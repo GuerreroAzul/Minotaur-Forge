@@ -10,3 +10,9 @@
   <IMG src="https://img.shields.io/badge/OS%20Test:%20-Linux%20Mint%2021.3%20x64%20-green?logo=Linux&logoColor=white">
 </P>
 <H2 style="color:#428BCA;">Software Description</H2>
+<P>
+  <IMG src="https://img.shields.io/badge/Software%20Version:%20-3.40%20-green">
+  <IMG src="https://img.shields.io/badge/Licence:%20-Free%20%E2%80%A2%20Proprietary-green">
+  <IMG src="https://img.shields.io/badge/Category:%20-Network%20-blue">
+  <IMG src="https://img.shields.io/badge/Company:%20-%20Mikrotik%20-blue">
+</P>
