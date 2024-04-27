@@ -102,8 +102,8 @@ declare -A SOFVERSION=(
 LIST="3.40 
 3.39 3.38 3.37 3.36 3.35 3.34 3.33 3.32 3.31 3.30 
 3.29 3.28 3.27 3.26 3.25 3.24 3.23 3.22 3.21 3.20 
-3.19 3.18 3.17 3.16 3.15 3.14 3.13 3.12 3.11 3.10
-3.9  3.8  3.7  3.6  3.5  3.4  3.3  3.2  3.1  3.0"
+3.19 3.18 3.17 3.16 3.15 3.14 3.13 3.12 3.11 3.10 
+3.9 3.8 3.7 3.6 3.5 3.4 3.3 3.2 3.1 3.0"
 
 
 # Setup Image
@@ -139,7 +139,6 @@ if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
   cd "$POL_System_TmpDir"
 
   # [GuerreroAzul] List of WinBox versions
-  POL_SetupWindow_message "$LIST" "$TITLE"
   POL_SetupWindow_menu "$(eval_gettext 'Select the version you want to install'):" "$TITLE" "$LIST" " "
 
   DOWNLOAD_URL=$(echo ${SOFVERSION[$APP_ANSWER]} | cut -d" " -f1)
@@ -152,6 +151,7 @@ else
   cd "$HOME"
   POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
   INSTALLER="$APP_ANSWER"
+  FILE_INSTALL=$(echo "$INSTALLER" | rev | cut -d'/' -f1 | rev)
 fi
 
 # Install Program
@@ -159,7 +159,7 @@ mkdir -p "$WINEPREFIX/drive_c/Program Files/WinBox/"
 cp "$INSTALLER" -d "$WINEPREFIX/drive_c/Program Files/WinBox/"
 
 # Shortcut
-POL_Shortcut "winbox.exe" "$TITLE" "" "" "$CATEGORY"
+POL_Shortcut "$FILE_INSTALL" "$TITLE" "" "" "$CATEGORY"
 
 # End script
 POL_System_TmpDelete
