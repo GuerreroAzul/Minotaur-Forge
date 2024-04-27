@@ -1,5 +1,5 @@
 <P align="center">
-  <IMG src="https://freesvg.org/img/winbox-mikrotik-icon.png" style="width:10%;">
+  <IMG src="../../Download/Icons/icon_winbox_download.png" style="width:10%;">
 </P>
 <H1 align="center">Winbox</H1>
 <P align="center">
