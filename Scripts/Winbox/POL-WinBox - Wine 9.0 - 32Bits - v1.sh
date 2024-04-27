@@ -99,7 +99,11 @@ declare -A SOFVERSION=(
     [3.1]="https://download.mikrotik.com/routeros/winbox/3.1/winbox.exe 994bae2a3a26ba16536c3e991eba2c08"
     [3.0]="https://download.mikrotik.com/routeros/winbox/3.0/winbox.exe 7a72d69c27657f660b8b6a4af1473158"
 )
-LIST=${!SOFVERSION[@]}
+LIST="3.40 
+3.39 3.38 3.37 3.36 3.35 3.34 3.33 3.32 3.31 3.30 
+3.29 3.28 3.27 3.26 3.25 3.24 3.23 3.22 3.21 3.20 
+3.19 3.18 3.17 3.16 3.15 3.14 3.13 3.12 3.11 3.10
+3.9  3.8  3.7  3.6  3.5  3.4  3.3  3.2  3.1  3.0"
 
 
 # Setup Image
