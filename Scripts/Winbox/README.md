@@ -16,3 +16,14 @@
   <IMG src="https://img.shields.io/badge/Category:%20-Network%20-blue">
   <IMG src="https://img.shields.io/badge/Company:%20-%20Mikrotik%20-blue">
 </P>
+<P align="justify">
+  <A>WinBox is a free program designed to
+manage MikroTik RouterOS through a simple and comfortable graphical interface. Thanks to it you can make Telnet, SSH and FTP type connections. It even integrates an API to create custom applications to manage and monitor.</A>
+</P>
+<A href="https://mikrotik.com">
+    <IMG src="https://img.shields.io/badge/OFICIAL%20WEB%20SITE-0099cc?style=for-the-badge">
+</A><BR>
+<A href="https://mikrotik.com/download">
+    <IMG src="https://img.shields.io/badge/Link%20to%20download%20the%20software-ffdd00?style=for-the-badge">
+</A>
+<H2 style="color:#428BCA;">Captures</H2>
