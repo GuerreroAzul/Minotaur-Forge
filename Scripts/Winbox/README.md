@@ -27,5 +27,9 @@ manage MikroTik RouterOS through a simple and comfortable graphical interface. T
     <IMG src="https://img.shields.io/badge/Link%20to%20download%20the%20software-ffdd00?style=for-the-badge">
 </A>
 <H2 style="color:#428BCA;">Captures</H2>
-<IMG src="ressources/captures">
-
+<IMG src="ressources/captures/winbox-001.png">
+<H2 style="color:#428BCA;">Advertisement</H2>
+<P align="justify">
+  <A>If you have the firewall activated, set the following rule:</A>
+</P>
+<IMG src="ressources/captures/winbox-002.png">
