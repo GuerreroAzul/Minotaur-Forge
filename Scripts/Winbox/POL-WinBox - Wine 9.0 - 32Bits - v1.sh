@@ -1,4 +1,4 @@
-#!/usr/bin/env playOnLinux-bash
+#!/usr/bin/env playonLinux-bash
 
 # Date: See changelog.
 # Last revision: See changelog.
