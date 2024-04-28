@@ -1,0 +1,257 @@
+﻿Windows 10 Pro  [Build 10.0.19043]
+CPU: Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+GameLoop 3.11.3149 2024/4/27 22:29:57
+----------------------------------------
+Type: 80000100
+Address: 7BDA9F38
+
+CallStack:
+ntdll + 29F38
+0x003A02FD<unknown module>
+msctf + 44FB4
+combase + BA8F
+combase + BEE3
+libcef + 2944687
+libcef + 895F6A
+libcef + 24AF898
+libcef + 1870908
+libcef + 187127B
+libcef + 1871012
+libcef + 18702DF
+libcef + 2071E54
+libcef + 1A0E430
+libcef + 1A0E06A
+libcef + 1243
+cef_frame + 9DEB3
+cef_frame + 253A0
+cef_frame + 7FEBD
+AppMarket + 2203C7
+AppMarket + 21C951
+AppMarket + 1E43FD
+AppMarket + 3FB0D9
+kernel32 + 296F0
+ntdll + 56BD3
+ntdll + 58072
+show in line:ntdll + 29F38 0x003A02FD<unknown module> msctf + 44FB4 combase + BA8F combase + BEE3 libcef + 2944687 libcef + 895F6A libcef + 24AF898 libcef + 1870908 libcef + 187127B libcef + 1871012 libcef + 18702DF libcef + 2071E54 libcef + 1A0E430 libcef + 1A0E06A libcef + 1243 cef_frame + 9DEB3 cef_frame + 253A0 cef_frame + 7FEBD AppMarket + 2203C7 AppMarket + 21C951 AppMarket + 1E43FD AppMarket + 3FB0D9 kernel32 + 296F0 ntdll + 56BD3 ntdll + 58072 
+
+Regs:
+EAX=767C2F18, EBX=0031F2B0, ECX=00000000, EDX=7FFC2000
+ESI=0031F39C, EDI=00000000, EBP=0031F304, ESP=0031F2B0, EIP=7BDA9F38
+
+DWORD_PTRs at CS:EIP:
+EB04EC83 00768DF3 57E58955 9D8D5356 FFFFFF6C CE89C789 00A4EC81 54890000 
+pid=00000220 init_tid=00000224 crashtid=00000224
+DWORD_PTRs at teb:
+0031E974 00320000 00222000 00000000 00000000 00000000 7FFC2000 00000000 00000220 00000224 00000000 00B4C300 7FFD1000 00000012 00000000 00000000 00000000 
+
+Modules(By Load Order):
+[00400000,673000] C:\Program Files\TxGameAssistant\AppMarket\AppMarket.exe [3.11.3149.80,2024-02-21 14:04:56 GMT] [6655160]
+[7BD80000,261000] C:\windows\system32\ntdll.dll [6.1.7601.24059,0000-00-00 00:00:00 GMT] [1664376]
+[7BC30000,139000] C:\windows\system32\kernel32.dll [10.0.19043.1466,2024-02-11 14:04:07 GMT] [1759083]
+[7B790000,486000] C:\windows\system32\kernelbase.dll [,2024-02-11 14:13:15 GMT] [5164966]
+[75760000,01B000] C:\Program Files\TxGameAssistant\AppMarket\caterpillar_sdk.dll [,2024-02-21 14:02:44 GMT] [102072]
+[75F30000,1F1000] C:\Program Files\TxGameAssistant\AppMarket\MSVCP140.dll [,2015-06-26 05:32:25 GMT] [439608]
+[7B150000,278000] C:\Program Files\TxGameAssistant\AppMarket\ucrtbase.dll [10.0.14393.2247,2016-03-29 05:21:53 GMT] [921280]
+[75F00000,015000] C:\Program Files\TxGameAssistant\AppMarket\vcruntime140.dll [,2015-06-26 05:32:09 GMT] [85328]
+[75700000,042000] C:\Program Files\TxGameAssistant\AppMarket\minicorelib.dll [,2024-02-21 14:02:54 GMT] [256184]
+[7A5F0000,46A000] C:\windows\system32\USER32.dll [5.1.2600.2180,2024-02-11 14:07:47 GMT] [4978025]
+[7B6B0000,0C6000] C:\windows\system32\advapi32.dll [10.0.10240.16384,2024-02-11 14:00:59 GMT] [992140]
+[7B480000,217000] C:\windows\system32\msvcrt.dll [7.0.2600.2180,2024-02-11 14:05:54 GMT] [2404379]
+[7B3E0000,081000] C:\windows\system32\sechost.dll [,2024-02-11 14:07:10 GMT] [602894]
+[7A430000,1AD000] C:\windows\system32\gdi32.dll [10.0.0.0,2024-02-11 14:03:37 GMT] [1940594]
+[7A3E0000,038000] C:\windows\system32\win32u.dll [,2024-02-11 14:08:13 GMT] [324704]
+[79480000,D14000] C:\windows\system32\SHELL32.dll [6.0.2900.6242,2024-02-11 14:14:32 GMT] [14209917]
+[79370000,0FA000] C:\windows\system32\shlwapi.dll [6.0.2800.1692,2024-02-11 14:14:28 GMT] [1384653]
+[79320000,039000] C:\windows\system32\shcore.dll [,2024-02-11 14:07:14 GMT] [294505]
+[78F50000,3B8000] C:\windows\system32\ole32.dll [10.0.0.0,2024-02-11 14:13:56 GMT] [4339165]
+[78E10000,121000] C:\windows\system32\combase.dll [,2024-02-11 14:16:39 GMT] [1419263]
+[7AED0000,1D6000] C:\windows\system32\rpcrt4.dll [5.1.2600.2180,2024-02-11 14:14:21 GMT] [2207409]
+[78DB0000,042000] C:\windows\system32\coml2.dll [,2024-02-11 14:16:40 GMT] [404188]
+[75560000,183000] C:\Program Files\TxGameAssistant\AppMarket\cef_frame.dll [,2024-02-21 14:03:16 GMT] [1572024]
+[6F660000,5EE5000] C:\Program Files\TxGameAssistant\AppMarket\libcef.dll [77.2.0.0,2019-10-09 00:12:56 GMT] [97653944]
+[7B0C0000,074000] C:\windows\system32\WS2_32.dll [5.1.2600.5512,2024-02-11 14:09:05 GMT] [526967]
+[7A250000,069000] C:\windows\system32\IPHLPAPI.DLL [5.1.2600.2180,2024-02-11 14:13:10 GMT] [590390]
+[7A200000,036000] C:\windows\system32\dnsapi.dll [5.2.3790.4318,2024-02-11 14:03:13 GMT] [252499]
+[7A1D0000,01E000] C:\windows\system32\nsi.dll [,2024-02-11 14:06:16 GMT] [137939]
+[6F4F0000,154000] C:\windows\system32\WINMM.dll [,2024-02-11 14:14:52 GMT] [1483998]
+[6F480000,056000] C:\windows\system32\msacm32.dll [,2024-02-11 14:04:39 GMT] [394017]
+[78430000,34C000] C:\windows\system32\OLEAUT32.dll [6.0.6001.18000,2024-02-11 14:13:54 GMT] [3730573]
+[76290000,07A000] C:\windows\system32\Secur32.dll [,2024-02-11 14:07:10 GMT] [554409]
+[7ACF0000,022000] C:\windows\system32\USERENV.dll [,2024-02-11 14:07:46 GMT] [162653]
+[76C90000,077000] C:\windows\system32\NETAPI32.dll [,2024-02-11 14:06:09 GMT] [560376]
+[6F390000,0DD000] C:\windows\system32\OLEACC.dll [7.0.0.0,2024-02-11 14:17:01 GMT] [997077]
+[6F220000,156000] C:\windows\system32\UIAutomationCore.DLL [,2024-02-11 14:14:38 GMT] [1638565]
+[789E0000,3B5000] C:\windows\winsxs\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.2600.2982_none_deadbeef\COMCTL32.dll [5.81.4704.1100,2024-02-11 14:16:45 GMT] [4253345]
+[7A370000,056000] C:\windows\system32\imm32.dll [5.1.2600.2180,2024-02-11 14:03:56 GMT] [420857]
+[75EC0000,023000] C:\windows\system32\WTSAPI32.dll [,2024-02-11 14:09:09 GMT] [166676]
+[6F1E0000,025000] C:\windows\system32\HID.DLL [10.0.0.0,2024-02-11 14:03:43 GMT] [170679]
+[6F140000,08D000] C:\windows\system32\WINTRUST.dll [6.1.7601.23769,2024-02-11 14:08:53 GMT] [651409]
+[76370000,275000] C:\windows\system32\crypt32.dll [5.131.2600.1243,2024-02-11 14:01:34 GMT] [2712211]
+[76320000,03C000] C:\windows\system32\bcrypt.dll [6.0.6000.16386,2024-02-11 14:01:21 GMT] [274448]
+[6F050000,0D6000] C:\Program Files\TxGameAssistant\AppMarket\chrome_elf.dll [77.0.3865.120,2019-10-09 00:12:56 GMT] [839864]
+[76D20000,01A000] C:\windows\system32\VERSION.dll [5.1.2600.2180,2024-02-11 14:07:57 GMT] [127801]
+[6EFD0000,06F000] C:\windows\system32\PROPSYS.dll [,2024-02-11 14:14:04 GMT] [615959]
+[6ED70000,242000] C:\windows\system32\DWrite.dll [,2024-02-11 14:03:22 GMT] [2507948]
+[6EC40000,119000] C:\windows\system32\dxgi.dll [6.0.6000.16386,2024-02-11 14:12:56 GMT] [1353263]
+[770B0000,10B4000] C:\windows\system32\wined3d.dll [10.0.0.0,2024-02-11 14:08:36 GMT] [17878800]
+[76D50000,345000] C:\windows\system32\opengl32.dll [5.1.2600.2082,2024-02-11 14:06:40 GMT] [3704422]
+[6EC00000,026000] C:\windows\system32\dwmapi.dll [10.0.19041.423,0000-00-00 00:00:00 GMT] [138928]
+[75800000,091000] C:\windows\system32\WINSPOOL.DRV [5.1.2600.2180,2024-02-11 14:08:50 GMT] [656612]
+[757C0000,022000] C:\windows\system32\compstui.dll [,2024-02-11 14:01:30 GMT] [121690]
+[75B80000,229000] C:\Program Files\TxGameAssistant\AppMarket\dbghelp.dll [6.1.7601.17514,2014-07-16 17:35:59 GMT] [1256080]
+[758B0000,219000] C:\windows\system32\COMDLG32.dll [6.0.2900.5512,2024-02-11 14:16:41 GMT] [2464728]
+[78180000,145000] C:\windows\system32\d3d9.dll [5.3.1.904,2024-02-11 14:16:52 GMT] [1463248]
+[6EBA0000,04C000] C:\windows\system32\dxva2.dll [,2024-02-11 14:12:55 GMT] [451872]
+[6E940000,24D000] C:\windows\system32\d3d11.dll [7.0.6002.18107,2024-02-11 14:16:49 GMT] [2696851]
+[10000000,002000] C:\windows\system32\USP10.dll [,2028-07-25 20:00:10 GMT] [8192]
+[78330000,0EA000] C:\windows\system32\WINHTTP.dll [5.1.2600.2180,2024-02-11 14:14:52 GMT] [1161770]
+[782E0000,040000] C:\windows\system32\jsproxy.dll [,2024-02-11 14:13:12 GMT] [401106]
+[6E6F0000,240000] C:\windows\system32\urlmon.dll [6.0.2800.1485,2024-02-11 14:14:41 GMT] [2671646]
+[6E550000,18E000] C:\windows\system32\wininet.dll [8.0.7601.17601,2024-02-11 14:08:45 GMT] [1769995]
+[6E4F0000,049000] C:\windows\system32\mpr.dll [5.0.2195.6611,2024-02-11 14:04:34 GMT] [341681]
+[6E490000,045000] C:\windows\system32\credui.dll [,2024-02-11 14:01:32 GMT] [316986]
+[6E320000,160000] C:\windows\system32\CRYPTUI.dll [,2024-02-11 14:16:45 GMT] [1630917]
+[6E2F0000,01D000] C:\windows\system32\ncrypt.dll [,2024-02-11 14:06:04 GMT] [143635]
+[6E2C0000,01C000] C:\windows\system32\dhcpcsvc.DLL [,2024-02-11 14:03:01 GMT] [134053]
+[78790000,231000] C:\windows\system32\gdiplus.dll [6.1.7601.17514,2024-02-11 14:13:03 GMT] [2476145]
+[6DE50000,45E000] C:\Program Files\TxGameAssistant\AppMarket\gmesdk.dll [2.1.5.1121,2018-09-12 18:07:49 GMT] [4568760]
+[6DCD0000,163000] C:\windows\system32\DSOUND.dll [5.3.1.904,2024-02-11 14:12:49 GMT] [1691287]
+[6DAE0000,1DC000] C:\Program Files\TxGameAssistant\AppMarket\MSVCP100.dll [,2011-02-19 00:18:09 GMT] [421200]
+[6D870000,25A000] C:\Program Files\TxGameAssistant\AppMarket\msvcr100.dll [10.0.30319.0,2011-02-19 00:17:38 GMT] [773968]
+[6D790000,0CA000] C:\Program Files\TxGameAssistant\AppMarket\MediaEngine.dll [2.1.5.1121,2018-09-12 18:03:46 GMT] [815288]
+[6D2E0000,49A000] C:\Program Files\TxGameAssistant\AppMarket\TRAE.DLL [2.1.5.1,2018-09-12 11:41:34 GMT] [4423864]
+[6D280000,045000] C:\Program Files\TxGameAssistant\AppMarket\xPlatform.dll [2.1.5.1121,2018-09-12 18:03:17 GMT] [275640]
+[6D240000,025000] C:\Program Files\TxGameAssistant\AppMarket\UDT.dll [1.9.8.5,2018-04-17 14:44:25 GMT] [149688]
+[6CF30000,2F9000] C:\Program Files\TxGameAssistant\AppMarket\Common.dll [,2019-04-22 06:50:25 GMT] [2287800]
+[6CF00000,017000] C:\Program Files\TxGameAssistant\AppMarket\zlib.dll [,2017-09-29 02:35:22 GMT] [80568]
+[6CED0000,020000] C:\Program Files\TxGameAssistant\AppMarket\libexpat.dll [,2017-09-29 02:35:05 GMT] [120504]
+[6CEA0000,01C000] C:\windows\system32\AVICAP32.dll [,2024-02-11 14:01:18 GMT] [129064]
+[7AD30000,183000] C:\windows\system32\SETUPAPI.dll [,2024-02-11 14:14:27 GMT] [1855967]
+[6CE70000,012000] C:\Program Files\TxGameAssistant\AppMarket\tinyxml.dll [,2019-04-22 06:48:09 GMT] [62136]
+[6CE40000,014000] C:\Program Files\TxGameAssistant\AppMarket\AsyncTask.dll [,2019-04-22 06:48:12 GMT] [72376]
+[6CE10000,012000] C:\Program Files\TxGameAssistant\AppMarket\arkFS.dll [,2019-04-22 06:48:53 GMT] [61112]
+[6CDF0000,007000] C:\Program Files\TxGameAssistant\AppMarket\arkIOStub.dll [,2019-04-22 06:48:08 GMT] [20664]
+[6CD50000,08D000] C:\Program Files\TxGameAssistant\AppMarket\sqlite.dll [,2017-09-29 02:35:27 GMT] [568504]
+[6CBF0000,142000] C:\Program Files\TxGameAssistant\AppMarket\LIBEAY32.dll [1.0.2.8,2020-01-14 09:50:14 GMT] [1306296]
+[75790000,01F000] C:\windows\system32\RASAPI32.dll [,2024-02-11 14:06:49 GMT] [148981]
+[6CA20000,1B5000] C:\Program Files\TxGameAssistant\AppMarket\GF.dll [,2019-04-22 06:51:23 GMT] [1777336]
+[6C970000,09D000] C:\Program Files\TxGameAssistant\AppMarket\xGraphic32.dll [,2019-04-22 06:49:10 GMT] [630456]
+[6C8C0000,092000] C:\Program Files\TxGameAssistant\AppMarket\arkGraphic.dll [,2019-04-22 06:48:59 GMT] [570040]
+[6C890000,012000] C:\Program Files\TxGameAssistant\AppMarket\arkImage.dll [,2019-04-22 06:48:04 GMT] [63672]
+[6C850000,023000] C:\Program Files\TxGameAssistant\AppMarket\libpng.dll [,2017-09-29 02:35:27 GMT] [132280]
+[6C7E0000,056000] C:\Program Files\TxGameAssistant\AppMarket\libjpegturbo.dll [1.3.1.0,2014-04-30 07:43:01 GMT] [281272]
+[6C7B0000,019000] C:\Program Files\TxGameAssistant\AppMarket\libimagequant.dll [,2017-09-29 02:35:27 GMT] [87736]
+[6C770000,028000] C:\Program Files\TxGameAssistant\AppMarket\VCOMP140.DLL [,2016-03-18 05:25:07 GMT] [163128]
+[76600000,014000] C:\windows\system32\MSIMG32.dll [,2024-02-11 14:04:54 GMT] [91285]
+[6C720000,03B000] C:\Program Files\TxGameAssistant\AppMarket\xImage.dll [,2019-04-22 06:48:14 GMT] [234680]
+[6C500000,207000] C:\windows\system32\WLDAP32.dll [,2024-02-11 14:08:59 GMT] [2257076]
+[6C4A0000,049000] C:\Program Files\TxGameAssistant\AppMarket\SSLEAY32.dll [1.0.2.8,2020-01-14 09:50:32 GMT] [291000]
+[7A1B0000,010000] C:\windows\system32\PSAPI.DLL [5.1.2600.3264,2024-02-11 14:06:45 GMT] [81143]
+[6C350000,140000] C:\Program Files\TxGameAssistant\AppMarket\PocoFoundation.dll [1.9.4.0,2021-07-15 02:37:34 GMT] [1305272]
+[6C300000,034000] C:\Program Files\TxGameAssistant\AppMarket\PocoJSON.dll [1.9.4.0,2021-07-15 02:38:30 GMT] [204472]
+[6C220000,0C6000] C:\Program Files\TxGameAssistant\AppMarket\PocoNet.dll [1.9.4.0,2021-07-15 02:41:04 GMT] [807096]
+[6C1D0000,033000] C:\Program Files\TxGameAssistant\AppMarket\PocoNetSSL.dll [1.9.4.0,2021-07-15 02:43:00 GMT] [202424]
+[6C190000,028000] C:\Program Files\TxGameAssistant\AppMarket\PocoCrypto.dll [1.9.4.0,2021-07-15 02:38:35 GMT] [164536]
+[6C0F0000,086000] C:\Program Files\TxGameAssistant\AppMarket\libssl-1_1.dll [1.1.1.11,2021-03-26 00:19:06 GMT] [540856]
+[6BE60000,271000] C:\Program Files\TxGameAssistant\AppMarket\libcrypto-1_1.dll [1.1.1.11,2021-03-26 00:18:41 GMT] [2532536]
+[6BDF0000,057000] C:\Program Files\TxGameAssistant\AppMarket\PocoUtil.dll [1.9.4.0,2021-07-15 02:42:05 GMT] [350904]
+[6BD60000,07B000] C:\Program Files\TxGameAssistant\AppMarket\PocoXML.dll [1.9.4.0,2021-07-15 02:41:11 GMT] [498360]
+[6BBC0000,181000] C:\Program Files\TxGameAssistant\AppMarket\beacon_sdk.dll [,2024-02-21 14:03:08 GMT] [1553080]
+[75E40000,061000] C:\Program Files\TxGameAssistant\AppMarket\concrt140.dll [,2016-06-10 05:09:19 GMT] [244032]
+[76250000,025000] C:\windows\system32\Kerberos.dll [,2024-02-11 14:04:05 GMT] [169189]
+[76210000,02F000] C:\windows\system32\MSV1_0.dll [,2024-02-11 14:05:08 GMT] [217323]
+[76C30000,04C000] C:\windows\system32\winex11.drv [10.0.0.0,2024-02-11 14:14:52 GMT] [453873]
+[76B80000,092000] C:\windows\system32\uxtheme.dll [10.0.0.0,2024-02-11 14:07:50 GMT] [677459]
+[75AE0000,089000] C:\Program Files\TxGameAssistant\AppMarket\AECommonDll.dll [3.11.3149.80,2024-02-21 14:03:22 GMT] [539832]
+[75DC0000,02F000] C:\windows\system32\imagehlp.dll [,2024-02-11 14:03:54 GMT] [250484]
+[75E00000,02F000] C:\Program Files\TxGameAssistant\AppMarket\dr.dll [10.11.16568.224,2024-02-21 14:03:03 GMT] [179384]
+[6BA40000,16D000] C:\Program Files\TxGameAssistant\AppMarket\pcyyb_sdk_dll.dll [1.0.109.0,2023-11-02 09:07:52 GMT] [1486520]
+[6B870000,1BF000] C:\Program Files\TxGameAssistant\AppMarket\WMPF\host\libwmpf_sdk_interface.dll [2.1.0.50056,2023-12-26 03:36:13 GMT] [1726056]
+[6B490000,3C3000] C:\windows\system32\d2d1.dll [6.2.9200.16765,2024-02-11 14:16:48 GMT] [4203222]
+[6B450000,02E000] C:\windows\system32\d3d10_1.dll [6.2.9200.16492,2024-02-11 14:01:47 GMT] [215103]
+[6B410000,023000] C:\windows\system32\d3d10core.dll [6.0.6000.16386,2024-02-11 14:01:47 GMT] [167487]
+[6B350000,0A9000] C:\windows\system32\hnetcfg.dll [,2024-02-11 14:13:05 GMT] [768954]
+[766D0000,103000] C:\windows\system32\msctf.dll [10.0.18362.535,0000-00-00 00:00:00 GMT] [1054864]
+
+ThirdPartyModules:
+C:\windows\system32\kernel32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\kernelbase.dll,,
+C:\windows\system32\USER32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\advapi32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\msvcrt.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\sechost.dll,,
+C:\windows\system32\gdi32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\win32u.dll,,
+C:\windows\system32\SHELL32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\shlwapi.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\shcore.dll,,
+C:\windows\system32\ole32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\combase.dll,,
+C:\windows\system32\rpcrt4.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\coml2.dll,,
+C:\windows\system32\WS2_32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\IPHLPAPI.DLL,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\dnsapi.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\nsi.dll,,
+C:\windows\system32\WINMM.dll,,
+C:\windows\system32\msacm32.dll,,
+C:\windows\system32\OLEAUT32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\Secur32.dll,,
+C:\windows\system32\USERENV.dll,,
+C:\windows\system32\NETAPI32.dll,,
+C:\windows\system32\OLEACC.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\UIAutomationCore.DLL,,
+C:\windows\winsxs\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.2600.2982_none_deadbeef\COMCTL32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\imm32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\WTSAPI32.dll,,
+C:\windows\system32\HID.DLL,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\WINTRUST.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\crypt32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\bcrypt.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\VERSION.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\PROPSYS.dll,,
+C:\windows\system32\DWrite.dll,,
+C:\windows\system32\dxgi.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\wined3d.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\WINSPOOL.DRV,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\compstui.dll,,
+C:\windows\system32\COMDLG32.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\d3d9.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\dxva2.dll,,
+C:\windows\system32\d3d11.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\USP10.dll,,
+C:\windows\system32\WINHTTP.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\jsproxy.dll,,
+C:\windows\system32\urlmon.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\wininet.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\mpr.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\credui.dll,,
+C:\windows\system32\CRYPTUI.dll,,
+C:\windows\system32\ncrypt.dll,,
+C:\windows\system32\dhcpcsvc.DLL,,
+C:\windows\system32\gdiplus.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\DSOUND.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\AVICAP32.dll,,
+C:\windows\system32\SETUPAPI.dll,,
+C:\windows\system32\RASAPI32.dll,,
+C:\windows\system32\MSIMG32.dll,,
+C:\windows\system32\WLDAP32.dll,,
+C:\windows\system32\PSAPI.DLL,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\Kerberos.dll,,
+C:\windows\system32\MSV1_0.dll,,
+C:\windows\system32\winex11.drv,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\uxtheme.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\imagehlp.dll,,
+C:\windows\system32\d2d1.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\d3d10_1.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\d3d10core.dll,Copyright (c) 1993-2024 the Wine project authors (see the file AUTHORS for a complete list),
+C:\windows\system32\hnetcfg.dll,,
+
+-----------------------------------------------------------------------------------------------------------
+Windows:
+TopLevelHwnd00020100:08000000,84000000,00000000,6F660000,00000000,00000000,00000000,    Base_PowerMessageWindow,
+TopLevelHwnd000200FE:00000000,8C000000,00000000,00000000,00000000,00000000,00000000,    IME,Default IME
+
+-----------------------------------------------------------------------------------------------------------
+
+User GUID: 4cddda4ef698573f93a5e9167cff9a1fCrash Signature: 6D2BDD8F7CE3BA3DD018991D9E55E149

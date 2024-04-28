@@ -54,18 +54,36 @@ fi
 
 # Prepare resources for installation!
 POL_Wine_SelectPrefix "$PREFIX"
-POL_System_SetArch "$ARQUITECTURE"
 POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
+
+
 # [GuerreroAzul] dll's Obtained from the site DLL-FILES.COM
 # [GuerreroAzul] Fix error: "fixme:msctf:TextStoreACPSink" (MS Text Service Module)
 POL_Download_Resource "https://archive.org/download/msctf/msctf.dll" "945b2f6a542a30a7032b0d0ae3f62b57" "msctf"
 cp "$POL_USER_ROOT/ressources/msctf/msctf.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
+
 # [GuerreroAzul] Fix error: "fixme:dwmapi:DwmEnableBlurBehindWindow" (Blur behind windows)
 POL_Download_Resource "https://archive.org/download/dwmapi/dwmapi.dll" "7a48cca25ef5aa3f537af4c3edce1902" "dwmapi"
 cp "$POL_USER_ROOT/ressources/dwmapi/dwmapi.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
+
+# [GuerreroAzul] Fix error "fixme:ntdll:NtQuerySystemInformation" (Information about system performance)
+POL_Download_Resource "https://archive.org/download/ntdll/ntdll.dll" "ba43e77a5b6c451360dcac576a386f20" "ntdll"
+cp "$POL_USER_ROOT/ressources/ntdll/ntdll.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
+
+# [GuerreroAzul] Fix error"fixme:richedit:fnTextSrv_OnTxSetCursor" (Show rich text)
+POL_Call POL_Install_riched20
+POL_Wine_OverrideDLL "native,builtin" "riched20"
+
+# [GuerreroAzul] Fix error: "fixme:cryptasn:CryptDecodeObjectEx"
+POL_Call POL_Install_donet40
+POL_Call POL_Install_gdiplus
+POL_Call POL_Install_msxml6
+POL_Call POL_Install_msls31
+POL_Wine_OverrideDLL "native,builtin" "msxml6"
+POL_Wine_OverrideDLL "native,builtin" "msls31"
 
 # Bugs pending solution
 # [GuerreroAzul] "fixme:system:EnableNonClientDpiScaling" (DPI scaling)
