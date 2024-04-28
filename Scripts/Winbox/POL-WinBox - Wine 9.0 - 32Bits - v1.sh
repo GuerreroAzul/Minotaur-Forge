@@ -40,7 +40,7 @@
 #   System version: Windows XP
 #   Architecture: 32bits
 # Reference
-#   Link Download: Link download: http://download2.mikrotik.com/routeros/winbox/3.13/winbox.exe / MD5: 5d97cafd31963ab6360c9b056f6ba26b825a4a2f
+#   Link download: http://download2.mikrotik.com/routeros/winbox/3.13/winbox.exe / MD5: 5d97cafd31963ab6360c9b056f6ba26b825a4a2f
 
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
