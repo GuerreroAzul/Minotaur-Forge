@@ -78,7 +78,7 @@ POL_Call POL_Install_riched20
 POL_Wine_OverrideDLL "native,builtin" "riched20"
 
 # [GuerreroAzul] Fix error: "fixme:cryptasn:CryptDecodeObjectEx"
-POL_Call POL_Install_donet40
+#POL_Call POL_Install_donet40
 POL_Call POL_Install_gdiplus
 POL_Call POL_Install_msxml6
 POL_Call POL_Install_msls31
