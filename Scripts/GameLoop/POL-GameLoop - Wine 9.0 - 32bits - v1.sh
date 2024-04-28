@@ -58,11 +58,20 @@ POL_System_SetArch "$ARQUITECTURE"
 POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
-#Dependencies
-#POL_Call POL_Install_riched20
-#POL_Call POL_Install_msxml4
-#POL_Wine_OverrideDLL "native,builtin" "riched20"
-#POL_Wine_OverrideDLL "native,builtin" "msxml6"
+# Dependencies
+# [GuerreroAzul] dll's Obtained from the site DLL-FILES.COM
+# [GuerreroAzul] Fix error: "fixme:msctf:TextStoreACPSink" (MS Text Service Module)
+POL_Download_Resource "https://archive.org/download/msctf/msctf.dll" "945b2f6a542a30a7032b0d0ae3f62b57" "msctf"
+cp "$POL_USER_ROOT/ressources/msctf/msctf.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
+# [GuerreroAzul] Fix error: "fixme:dwmapi:DwmEnableBlurBehindWindow" (Blur behind windows)
+POL_Download_Resource "https://archive.org/download/dwmapi/dwmapi.dll" "7a48cca25ef5aa3f537af4c3edce1902" "dwmapi"
+cp "$POL_USER_ROOT/ressources/dwmapi/dwmapi.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
+
+# Bugs pending solution
+# [GuerreroAzul] "fixme:system:EnableNonClientDpiScaling" (DPI scaling)
+# [GuerreroAzul] "fixme:wtsapi:WTSUnRegisterSessionNotification" (Terminal Service (WTS))
+# [GuerreroAzul] "fixme:userenv:UnregisterGPNotification" (Group policy notifications in Windows environment)
+
 
 # Script start
 POL_SetupWindow_InstallMethod "LOCAL,DOWNLOAD"
