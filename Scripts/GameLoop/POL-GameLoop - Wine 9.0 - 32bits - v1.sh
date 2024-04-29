@@ -58,7 +58,7 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
-
+POL_Call POL_Install_dotnet40
 
 # [GuerreroAzul] dll's Obtained from the site DLL-FILES.COM
 # [GuerreroAzul] Fix error: "fixme:msctf:TextStoreACPSink" (MS Text Service Module)
