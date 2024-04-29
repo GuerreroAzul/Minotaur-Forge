@@ -1,5 +1,5 @@
 <P align="center">
-  <IMG src="ressources/images/WinBox.png" style="width:10%;">
+  <IMG src="ressources/images/GameLoop.web" style="width:10%;">
 </P>
 <H1 align="center">Winbox</H1>
 <P align="center">
