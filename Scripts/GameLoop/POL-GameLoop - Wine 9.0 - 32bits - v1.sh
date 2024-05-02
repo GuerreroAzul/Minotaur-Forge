@@ -58,6 +58,10 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
+# fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+POL_Call POL_Install_riched20
+POL_Wine_OverrideDLL "native,builtin" "riched20"
+
 # .Net Framework 4.0
 # POL_Download_Resource "http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe" "251743dfd3fda414570524bac9e55381" "dotnet40"
 # POL_Wine --ignore-errors "$POL_USER_ROOT/ressources/dotnet40/dotNetFx40_Full_x86_x64.exe" /q /c:"install.exe /q"
@@ -113,6 +117,7 @@ POL_Wine_WaitExit "$TITLE"
 
 # Shortcut
 POL_Shortcut "AppMarket.exe" "$TITLE" "" "" "$CATEGORY"
+POL_Shortcut "AndroidEmulatorEx.exe" "Android Emulator" "" "" "$CATEGORY"
 
 # End script
 POL_System_TmpDelete

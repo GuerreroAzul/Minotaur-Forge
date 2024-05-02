@@ -1,0 +1,125 @@
+L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\QQExternal.exe" L"action=allow"
+01ec:fixme:netsh:wmain stub: L"C:\\windows\\system32\\Netsh.exe" L"advfirewall" L"firewall" L"add" L"rule" L"name=GameDownload" L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\GameD01fc:fixme:netsh:wmain stub: L"C:\\windows\\system32\\Netsh.exe" L"advfirewall" L"firewall" L"add" L"rule" L"name=TUpdate" L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\GF186\\TUp0178:fixme:ver:GetCurrentPackageId (0031FEB4 00000000): stub
+0140:fixme:shell:SHChangeNotify unknown type 00000003
+00d0:fixme:richedit:editor_handle_message EM_SETLANGOPTIONS: stub
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+[05/02/24 11:12:08] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.local/share/applications)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+009c:err:vulkan:wine_vk_init Failed to load libvulkan.so.1.
+009c:err:ole:start_rpcss Failed to start RpcSs service
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+/home/olagos/.PlayOnLinux//wineprefix/gameloop/dosdevices/c:/users/olagos/Desktop
+[05/02/24 11:12:25] - Running wine-9.0 AppMarket.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/AppMarket)
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+[I] <MMKV.cpp:165::initialize> version v1.2.13, page size 4096, arch x86
+[I] <MMKV.cpp:207::initializeMMKV> root dir: C:\users\olagos\AppData\Roaming\Tencent\TxGameAssistant\radium\XPlugin\Info\
+[05/02/24 11:25:41] - ----- Starting function POL_Install_riched20 -----
+[05/02/24 11:25:41] - ----- Starting function POL_SP2_Extract -----
+[05/02/24 11:25:42] - ----- Ending function POL_SP2_Extract -----
+[05/02/24 11:25:43] - Running wine-9.0 regedit /home/olagos/.PlayOnLinux//tmp/override-dll.reg (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/windows/system32)
+[05/02/24 11:25:43] - Content of /home/olagos/.PlayOnLinux//tmp/override-dll.reg
+-----------
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Wine\DllOverrides]
+"*riched20"="native,builtin"
+-----------
+[05/02/24 11:25:43] - ----- Ending function POL_Install_riched20 -----
+[05/02/24 11:25:48] - Running wine-9.0 AppMarket.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/AppMarket)
+[I] <MMKV.cpp:165::initialize> version v1.2.13, page size 4096, arch x86
+[I] <MMKV.cpp:207::initializeMMKV> root dir: C:\users\olagos\AppData\Roaming\Tencent\TxGameAssistant\radium\XPlugin\Info\
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+[05/02/24 11:27:53] - Running wine-9.0 AppMarket.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/AppMarket)
+[I] <MMKV.cpp:165::initialize> version v1.2.13, page size 4096, arch x86
+[I] <MMKV.cpp:207::initializeMMKV> root dir: C:\users\olagos\AppData\Roaming\Tencent\TxGameAssistant\radium\XPlugin\Info\
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10060
+recv failed with error: 10054
+recv failed with error: 10060
+recv failed with error: 10054
+Start Parse Apk
+Z:\home\olagos\Escritorio\GameLoop\Mobile_Legends_ Bang_Bang_21.8.58.9312_Apkpure.apk
+recv failed with error: 10054
+recv failed with error: 10060
+*** Leaked objects detected: 1 instance(s) of class BinderBase
+*** Leaked objects detected: 1 instance(s) of class CBChecker
+[05/02/24 11:28:15] - Running wine-9.0 AppMarket.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/AppMarket)
+[I] <MMKV.cpp:165::initialize> version v1.2.13, page size 4096, arch x86
+[I] <MMKV.cpp:207::initializeMMKV> root dir: C:\users\olagos\AppData\Roaming\Tencent\TxGameAssistant\radium\XPlugin\Info\
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Unhandled page fault on read access to 10000000 at address 012EDBDE (thread 0394), starting debugger...
+[31083:31083:0100/000000.920777:ERROR:zygote_linux.cc(672)] write: Tubería rota (32)
+[05/02/24 11:32:14] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c)
+/home/olagos/.PlayOnLinux//wineprefix/gameloop/dosdevices/c:/users/olagos/Desktop
+[05/02/24 11:32:33] - Running wine-9.0 AndrowsInstaller.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/AppMarket)
+[05/02/24 11:33:42] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c)
+/home/olagos/.PlayOnLinux/wineprefix/gameloop/dosdevices/c:/users/olagos/Desktop
+[05/02/24 11:33:52] - Running wine-9.0 AndroidEmulator.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/ui)
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+Start Parse Apk
+Z:\home\olagos\Escritorio\GameLoop\Mobile_Legends_ Bang_Bang_21.8.58.9312_Apkpure.apk
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+*** Leaked objects detected: 1 instance(s) of class BinderBase
+*** Leaked objects detected: 1 instance(s) of class CBChecker
+[05/02/24 11:34:22] - Running wine-9.0 wineboot (Working directory : /usr/share/playonlinux/python)
+[05/02/24 11:34:30] - Running wine-9.0 AndroidEmulator.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/ui)
+[05/02/24 11:35:00] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c)
+/home/olagos/.PlayOnLinux/wineprefix/gameloop/dosdevices/c:/users/olagos/Desktop
+[05/02/24 11:35:10] - Running wine-9.0 AndroidEmulatorEx.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/ui)

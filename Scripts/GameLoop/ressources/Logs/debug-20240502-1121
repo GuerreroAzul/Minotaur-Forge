@@ -1,0 +1,138 @@
+lagos/.PlayOnLinux/shortcuts)
+wine-9.0
+
+PlayOnLinux logfile
+-------------------
+Date: 05/02/24 11:08:43
+
+> PlayOnLinux Version
+  4.3.4
+> uname -a
+  Linux MATE-D15 5.15.0-105-generic #115-Ubuntu SMP Mon Apr 15 09:52:04 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+> lsb_release -a
+  
+> wine --version
+  wine-9.0
+> POL_WINEVERSION
+  9.0
+> WINEPREFIX
+  /home/olagos/.PlayOnLinux//wineprefix/gameloop
+> Distribution
+  Linux Mint 21.3
+> glxinfo \| grep rendering
+  direct rendering: Yes
+> glxinfo \| grep renderer
+      GLX_MESA_copy_sub_buffer, GLX_MESA_query_renderer, GLX_MESA_swap_control, 
+    GLX_MESA_copy_sub_buffer, GLX_MESA_query_renderer, GLX_MESA_swap_control, 
+Extended renderer info (GLX_MESA_query_renderer):
+OpenGL renderer string: Mesa Intel(R) UHD Graphics (CML GT2)
+> OpenGL libs (Direct rendering testing)
+  check_dd_x86 missing, test skipped
+  check_dd_amd64 missing, test skipped
+
+[05/02/24 11:08:55] - Running wine-9.0 cmd /c echo %ProgramFiles% (Working directory : /home/olagos/.PlayOnLinux/shortcuts)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+C:\Program Files
+[05/02/24 11:08:59] - Running wine-9.0 regedit /home/olagos/.PlayOnLinux//tmp/regkey.reg (Working directory : /home/olagos/.PlayOnLinux/shortcuts)
+[05/02/24 11:08:59] - Content of /home/olagos/.PlayOnLinux//tmp/regkey.reg
+-----------
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Wine]
+"Version"="win10"
+-----------
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+[05/02/24 11:09:27] - Running wine-9.0 start /unix /home/olagos/Escritorio/GameLoop/GLP_installer_1000218456_market.exe (Working directory : /home/olagos)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+00d8:err:vulkan:wine_vk_init Failed to load libvulkan.so.1.
+0110:fixme:ver:GetCurrentPackageId (0199FF10 00000000): stub
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+00d0:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+00d0:err:vulkan:wine_vk_init Failed to load libvulkan.so.1.
+00d0:err:wgl:init_opengl Failed to load libGL: libGL.so.1: no se puede abrir el archivo del objeto compartido: No existe el archivo o el directorio
+00d0:err:wgl:init_opengl OpenGL support is disabled.
+00d0:err:d3d:wined3d_caps_gl_ctx_create Failed to find a suitable pixel format.
+00d0:err:d3d:wined3d_adapter_gl_init Failed to get a GL context for adapter 016B6750.
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:query_property Unsupported property 0x8
+0058:fixme:mountmgr:query_property Unsupported property 0x7
+0140:fixme:exec:SHELL_execute flags ignored: 0x00000100
+0150:fixme:shell:SHAutoComplete stub
+0150:fixme:ver:GetCurrentPackageId (0031FEB4 00000000): stub
+0140:fixme:exec:SHELL_execute flags ignored: 0x00000100
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+01ac:fixme:netsh:wmain stub: L"C:\\windows\\system32\\Netsh.exe" L"advfirewall" L"firewall" L"add" L"rule" L"name=AppMarket" L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\AppMarke01bc:fixme:netsh:wmain stub: L"C:\\windows\\system32\\Netsh.exe" L"advfirewall" L"firewall" L"add" L"rule" L"name=TInst" L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\TInst.exe" L01cc:fixme:netsh:wmain stub: L"C:\\windows\\system32\\Netsh.exe" L"advfirewall" L"firewall" L"add" L"rule" L"name=bugreport" L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\bugrepor01dc:fixme:netsh:wmain stub: L"C:\\windows\\system32\\Netsh.exe" L"advfirewall" L"firewall" L"add" L"rule" L"name=QQExternal" L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\QQExter01ec:fixme:netsh:wmain stub: L"C:\\windows\\system32\\Netsh.exe" L"advfirewall" L"firewall" L"add" L"rule" L"name=GameDownload" L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\GameD01fc:fixme:netsh:wmain stub: L"C:\\windows\\system32\\Netsh.exe" L"advfirewall" L"firewall" L"add" L"rule" L"name=TUpdate" L"dir=in" L"program=c:\\program files\\txgameassistant\\appmarket\\GF186\\TUp0178:fixme:ver:GetCurrentPackageId (0031FEB4 00000000): stub"
+0140:fixme:shell:SHChangeNotify unknown type 00000003
+00d0:fixme:richedit:editor_handle_message EM_SETLANGOPTIONS: stub
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+00d0:fixme:richedit:fnTextSrv_OnTxSetCursor Ignoring most params
+[05/02/24 11:12:08] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.local/share/applications)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+009c:err:vulkan:wine_vk_init Failed to load libvulkan.so.1.
+009c:err:ole:start_rpcss Failed to start RpcSs service
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+/home/olagos/.PlayOnLinux//wineprefix/gameloop/dosdevices/c:/users/olagos/Desktop
+[05/02/24 11:12:25] - Running wine-9.0 AppMarket.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/AppMarket)
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
+wine: Read access denied for device L"\\??\\Z:\\", FS volume label and serial are not available.
