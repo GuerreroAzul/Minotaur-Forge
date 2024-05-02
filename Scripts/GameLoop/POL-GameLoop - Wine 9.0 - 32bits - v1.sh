@@ -35,7 +35,7 @@ DOWNLOAD_URL="https://down.gameloop.com/channel/3/16412/GLP_installer_1000218456
 FILE_INSTALL="GLP_installer_1000218456_market.exe"
 MD5_CHECKSUM="ef61ca12b115d390a2971608cf462a83"
 
-#Setup Image
+# Setup Image
 POL_GetSetupImages "$LOGO" "$BANNER" "$TITLE"
 
 # Starting the script
@@ -58,32 +58,34 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
-POL_Call POL_Install_dotnet40
+# .Net Framework 4.0
+# POL_Download_Resource "http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe" "251743dfd3fda414570524bac9e55381" "dotnet40"
+# POL_Wine --ignore-errors "$POL_USER_ROOT/ressources/dotnet40/dotNetFx40_Full_x86_x64.exe" /q /c:"install.exe /q"
 
 # [GuerreroAzul] dll's Obtained from the site DLL-FILES.COM
 # [GuerreroAzul] Fix error: "fixme:msctf:TextStoreACPSink" (MS Text Service Module)
-POL_Download_Resource "https://archive.org/download/msctf/msctf.dll" "945b2f6a542a30a7032b0d0ae3f62b57" "msctf"
-cp "$POL_USER_ROOT/ressources/msctf/msctf.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
+# POL_Download_Resource "https://archive.org/download/msctf/msctf.dll" "945b2f6a542a30a7032b0d0ae3f62b57" "msctf"
+# cp "$POL_USER_ROOT/ressources/msctf/msctf.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
 
 # [GuerreroAzul] Fix error: "fixme:dwmapi:DwmEnableBlurBehindWindow" (Blur behind windows)
-POL_Download_Resource "https://archive.org/download/dwmapi/dwmapi.dll" "7a48cca25ef5aa3f537af4c3edce1902" "dwmapi"
-cp "$POL_USER_ROOT/ressources/dwmapi/dwmapi.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
+# POL_Download_Resource "https://archive.org/download/dwmapi/dwmapi.dll" "7a48cca25ef5aa3f537af4c3edce1902" "dwmapi"
+# cp "$POL_USER_ROOT/ressources/dwmapi/dwmapi.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
 
 # [GuerreroAzul] Fix error "fixme:ntdll:NtQuerySystemInformation" (Information about system performance)
-POL_Download_Resource "https://archive.org/download/ntdll/ntdll.dll" "ba43e77a5b6c451360dcac576a386f20" "ntdll"
-cp "$POL_USER_ROOT/ressources/ntdll/ntdll.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
+#POL_Download_Resource "https://archive.org/download/ntdll/ntdll.dll" "ba43e77a5b6c451360dcac576a386f20" "ntdll"
+# cp "$POL_USER_ROOT/ressources/ntdll/ntdll.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
 
 # [GuerreroAzul] Fix error"fixme:richedit:fnTextSrv_OnTxSetCursor" (Show rich text)
-POL_Call POL_Install_riched20
-POL_Wine_OverrideDLL "native,builtin" "riched20"
+# POL_Call POL_Install_riched20
+# POL_Wine_OverrideDLL "native,builtin" "riched20"
 
 # [GuerreroAzul] Fix error: "fixme:cryptasn:CryptDecodeObjectEx"
-#POL_Call POL_Install_donet40
-POL_Call POL_Install_gdiplus
-POL_Call POL_Install_msxml6
-POL_Call POL_Install_msls31
-POL_Wine_OverrideDLL "native,builtin" "msxml6"
-POL_Wine_OverrideDLL "native,builtin" "msls31"
+# POL_Call POL_Install_donet40
+# POL_Call POL_Install_gdiplus
+# POL_Call POL_Install_msxml6
+# POL_Call POL_Install_msls31
+# POL_Wine_OverrideDLL "native,builtin" "msxml6"
+# POL_Wine_OverrideDLL "native,builtin" "msls31"
 
 # Bugs pending solution
 # [GuerreroAzul] "fixme:system:EnableNonClientDpiScaling" (DPI scaling)
