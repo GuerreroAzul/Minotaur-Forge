@@ -62,6 +62,15 @@ Set_OS "$OSVERSION"
 POL_Call POL_Install_riched20
 POL_Wine_OverrideDLL "native,builtin" "riched20"
 
+cd "$WINEPREFIX/drive_c/windows/system32"
+POL_Call POL_SP2_Extract riched30.dll
+POL_Wine_OverrideDLL "native,builtin" "riched30"
+
+# fixme:kernelbase:AppPolicyGetProcessTerminationMethod FFFFFFFA, 0031FECC
+cd "$WINEPREFIX/drive_c/windows/system32"
+POL_Call POL_SP2_Extract kernelbase.dll
+POL_Wine_OverrideDLL "native,builtin" "kernelbase"
+
 # .Net Framework 4.0
 # POL_Download_Resource "http://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe" "251743dfd3fda414570524bac9e55381" "dotnet40"
 # POL_Wine --ignore-errors "$POL_USER_ROOT/ressources/dotnet40/dotNetFx40_Full_x86_x64.exe" /q /c:"install.exe /q"
