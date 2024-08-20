@@ -1,0 +1,100 @@
+ unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 02000000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x7bff0000-0x7cff0000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 01000000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x7bff0000-0x7cbf0000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00c00000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x7bff0000-0x7c9f0000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00a00000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x7bff0000-0x7c970000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00980000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x7bff0000-0x7c930000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00940000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x7bff0000-0x7c910000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00920000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00918000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00914000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00912000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 00911000
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 60000000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x60010000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 50000000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x58010000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 48000000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x54010000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 44000000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x52010000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 42000000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51810000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41800000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51410000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41400000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51210000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41200000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51110000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41100000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x510d0000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 410c0000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x510b0000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 410a0000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x510a0000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41090000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51098000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41088000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51094000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41084000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51092000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41082000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0134:err:virtual:try_map_free_area mmap() error No se pudo asignar memoria, range 0x10010000-0x51091000, unix_prot 0.
+0134:err:virtual:allocate_virtual_memory out of memory for allocation, base (nil) size 41081000
+0114:fixme:explorerframe:taskbar_list_SetProgressValue iface 01359310, hwnd 00010094, ullCompleted 0, ullTotal 2f1 stub!
+0114:fixme:sfc:SfcIsFileProtected (00000000, L"C:\\Program Files\\Grand Theft Auto III\\unins000.exe") stub
+0114:fixme:explorerframe:taskbar_list_SetProgressState iface 01359310, hwnd 00010094, flags 0 stub!
+0114:fixme:win:WINNLSEnableIME hwnd 000100CC enable 0: stub!
+0114:fixme:win:WINNLSEnableIME hwnd 000100CC enable -1: stub!
+01ec:fixme:inseng:InstallEngine_RegisterInstallEngineCallback (00A89150)->(00B81378)
+01ec:fixme:inseng:InstallEngine_RegisterInstallEngineCallback (00A89170)->(00B81378)
+01ec:fixme:inseng:InstallEngine_UnregisterInstallEngineCallback (00A89150)
+01ec:fixme:inseng:InstallEngine_UnregisterInstallEngineCallback (00A89170)
+0114:fixme:rstrtmgr:RmEndSession 3735928559 stub!
+0114:fixme:graphics:ShutdownBlockReasonDestroy (00010094): stub
+[03/17/24 14:43:43] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.local/share/applications)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+/home/olagos/.PlayOnLinux//wineprefix/gta3/dosdevices/c:/users/olagos/Desktop
+[03/17/24 14:43:52] - Running wine-9.0 gta3.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gta3/drive_c/Program Files/Grand Theft Auto III)

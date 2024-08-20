@@ -1,0 +1,126 @@
+ 013148C8, format 28, format_support 0031F460 partial-stub!
+0390:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+0390:fixme:d3d11:d3d11_device_CheckFormatSupport iface 013148C8, format 29, format_support 0031F460 partial-stub!
+0390:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+0390:fixme:d3d11:d3d11_device_CheckFormatSupport iface 013148C8, format 28, format_support 0031F460 partial-stub!
+0390:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+0390:fixme:d3d11:d3d11_device_CheckFormatSupport iface 013148C8, format 29, format_support 0031F460 partial-stub!
+0390:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+0390:fixme:d3d11:d3d11_device_CheckFormatSupport iface 013148C8, format 28, format_support 0031F460 partial-stub!
+0390:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+0390:fixme:d3d11:d3d11_device_CheckFormatSupport iface 013148C8, format 29, format_support 0031F460 partial-stub!
+0390:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+0390:fixme:d3d11:d3d11_device_CheckFormatSupport iface 013148C8, format 87, format_support 0031F460 partial-stub!
+0390:fixme:d3d11:d3d11_device_CheckFormatSupport iface 013148C8, format 87, format_support 0031F460 partial-stub!
+0390:fixme:d3d:wined3d_check_device_multisample_type multisample_type 32 not handled yet.
+0470:fixme:dwmapi:DwmGetCompositionTimingInfo (00000000 0375F598)
+0220:fixme:win:RegisterTouchWindow hwnd 0001010A, flags 0x2 stub!
+0220:fixme:system:NtUserQueryDisplayConfig flags 0x2, paths_count 0x31ecdc, paths 0xdaed218, modes_count 0x31ecd8, modes 0xdaebdd0, topology_id (nil) semi-stub
+0220:fixme:system:NtUserDisplayConfigGetDeviceInfo Unimplemented packet type 11.
+0220:fixme:msctf:SetInputScopes STUB: 0001010A ... (null) (null)
+0220:fixme:win:RegisterTouchWindow hwnd 0001010C, flags 0x2 stub!
+0220:fixme:msctf:SetInputScopes STUB: 0001010A ... (null) (null)
+0220:fixme:msctf:SetInputScopes STUB: 0001010A ... (null) (null)
+04a0:fixme:heap:RtlSetHeapInformation HEAP_INFORMATION_CLASS 1 not implemented!
+04a0:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+04a0:fixme:thread:QueryThreadCycleTime (FFFFFFFE,0031F6E0): stub!
+0374:fixme:file:NtLockFile I/O completion on lock not implemented yet
+040c:fixme:cryptnet:check_ocsp_response_info check responder id
+040c:fixme:cryptnet:check_ocsp_response_info check responder id
+03f8:fixme:cryptnet:check_ocsp_response_info check responder id
+0410:fixme:cryptnet:check_ocsp_response_info check responder id
+040c:fixme:secur32:get_cipher_algid unknown algorithm 23
+040c:fixme:secur32:get_mac_algid unknown algorithm 200, cipher 23
+040c:fixme:secur32:get_cipher_algid unknown algorithm 23
+040c:fixme:secur32:get_mac_algid unknown algorithm 200, cipher 23
+040c:fixme:secur32:get_cipher_algid unknown algorithm 23
+040c:fixme:secur32:get_mac_algid unknown algorithm 200, cipher 23
+040c:fixme:secur32:get_cipher_algid unknown algorithm 23
+040c:fixme:secur32:get_mac_algid unknown algorithm 200, cipher 23
+04f8:fixme:ole:CoInitializeSecurity 00000000, -1, 00000000, 00000000, 0, 3, 00000000, 0, 00000000 stub
+04f8:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+0254:fixme:hnetcfg:fw_app_get_Enabled 0537BCA8, 02EFFA6C
+0254:fixme:hnetcfg:fw_app_put_ProcessImageFileName 0537BCA8, L"C:\\Program Files\\TxGameAssistant\\AppMarket\\DL\\syzs_dl_svr.exe"
+0254:fixme:mpr:WNetGetUniversalNameW (L"C:\\Program Files\\TxGameAssistant\\AppMarket\\DL\\syzs_dl_svr.exe", 0x00000001, 00000000, 02EFFA4C): stub
+0254:fixme:hnetcfg:fw_app_put_Name 0537BCA8, L"\817e\8baf\624b\6e38\52a9\624b\4e0b\8f7d\5668\7ec4\4ef6"
+0254:fixme:hnetcfg:fw_apps_Add 0537BC88, 0537BCA8
+0254:fixme:hnetcfg:fw_policy_GetProfileByType 0537BCA8, 0, 02EFFA98
+0254:fixme:hnetcfg:fw_policy_GetProfileByType 0537BCA8, 1, 02EFFA90
+0254:fixme:exec:SHELL_execute flags ignored: 0x00000100
+0518:fixme:msvcp:_Task_impl_base__IsNonBlockingThread () stub
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0534:fixme:advapi:OpenEventLogW ((null),L"System") stub
+0534:fixme:advapi:ReadEventLogW (CAFE4242,0x00000005,0x00000000,0EFCEB8C,0x00001000,0EFCFBBC,0EFCFBB4) stub
+0534:fixme:advapi:CloseEventLog (CAFE4242) stub
+04a0:fixme:dwrite:dwritefontface5_HasVariations 01324628: stub
+04e0:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+0410:fixme:cryptnet:check_ocsp_response_info check responder id
+040c:fixme:cryptnet:check_ocsp_response_info check responder id
+040c:fixme:cryptnet:check_ocsp_response_info check responder id
+0220:fixme:dwmapi:DwmEnableBlurBehindWindow 0003012E 0031EC10
+0220:fixme:d3d11:d3d11_device_context_SwapDeviceContextState D3D10 interface emulation not fully implemented yet!
+0220:fixme:dxgi:dxgi_surface_GetDC iface 04F9FDE0, discard 0, hdc 0031E60C semi-stub!
+02d0:fixme:d3d:state_linepattern_w Setting line patterns is not supported in OpenGL core contexts.
+0220:fixme:dxgi:dxgi_surface_GetDC iface 04F9FF30, discard 0, hdc 0031E60C semi-stub!
+0220:fixme:dwmapi:DwmEnableBlurBehindWindow 0003012E 0031F0D0
+0220:fixme:dxgi:dxgi_surface_GetDC iface 04F9FE10, discard 0, hdc 0031F1E4 semi-stub!
+0220:fixme:dxgi:dxgi_surface_GetDC iface 04F9FF30, discard 0, hdc 0031F1E4 semi-stub!
+0220:fixme:dxgi:dxgi_surface_GetDC iface 04F9FEA0, discard 0, hdc 0031F1E4 semi-stub!
+0220:fixme:dxgi:dxgi_surface_GetDC iface 04F9FF30, discard 0, hdc 0031F1E4 semi-stub!
+0220:fixme:dxgi:dxgi_surface_GetDC iface 04F9FEA0, discard 0, hdc 0031F1E4 semi-stub!
+0360:fixme:userenv:UnregisterGPNotification 00000334
+0360:fixme:userenv:UnregisterGPNotification 00000338
+03fc:fixme:file:ReplaceFileW Ignoring flags 2
+0220:fixme:wtsapi:WTSUnRegisterSessionNotification Stub 000500E2
+0220:fixme:wtsapi:WTSUnRegisterSessionNotification Stub 000400E0
+[08/09/24 10:38:44] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.local/share/applications)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+009c:err:ole:start_rpcss Failed to start RpcSs service
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:query_property Faking StorageDeviceProperty data
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+0058:fixme:mountmgr:harddisk_ioctl Unsupported ioctl 74080 (device=7 access=1 func=20 method=0)
+/home/olagos/.PlayOnLinux//wineprefix/gameloop/dosdevices/c:/users/olagos/Desktop
+[08/09/24 10:38:58] - Running wine-9.0 AppMarket.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/AppMarket)
+[I] <MMKV.cpp:165::initialize> version v1.2.13, page size 4096, arch x86
+[I] <MMKV.cpp:207::initializeMMKV> root dir: C:\users\olagos\AppData\Roaming\Tencent\TxGameAssistant\radium\XPlugin\Info\
+[08/09/24 10:40:27] - Running wine-9.0 AppMarket.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/gameloop/drive_c/Program Files/TxGameAssistant/AppMarket)
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+recv failed with error: 10054
+*** Leaked objects detected: 1 instance(s) of class BinderBase
+*** Leaked objects detected: 1 instance(s) of class CBChecker
+wine: Unhandled page fault on read access to 10000000 at address 012EDBDE (thread 082c), starting debugger...
+[I] <MMKV.cpp:165::initialize> version v1.2.13, page size 4096, arch x86
+[I] <MMKV.cpp:207::initializeMMKV> root dir: C:\users\olagos\AppData\Roaming\Tencent\TxGameAssistant\radium\XPlugin\Info\
+
