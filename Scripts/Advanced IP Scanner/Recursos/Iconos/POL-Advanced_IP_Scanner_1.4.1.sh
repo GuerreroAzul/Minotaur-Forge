@@ -95,11 +95,11 @@ else
 fi
  
 # Install Program
-POL_Wine start /unix "$Installer" /SILENT /CLOSEAPPLICATIONS /NOICONS
-POL_Wine_WaitExit "$Installer"
+POL_Wine start /unix "$Installer" /S
+POL_Wine_WaitExit "$Installer" /S
  
 # Shortcut
-POL_Shortcut "$FileSetup" "$Title" "" "" "$Category"
+POL_Shortcut "$FileSoftware" "$FileSetup" "" "" "$Category"
  
 # End script
 POL_System_TmpDelete
