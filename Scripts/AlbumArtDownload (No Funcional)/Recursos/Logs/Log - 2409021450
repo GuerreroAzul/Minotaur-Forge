@@ -1,0 +1,107 @@
+[09/02/24 14:48:37] - Running wine-9.0 --version (Working directory : /home/olagos/.PlayOnLinux/shortcuts)
+wine-9.0
+
+PlayOnLinux logfile
+-------------------
+Date: 09/02/24 14:48:37
+
+> PlayOnLinux Version
+  4.3.4
+> uname -a
+  Linux MATE-D15 6.8.0-41-generic #41-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  2 20:41:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+> lsb_release -a
+  
+> wine --version
+  wine-9.0
+> POL_WINEVERSION
+  9.0
+> WINEPREFIX
+  /home/olagos/.PlayOnLinux//wineprefix/AlbumArtDownloader
+> Distribution
+  Linux Mint 22
+> glxinfo \| grep rendering
+  direct rendering: Yes
+> glxinfo \| grep renderer
+      GLX_MESA_copy_sub_buffer, GLX_MESA_gl_interop, GLX_MESA_query_renderer, 
+    GLX_MESA_copy_sub_buffer, GLX_MESA_gl_interop, GLX_MESA_query_renderer, 
+Extended renderer info (GLX_MESA_query_renderer):
+OpenGL renderer string: Mesa Intel(R) UHD Graphics (CML GT2)
+> OpenGL libs (Direct rendering testing)
+  check_dd_x86 missing, test skipped
+  check_dd_amd64 missing, test skipped
+
+[09/02/24 14:48:51] - Running wine-9.0 cmd /c echo %ProgramFiles% (Working directory : /home/olagos/.PlayOnLinux/shortcuts)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+C:\Program Files
+[09/02/24 14:48:55] - Running wine-9.0 regedit /home/olagos/.PlayOnLinux//tmp/regkey.reg (Working directory : /home/olagos/.PlayOnLinux/shortcuts)
+[09/02/24 14:48:55] - Content of /home/olagos/.PlayOnLinux//tmp/regkey.reg
+-----------
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Wine]
+"Version"="win11"
+-----------
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+[09/02/24 14:49:08] - Running wine-9.0 start /unix /home/olagos/.PlayOnLinux//tmp/AlbumArtDownloader/AlbumArtDownloaderXUI-1.05.exe /S (Working directory : /home/olagos/.PlayOnLinux/tmp/AlbumArtDownlo007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+[09/02/24 14:49:15] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.local/share/applications)
+0080:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+0080:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+0080:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+0080:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+/home/olagos/.PlayOnLinux//wineprefix/AlbumArtDownloader/dosdevices/c:/users/olagos/Desktop
+[09/02/24 14:49:22] - Running wine-9.0 AlbumArt.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/AlbumArtDownloader/drive_c/Program Files/AlbumArtDownloader)
+* Assertion at /vagrant/mono/mono/metadata/sre-encode.c:290, condition `count > 0' not met
+
+[09/02/24 14:52:41] - Running wine-9.0 winecfg (Working directory : /usr/share/playonlinux/python)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+[09/02/24 14:52:52] - Running wine-9.0 AlbumArt.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/AlbumArtDownloader/drive_c/Program Files/AlbumArtDownloader)
+[09/02/24 14:52:53] - Running wine-9.0 AlbumArt.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/AlbumArtDownloader/drive_c/Program Files/AlbumArtDownloader)
+* Assertion at /vagrant/mono/mono/metadata/sre-encode.c:290, condition `count > 0' not met
+
+[09/02/24 14:54:11] - ----- Starting function POL_Install_vcrun2008 -----
+[09/02/24 14:54:11] - Running wine-9.0 start /unix vcredist_x86.exe /q (Working directory : /home/olagos/.PlayOnLinux/ressources/vcrun2008)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+00d0:fixme:clusapi:GetNodeClusterState ((null),0031ECE4) stub!
+00d0:fixme:advapi:DecryptFileA ("c:\\903a5df9cd17393d39\\", 00000000): stub
+0118:fixme:heap:RtlSetHeapInformation HEAP_INFORMATION_CLASS 1 not implemented!
+0118:fixme:security:GetWindowsAccountDomainSid (0031F274 003B25FC 0031F270): semi-stub
+0118:fixme:secur32:GetComputerObjectNameW NameFormat 7 not implemented
+0118:fixme:file:NtLockFile I/O completion on lock not implemented yet
+011c:fixme:ntdll:NtQuerySystemInformation info_class SYSTEM_PERFORMANCE_INFORMATION
+[09/02/24 14:54:19] - Running wine-9.0 regedit /home/olagos/.PlayOnLinux//tmp/override-dll.reg (Working directory : /home/olagos/.PlayOnLinux/ressources/vcrun2008)
+[09/02/24 14:54:19] - Content of /home/olagos/.PlayOnLinux//tmp/override-dll.reg
+-----------
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Wine\DllOverrides]
+"*msvcr90"="native,builtin"
+-----------
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+[09/02/24 14:54:20] - ----- Ending function POL_Install_vcrun2008 -----
+[09/02/24 14:54:26] - Running wine-9.0 winecfg (Working directory : /usr/share/playonlinux/python)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+[09/02/24 14:54:36] - Running wine-9.0 AlbumArt.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/AlbumArtDownloader/drive_c/Program Files/AlbumArtDownloader)
+* Assertion at /vagrant/mono/mono/metadata/sre-encode.c:290, condition `count > 0' not met
+
+

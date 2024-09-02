@@ -1,0 +1,67 @@
+[09/02/24 14:21:52] - Running wine-9.0 --version (Working directory : /home/olagos)
+wine-9.0
+
+PlayOnLinux logfile
+-------------------
+Date: 09/02/24 14:21:52
+
+> PlayOnLinux Version
+  4.3.4
+> uname -a
+  Linux MATE-D15 6.8.0-41-generic #41-Ubuntu SMP PREEMPT_DYNAMIC Fri Aug  2 20:41:06 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux
+> lsb_release -a
+  
+> wine --version
+  wine-9.0
+> POL_WINEVERSION
+  9.0
+> WINEPREFIX
+  /home/olagos/.PlayOnLinux//wineprefix/AlbumArtDownloader
+> Distribution
+  Linux Mint 22
+> glxinfo \| grep rendering
+  direct rendering: Yes
+> glxinfo \| grep renderer
+      GLX_MESA_copy_sub_buffer, GLX_MESA_gl_interop, GLX_MESA_query_renderer, 
+    GLX_MESA_copy_sub_buffer, GLX_MESA_gl_interop, GLX_MESA_query_renderer, 
+Extended renderer info (GLX_MESA_query_renderer):
+OpenGL renderer string: Mesa Intel(R) UHD Graphics (CML GT2)
+> OpenGL libs (Direct rendering testing)
+  check_dd_x86 missing, test skipped
+  check_dd_amd64 missing, test skipped
+
+[09/02/24 14:22:08] - Running wine-9.0 cmd /c echo %ProgramFiles% (Working directory : /home/olagos)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+C:\Program Files
+[09/02/24 14:22:11] - Running wine-9.0 regedit /home/olagos/.PlayOnLinux//tmp/regkey.reg (Working directory : /home/olagos)
+[09/02/24 14:22:11] - Content of /home/olagos/.PlayOnLinux//tmp/regkey.reg
+-----------
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Wine]
+"Version"="win11"
+-----------
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+[09/02/24 14:22:22] - Running wine-9.0 start /unix /home/olagos/.PlayOnLinux//tmp/AlbumArtDownloader/AlbumArtDownloaderXUI-1.05.exe (Working directory : /home/olagos/.PlayOnLinux/tmp/AlbumArtDownloade007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+00d0:fixme:shell:SHAutoComplete stub
+[09/02/24 14:25:51] - Running wine-9.0 winepath -u C:\\users\\olagos\\Desktop (Working directory : /home/olagos/.PlayOnLinux/wineprefix/AlbumArtDownloader/drive_c)
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+007c:fixme:hid:handle_IRP_MN_QUERY_ID Unhandled type 00000005
+wine: configuration in L"/home/olagos/.PlayOnLinux/wineprefix/AlbumArtDownloader" has been updated.
+/home/olagos/.PlayOnLinux//wineprefix/AlbumArtDownloader/dosdevices/c:/users/olagos/Desktop
+[09/02/24 14:26:02] - Running wine-9.0 AlbumArt.exe (Working directory : /home/olagos/.PlayOnLinux/wineprefix/AlbumArtDownloader/drive_c/Program Files/AlbumArtDownloader)
+wine: configuration in L"/home/olagos/.PlayOnLinux/wineprefix/AlbumArtDownloader" has been updated.
+* Assertion at /vagrant/mono/mono/metadata/sre-encode.c:290, condition `count > 0' not met
+
+
