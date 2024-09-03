@@ -1,5 +1,5 @@
+![Idioma español](https://img.shields.io/badge/Espa%F1ol-grey)
+![Idioma ingles](https://img.shields.io/badge/English-blue)
 # Script PlayOnLinux
-## Español
-<sumary>
-Test
-</sumary>
+## Tabla de contenido
+### ¿Que es wine?
