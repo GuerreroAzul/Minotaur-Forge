@@ -9,7 +9,7 @@
 # [GuerreroAzul] 2024-08-21 08-05 (UTC -06-00)
 #   Script version: 1.1.1
 #   Wine Version: 9.0
-#   System version: win11 
+#   System version: win7
 #   REFERENCE:
 #     GuerreroAzul: Documentation POL. - https://appdb.winehq.org/objectManager.php?sClass=application&iId=178
 #     GuerreroAzul: Link Download. - https://www.flstudio.com
@@ -27,7 +27,7 @@ Prefix="FLStudio"
 Category="Audio;"
 WineVersion="6.17"
 Arquitecture="x64"
-SystemVersion="win11"
+SystemVersion="win7"
 Edithor="GuerreroAzul"
 Company="FL Studio"
 OfficialSite="https://www.flstudio.com"
