@@ -1,5 +1,5 @@
 ![Idioma español](https://img.shields.io/badge/Espa%F1ol-grey)
-![Idioma ingles](https://img.shields.io/badge/English-blue)
+[![Idioma ingles](https://img.shields.io/badge/English-blue)](README.md)
 
 # Script PlayOnLinux
 
