@@ -1,45 +1,44 @@
-![English language](https://img.shields.io/badge/English-grey)
-![Spanish language](https://img.shields.io/badge/Spanish-blue)
+![Idioma español](https://img.shields.io/badge/Espa%F1ol-grey)
+![Idioma ingles](https://img.shields.io/badge/English-blue)
 
-
-# PlayOnLinux Script
+# Script PlayOnLinux
 
 ![PlayOnLinux](https://img.shields.io/badge/PlayOnLinux-4.3.4-green)
 
-## Introduction
+## Introducción
 
-The goal of this project is to develop a series of custom scripts for PlayOnLinux, a tool that allows the installation and management of applications and games designed for Windows on Linux operating systems. PlayOnLinux provides a friendly graphical interface that simplifies the use of Wine, the underlying compatibility layer that makes it possible to run Windows programs in Linux environments.
+El objetivo de este proyecto es desarrollar una serie de scripts personalizados para PlayOnLinux, una herramienta que permite la instalación y gestión de aplicaciones y juegos diseñados para Windows en sistemas operativos Linux. PlayOnLinux proporciona una interfaz gráfica amigable que simplifica el uso de Wine, la capa de compatibilidad subyacente que hace posible la ejecución de programas de Windows en entornos Linux.
 
-In this project, the advanced capabilities of PlayOnLinux are explored by creating scripts that automate and optimize software installation, improving the user experience. These scripts will allow users to install and configure applications more efficiently, addressing common issues such as dependency configuration, version management, and applying specific patches.
+En este proyecto, se exploran las capacidades avanzadas de PlayOnLinux mediante la creación de scripts que automatizan y optimizan la instalación de software, mejorando la experiencia del usuario. Estos scripts permitirán a los usuarios instalar y configurar aplicaciones de manera más eficiente, abordando problemas comunes como la configuración de dependencias, la gestión de versiones, y la aplicación de parches específicos.
 
-The implementation of these scripts is intended not only to simplify the lives of end users, but also to contribute to the PlayOnLinux community with reusable and customized solutions.
+La implementación de estos scripts tiene como finalidad no solo simplificar la vida de los usuarios finales, sino también contribuir a la comunidad de PlayOnLinux con soluciones reutilizables y personalizadas.
 
-## Basic knowledge
+## Conocimientos basicos 
 
-### What is wine?
+### ¿Que es wine?
 
-Wine is a compatibility layer that allows Windows applications to run on operating systems such as Linux, macOS, BSD, and Solaris.
-
-Wine translates Windows API calls into POSIX calls in real time, allowing Windows applications to be integrated into the desktop without memory and performance penalties.
-
-Wine also offers a set of development tools to port Windows application source code to Unix.
+Wine es una capa de compatibilidad que permite ejecutar aplicaciones de Windows en sistemas operativos como Linux, macOS, BSD y Solaris. 
+ 
+Wine traduce las llamadas de API de Windows en llamadas POSIX en tiempo real, lo que permite integrar aplicaciones de Windows en el escritorio sin penalizaciones de memoria y rendimiento. 
+ 
+Wine también ofrece un conjunto de herramientas de desarrollo para trasladar el código fuente de aplicaciones de Windows a Unix.
 
 > [!NOTE]
-> To learn more about how to install wine press the button.
->
+> Para saber mas de como intalar wine presiona el boton.
+> 
 > [![WINE](https://img.shields.io/badge/WINE-red?style=for-the-badge)](https://wiki.winehq.org/Download)
 
-### What is PlayOnLinux?
+### ¿Que es PlayOnLinux?
 
-PlayOnLinux is a free and open source program that allows you to run Windows applications on Linux. To do this, it uses scripts that modify the behavior of Wine, a program that already exists.
-
-Some of the features of PlayOnLinux are:
-- You do not need to have a Windows license to use it.
-- Programs are installed in different containers to prevent them from interfering with each other.
-- Users can create their own scripts, with a "**.sh**" extension.
-- If a game is not in the script database, it can be installed manually.
+PlayOnLinux es un programa gratuito y libre que permite ejecutar aplicaciones de Windows en Linux. Para ello, utiliza scripts que modifican el comportamiento de Wine, un programa que ya existe. 
+ 
+Algunas de las características de PlayOnLinux son:
+- No es necesario tener una licencia de Windows para usarlo. 
+- Los programas se instalan en contenedores diferentes para evitar que interfieran entre sí. 
+- Los usuarios pueden crear sus propios scripts, con extensión "**.sh**". 
+- Si un juego no está en la base de datos de scripts, se puede instalar manualmente. 
 
 > [!NOTE]
-> To learn more about how to install wine, press the button.
+> Para saber mas de como intalar wine presiona el boton.
 > 
 > [![WINE](https://img.shields.io/badge/PLAYONLINUX-yellow?style=for-the-badge)](https://www.playonlinux.com/en/download.html)
