@@ -1,6 +1,8 @@
 ![Idioma español](https://img.shields.io/badge/Espa%F1ol-grey)
 ![Idioma ingles](https://img.shields.io/badge/English-blue)
+
 # Script PlayOnLinux
+
 ![PlayOnLinux](https://img.shields.io/badge/PlayOnLinux-4.3.4-green)
 
 ## Introducción
@@ -25,3 +27,18 @@ Wine también ofrece un conjunto de herramientas de desarrollo para trasladar el
 > Para saber mas de como intalar wine presiona el boton.
 > 
 > [![WINE](https://img.shields.io/badge/WINE-red?style=for-the-badge)](https://wiki.winehq.org/Download)
+
+### ¿Que es PlayOnLinux?
+
+PlayOnLinux es un programa gratuito y libre que permite ejecutar aplicaciones de Windows en Linux. Para ello, utiliza scripts que modifican el comportamiento de Wine, un programa que ya existe. 
+ 
+Algunas de las características de PlayOnLinux son:
+- No es necesario tener una licencia de Windows para usarlo. 
+- Los programas se instalan en contenedores diferentes para evitar que interfieran entre sí. 
+- Los usuarios pueden crear sus propios scripts, con extensión "**.sh**". 
+- Si un juego no está en la base de datos de scripts, se puede instalar manualmente. 
+
+> [!NOTE]
+> Para saber mas de como intalar wine presiona el boton.
+> 
+> [![WINE](https://img.shields.io/badge/PLAYONLINUX-yellow?style=for-the-badge)](https://www.playonlinux.com/en/download.html)
