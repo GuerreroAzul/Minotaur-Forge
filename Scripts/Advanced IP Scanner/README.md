@@ -1,3 +1,5 @@
+![Logo](Icon/Icon_Advanced.png)
+
 # Advanced IP Scanner
 
 ![Version](https://img.shields.io/badge/Version-2.5.4594.1-blue)
