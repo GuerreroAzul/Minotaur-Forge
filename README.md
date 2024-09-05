@@ -1,6 +1,3 @@
-![Idioma español](https://img.shields.io/badge/Espa%F1ol-grey)
-[![Idioma ingles](https://img.shields.io/badge/English-blue)](/README.md)
-
 # Script PlayOnLinux
 
 ![PlayOnLinux](https://img.shields.io/badge/PlayOnLinux-4.3.4-green)
