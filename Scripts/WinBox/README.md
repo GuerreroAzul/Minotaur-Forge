@@ -1,13 +1,12 @@
-# Advanced IP Scanner
+![Logo](Icon/icon_Winbox.png)
+
+# Winbox
 
 ![Version](https://img.shields.io/badge/Version-3.41-blue)
 ![License](https://img.shields.io/badge/License-Free%20%E2%80%A2Proprietary-green)
 ![Category](https://img.shields.io/badge/Category-Network-blue)
 ![Company](https://img.shields.io/badge/Company-Mikrotik%20%C2%A9-blue)
-
 ![Script](https://img.shields.io/badge/Script-1.6.2-blue)
-![Distribution](https://img.shields.io/badge/Distribution-Linux%20Mint%2022%20x64-green?logo=Linux)
-![System](https://img.shields.io/badge/System-Windows%2011-blue?logo=Windows)
 
 ## Introducción
 
@@ -39,16 +38,18 @@
    ![007](Images/007.png)
 7. ¡Instalación Finalizada!
 
-  > [!NOTE]
-  > El banner y el icono es posible que no sean visible en tu instalación.
+> [!NOTE]
+> El banner y el icono es posible que no sean visible en tu instalación.
 
-  > [IMPOTANT]
-  > Si tienes el firewall activado, establece la siguiente regla:
-  > O a través de la terminal:
-  > ![010](Images/010.png)
-  > '''
-  > sudo ufw allow proto udp from any to any port 5678 comment 'WinBox'
-  > '''
+> [!IMPORTANT]
+> Si tienes el firewall activado, establece la siguiente regla:
+> 
+> ![010](Images/010.png)
+>
+> O a través de la terminal:
+> ```
+> sudo ufw allow proto udp from any to any port 5678 comment 'WinBox'
+> ```
 
 ## Capturas
 
@@ -56,4 +57,4 @@
 
 ![009](Images/009.png)
 
-###### Referencia: [PlayOnLinux](https://www.playonlinux.com/en/app-3972-Advanced_IP_Scanner.html)
+###### Referencia: [PlayOnLinux](https://www.playonlinux.com/en/app-3035-Winbox.html)
