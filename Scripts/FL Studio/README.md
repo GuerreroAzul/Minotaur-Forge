@@ -1,4 +1,4 @@
-![Logo](Icon/icon_WFLStudio.png)
+![Logo](Icon/icon_FLStudio.png)
 
 # FL Studio
 
