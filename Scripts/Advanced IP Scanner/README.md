@@ -6,10 +6,7 @@
 ![License](https://img.shields.io/badge/License-Free%20%E2%80%A2Proprietary-green)
 ![Category](https://img.shields.io/badge/Category-Network-blue)
 ![Company](https://img.shields.io/badge/Company-Famatech%20Corp%20%C2%A9-blue)
-
 ![Script](https://img.shields.io/badge/Script-1.4.2-blue)
-![Distribution](https://img.shields.io/badge/Distribution-Linux%20Mint%2022%20x64-green?logo=Linux)
-![System](https://img.shields.io/badge/System-Windows%2011-blue?logo=Windows)
 
 ## Introducción
 
