@@ -1,3 +1,4 @@
+![Logo](Icon/icon_Winbox.png)
 # Winbox
 
 ![Version](https://img.shields.io/badge/Version-3.41-blue)
