@@ -39,16 +39,18 @@
    ![007](Images/007.png)
 7. ¡Instalación Finalizada!
 
-  > [!NOTE]
-  > El banner y el icono es posible que no sean visible en tu instalación.
+> [!NOTE]
+> El banner y el icono es posible que no sean visible en tu instalación.
 
-  > [IMPOTANT]
-  > Si tienes el firewall activado, establece la siguiente regla:
-  > O a través de la terminal:
-  > ![010](Images/010.png)
-  > '''
-  > sudo ufw allow proto udp from any to any port 5678 comment 'WinBox'
-  > '''
+> [!IMPORTANT]
+> Si tienes el firewall activado, establece la siguiente regla:
+> 
+> ![010](Images/010.png)
+>
+> O a través de la terminal:
+> ```
+> sudo ufw allow proto udp from any to any port 5678 comment 'WinBox'
+> ```
 
 ## Capturas
 
@@ -56,4 +58,4 @@
 
 ![009](Images/009.png)
 
-###### Referencia: [PlayOnLinux](https://www.playonlinux.com/en/app-3972-Advanced_IP_Scanner.html)
+###### Referencia: [PlayOnLinux](https://www.playonlinux.com/en/app-3035-Winbox.html)
