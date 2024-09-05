@@ -1,4 +1,4 @@
-# Advanced IP Scanner
+# Winbox
 
 ![Version](https://img.shields.io/badge/Version-3.41-blue)
 ![License](https://img.shields.io/badge/License-Free%20%E2%80%A2Proprietary-green)
