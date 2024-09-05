@@ -1,5 +1,5 @@
 ![English language](https://img.shields.io/badge/English-grey)
-![Spanish language](https://img.shields.io/badge/Spanish-blue)
+[![Spanish language](https://img.shields.io/badge/Spanish-blue)](/LEAME.md)
 
 
 # PlayOnLinux Script
