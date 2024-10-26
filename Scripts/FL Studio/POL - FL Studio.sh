@@ -8,7 +8,7 @@
 # CHANGELOG
 # [GuerreroAzul] 2024-08-21 08-05 (UTC -06-00)
 #   Script version: 1.1.1
-#   Wine Version: 9.0
+#   Wine Version: 6.17
 #   System version: win7
 #   REFERENCE:
 #     GuerreroAzul: Documentation POL. - https://appdb.winehq.org/objectManager.php?sClass=application&iId=178
