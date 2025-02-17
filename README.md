@@ -4,7 +4,7 @@
 
 ## Introducción
 
-El objetivo de este proyecto es desarrollar una serie de scripts personalizados para PlayOnLinux, una herramienta que permite la instalación y gestión de aplicaciones y juegos diseñados para Windows en sistemas operativos Linux. PlayOnLinux proporciona una interfaz gráfica amigable que simplifica el uso de Wine, la capa de compatibilidad subyacente que hace posible la ejecución de programas de Windows en entornos Linux.
+<p align=justify>El objetivo de este proyecto es desarrollar una serie de scripts personalizados para PlayOnLinux, una herramienta que permite la instalación y gestión de aplicaciones y juegos diseñados para Windows en sistemas operativos Linux. PlayOnLinux proporciona una interfaz gráfica amigable que simplifica el uso de Wine, la capa de compatibilidad subyacente que hace posible la ejecución de programas de Windows en entornos Linux.</p>
 
 En este proyecto, se exploran las capacidades avanzadas de PlayOnLinux mediante la creación de scripts que automatizan y optimizan la instalación de software, mejorando la experiencia del usuario. Estos scripts permitirán a los usuarios instalar y configurar aplicaciones de manera más eficiente, abordando problemas comunes como la configuración de dependencias, la gestión de versiones, y la aplicación de parches específicos.
 
