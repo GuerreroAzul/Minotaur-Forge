@@ -1,0 +1,3 @@
+regsvr32 %systemroot%\system32\mstscax.dll
+
+msvcr60.dll
