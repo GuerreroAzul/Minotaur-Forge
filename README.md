@@ -5,39 +5,61 @@
 ## Introducción
 
 <p style="text-align: justify;">
-El objetivo de este proyecto es desarrollar una serie de scripts personalizados para PlayOnLinux, una herramienta que permite la instalación y gestión de aplicaciones y juegos diseñados para Windows en sistemas operativos Linux.<br><br>
-PlayOnLinux proporciona una interfaz gráfica amigable que simplifica el uso de Wine, la capa de compatibilidad subyacente que hace posible la ejecución de programas de Windows en entornos Linux.<br><br>
-En este proyecto, se exploran las capacidades avanzadas de PlayOnLinux mediante la creación de scripts que automatizan y optimizan la instalación de software, mejorando la experiencia del usuario. Estos scripts permitirán a los usuarios instalar y configurar aplicaciones de manera más eficiente, abordando problemas comunes como la configuración de dependencias, la gestión de versiones, y la aplicación de parches específicos.<br><br>
-La implementación de estos scripts tiene como finalidad no solo simplificar la vida de los usuarios finales, sino también contribuir a la comunidad de PlayOnLinux con soluciones reutilizables y personalizadas.
+El objetivo de este proyecto es contribuir con el desarrollo de una serie de scripts personalizados para <b>PlayOnLinux</b>. Estos scripts permitirán a los usuarios instalar y configurar de manera más eficiente, abordando problemas comunes como la configuración de dependencias, la gestión de versiones, y la aplicación de parches específicos.<br><br>
+La implementación de estos scripts tiene como finalidad no solo simplificar la vida de los usuarios finales, sino también contribuir a la comunidad de <b>PlayOnLinux</b> con soluciones reutilizables y personalizadas.
 </p>
 
-## Conocimientos basicos 
-
-### ¿Que es wine?
+## Configuramiento e Instalación
 
 <p style="text-align: justify;">
-Wine es una capa de compatibilidad que permite ejecutar aplicaciones de Windows en sistemas operativos como Linux, macOS, BSD y Solaris.<br><br> 
-Wine traduce las llamadas de API de Windows en llamadas POSIX en tiempo real, lo que permite integrar aplicaciones de Windows en el escritorio sin penalizaciones de memoria y rendimiento.<br><br>
-Wine también ofrece un conjunto de herramientas de desarrollo para trasladar el código fuente de aplicaciones de Windows a Unix.
+Wine es una capa de compatibilidad que permite ejecutar aplicaciones de Windows en sistemas operativos como Linux, macOS, BSD y Solaris.<br>
 </p>
 
+### Wine
+
+<b>1. habilitar la arquitectura de 32 bits:</b>
+
+```console
+sudo dpkg --add-architecture i386
+```
+
+<b>2. Identificar distribución:</b>
+<p style="text-align: justify;">
+Busca la línea con cualquiera de `UBUNTU_CODENAME` o `VERSION_CODENAME`. Si ambos están presentes, use el nombre después `UBUNTU_CODENAME`.
+</p>
+
+```console
+cat /etc/os-release
+```
+
+<b>3. Añadir clave del repositorio:</b>
+
+```console
+sudo mkdir -pm755 /etc/apt/keyrings
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+```
+<b>4. Agregar el repositorio:</b>
+<p style="text-align: justify;">
+Si su nombre de distribución no está en la lista, es más antiguo los paquetes pueden estar disponibles en el servidor de descargas. Añadir un repositorio.
+</p>
+|Distribución             |Comando                                                                                                               |
+|:------------------------|:---------------------------------------------------------------------------------------------------------------------|
+|Plucky&#10;Ubuntu 25.04                   |`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/plucky/winehq-plucky.sources`    |
+|Oracular&#10;Ubuntu 24.10                 |`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/oracular/winehq-oracular.sources`|
+|Noble&#10;Ubuntu 24.04&#10;Linux Mint 22  |`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources`      |
+|Jammy&#10;Ubuntu 22.04&#10;Linux Mint 21.x|`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources`      |
+|Focal&#10;Ubuntu 20.04&#10;Linux Mint 20.x|`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/focal/winehq-focal.sources`      |
+|Trixie&#10;Debian Testing                 |`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/trixie/winehq-trixie.sources`    |
+|Bookworm&#10;Debian 12                    |`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bookworm/winehq-bookworm.sources`|
+|Bullseye&#10;Debian 11                    |`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/debian/dists/bullseye/winehq-bullseye.sources`|
+
+<b>5. Instalar Wine:</b>
+
+```console
+sudo apt install --install-recommends winehq-stable
+```
 
 > [!NOTE]
-> Para saber mas de como intalar wine presiona el boton.
+> Para mas información visite.
 > 
-> [![WINE](https://img.shields.io/badge/WINE-red?style=for-the-badge)](https://wiki.winehq.org/Download)
-
-### ¿Que es PlayOnLinux?
-
-PlayOnLinux es un programa gratuito y libre que permite ejecutar aplicaciones de Windows en Linux. Para ello, utiliza scripts que modifican el comportamiento de Wine, un programa que ya existe. 
- 
-Algunas de las características de PlayOnLinux son:
-- No es necesario tener una licencia de Windows para usarlo. 
-- Los programas se instalan en contenedores diferentes para evitar que interfieran entre sí. 
-- Los usuarios pueden crear sus propios scripts, con extensión "**.sh**". 
-- Si un juego no está en la base de datos de scripts, se puede instalar manualmente. 
-
-> [!NOTE]
-> Para saber mas de como intalar wine presiona el boton.
-> 
-> [![WINE](https://img.shields.io/badge/PLAYONLINUX-yellow?style=for-the-badge)](https://www.playonlinux.com/en/download.html)
+> [![WINE](https://gitlab.winehq.org/uploads/-/system/appearance/header_logo/1/winehq_logo_gitlab_small.png)](https://wiki.winehq.org/Download)
