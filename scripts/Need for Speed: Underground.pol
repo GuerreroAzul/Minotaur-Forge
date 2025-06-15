@@ -35,12 +35,12 @@ EDITHOR="NSLW And GuerreroAzul"
 COMPANY="Electronic Arts"
 HOMEPAGE="https://www.ea.com/"
 LOGO="https://i.imgur.com/lSefMho.png"
-BANNER="https://i.imgur.com/Di6W76j.png"
+BANNER="https://i.imgur.com/rCSMQ49.png"
  
 # Download Images
 mkdir "$POL_USER_ROOT/configurations/setups/$TITLE"
 wget --header="User-Agent: Mozilla/5.0" -qO- "$LOGO" | convert - -resize 64x64! "$POL_USER_ROOT/configurations/setups/$TITLE/top"
-wget --header="User-Agent: Mozilla/5.0" "$BANNER" -O "$POL_USER_ROOT/configurations/setups/$TITLE/left"
+wget --header="User-Agent: Mozilla/5.0" -qO- "$BANNER" | convert - -resize 150x356! "$POL_USER_ROOT/configurations/setups/$TITLE/left"
 
 #Setup Image
 POL_GetSetupImages "$LOGO" "$BANNER" "$TITLE"
@@ -66,6 +66,9 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
  
 # Dependencies
+# Microsoft DirectX 9
+POL_Call POL_Install_d3dx9
+
 # Dll Obtained from the site DLL-FILES.COM
 POL_Download_Resource "https://archive.org/download/dinput8/dinput8.dll" "dfe561ad494e657cbc0a9a222ba1a792" "dinput8"
 cp "$POL_USER_ROOT/ressources/dinput8/dinput8.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
@@ -86,14 +89,14 @@ fi
 POL_Wine start /unix "$INSTALLER"
 POL_Wine_WaitExit "$INSTALLER"
 
+# Shortcut
+POL_Shortcut "Speed.exe" "$TITLE" "" "" "$CATEGORY"
+POL_Shortcut_QuietDebug "$TITLE"
+
 # Update icon
 wget --header="User-Agent: Mozilla/5.0" -qO- "$LOGO" | convert - -resize 32x32! "$POL_USER_ROOT/icones/32/$TITLE"
 wget --header="User-Agent: Mozilla/5.0" "$LOGO" -O "$POL_USER_ROOT/icones/full_size/$TITLE"
 
-# Shortcut
-POL_Shortcut "Speed.exe" "$TITLE" "" "" "$CATEGORY"
-POL_Shortcut_QuietDebug "$TITLE"
- 
 # End script
 POL_System_TmpDelete
 POL_SetupWindow_Close

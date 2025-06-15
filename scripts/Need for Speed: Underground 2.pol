@@ -15,12 +15,10 @@ CHANGELOG
     + System version: Windows 7
     + Category: Games
 [Dadu042] (2019-12-24)
-    + Wine 1.7.36 (2015) -> 3.0.3
-    + Update: POL_Shortcut, POL_Wine_SelectPrefix, arch x86.
-[?] (2015-21-02)
-    + ?
-[?] (2009-23-05)
-    + First script.
+  + Wine 1.7.36 (2015) -> 3.0.3
+  + Update: POL_Shortcut, POL_Wine_SelectPrefix, arch x86.
+[NSWL & GNU_Raziel] (2009-05-23 12-14)
+  + Initial script.
 
 REFERENCE
 GuerreroAzul: Documentation POL. - https://www.playonlinux.com/en/app-623-Need_for_Speed_Underground_2.html
@@ -39,12 +37,12 @@ EDITHOR="NSLW & GNU_Raziel, Dadu042 And GuerreroAzul"
 COMPANY="Electronic Arts"
 HOMEPAGE="https://www.ea.com/"
 LOGO="https://i.imgur.com/r0VkAIc.png"
-BANNER="https://i.imgur.com/Di6W76j.png"
+BANNER="https://i.imgur.com/fo7SPl8.png"
  
 # Download Images
 mkdir "$POL_USER_ROOT/configurations/setups/$TITLE"
 wget --header="User-Agent: Mozilla/5.0" -qO- "$LOGO" | convert - -resize 64x64! "$POL_USER_ROOT/configurations/setups/$TITLE/top"
-wget --header="User-Agent: Mozilla/5.0" "$BANNER" -O "$POL_USER_ROOT/configurations/setups/$TITLE/left"
+wget --header="User-Agent: Mozilla/5.0" -qO- "$BANNER" | convert - -resize 150x356! "$POL_USER_ROOT/configurations/setups/$TITLE/left"
 
 #Setup Image
 POL_GetSetupImages "$LOGO" "$BANNER" "$TITLE"
@@ -70,6 +68,9 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
  
 # Dependencies
+# Microsoft DirectX 9
+POL_Call POL_Install_d3dx9
+
 # Dll Obtained from the site DLL-FILES.COM
 POL_Download_Resource "https://archive.org/download/dinput8/dinput8.dll" "dfe561ad494e657cbc0a9a222ba1a792" "dinput8"
 cp "$POL_USER_ROOT/ressources/dinput8/dinput8.dll" -d "$WINEPREFIX/drive_c/windows/system32/"
@@ -85,18 +86,18 @@ else
     POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
     INSTALLER="$APP_ANSWER"
 fi
- 
+
 # Install Program
 POL_Wine start /unix "$INSTALLER"
 POL_Wine_WaitExit "$INSTALLER"
 
-# Update icon
-wget --header="User-Agent: Mozilla/5.0" -qO- "$LOGO" | convert - -resize 32x32! "$POL_USER_ROOT/icones/32/$TITLE"
-wget --header="User-Agent: Mozilla/5.0" "$LOGO" -O "$POL_USER_ROOT/icones/full_size/$TITLE"
- 
 # Shortcut
 POL_Shortcut "SPEED2.exe" "$TITLE" "" "" "$CATEGORY"
 POL_Shortcut_QuietDebug "$TITLE"
+
+# Update icon
+wget --header="User-Agent: Mozilla/5.0" -qO- "$LOGO" | convert - -resize 32x32! "$POL_USER_ROOT/icones/32/$TITLE"
+wget --header="User-Agent: Mozilla/5.0" "$LOGO" -O "$POL_USER_ROOT/icones/full_size/$TITLE"
  
 # End script
 POL_System_TmpDelete
