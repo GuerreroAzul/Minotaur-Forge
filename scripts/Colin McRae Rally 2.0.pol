@@ -40,6 +40,7 @@ LOGO="https://i.imgur.com/sMKzjoL.png"
 BANNER="https://i.imgur.com/Di6W76j.png"
  
 # Download Images
+mkdir "$POL_USER_ROOT/configurations/setups/$TITLE"
 wget --header="User-Agent: Mozilla/5.0" "$LOGO" -O "$POL_USER_ROOT/configurations/setups/$TITLE/top"
 wget --header="User-Agent: Mozilla/5.0" "$BANNER" -O "$POL_USER_ROOT/configurations/setups/$TITLE/left"
 
