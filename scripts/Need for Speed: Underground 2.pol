@@ -89,7 +89,7 @@ fi
 
 # Install Program
 POL_Wine start /unix "$INSTALLER"
-POL_Wine_WaitExit "$INSTALLER"
+POL_Wine_WaitExit "$TITLE"
 
 # Shortcut
 POL_Shortcut "SPEED2.exe" "$TITLE" "" "" "$CATEGORY"
