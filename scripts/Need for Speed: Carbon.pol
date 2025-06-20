@@ -22,7 +22,9 @@ CHANGELOG
   + Initial script.
 
 REFERENCE
-GuerreroAzul: Documentation POL. - https://www.playonlinux.com/en/app-3865-Need_for_Speed_Carbon.html
+[GuerreroAzul]
+Documentation POL: https://www.playonlinux.com/en/app-3865-Need_for_Speed_Carbon.html
+Icon Shortcut: https://www.deviantart.com/wolfangraul/gallery#content
 '
         
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -37,7 +39,7 @@ OSVERSION="win7"
 EDITHOR="redevizer, Dadu042, GuerreroAzul"
 COMPANY="Electronic Arts"
 HOMEPAGE="https://www.ea.com/"
-LOGO="https://i.imgur.com/Ng9DuuK.png"
+LOGO="https://i.imgur.com/ByYE0mr.png"
 BANNER="https://i.imgur.com/NmmwzOF.png"
 
 # Download Images
