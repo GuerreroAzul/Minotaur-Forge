@@ -25,68 +25,55 @@
 ║ ❖ collections           ║ EN: Contains advanced data types.                                        ║
 ║                         ║ ES: Contiene tipos de datos avanzados.                                   ║
 ╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
-║ ❖ collections.Counter   ║ EN: To count the number of times each item appears in a list.            ║
-║                         ║ ES: Para contar la cantidad de veces que aparece cada elemento en una    ║
-║                         ║     lista.                                                               ║
+║ ❖ gettext               ║ EN: Provides internationalization services (I18N).                       ║
+║                         ║ ES: Proporciona servicios de internacionalización (I18N).                ║
 ╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
-║ ❖ gi.repository         ║ EN: It is a base library for GNOME/GTK applications.                     ║
+║ ❖ gi.repository (Glib)  ║ EN: It is a base library for GNOME/GTK applications.                     ║
 ║                         ║ ES: Es una biblioteca base para aplicaciones GNOME/GTK.                  ║
 ╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
 ║ ❖ os                    ║ EN: Library that interacts with the system.                              ║
 ║                         ║ ES: Libreria que interactua con el sistema.                              ║
 ╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
-║ ❖ os.environ            ║ EN: Object that represents the operating system environment variables.   ║
-║                         ║ ES: Objeto que representa las variables de entorno del sistema           ║
-║                         ║     operativo.                                                           ║
+║ ❖ shlex                 ║ EN: Split text strings into "Tokens".                                    ║
+║                         ║ ES: Dividir cadenas de texto en "Tokens".                                ║
 ╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
-║ ❖ os.listdir            ║ devuelve una lista con todos los elementos del directorio.                 ║
-║                         ║                                                                            ║
-║ ❖ os.path               ║ Proporciona funciones para manipular nombres de rutas de archivos y direc- ║
-║                         ║ torios.                                                                    ║
-║                         ║                                                                            ║
-║ ❖ os.path.exists        ║ verifica si la ruta especificada existe en el sistema de archivos.         ║
-║                         ║                                                                            ║
-║ ❖ os.path.expanduser    ║ Convierte ~ en la carpeta personal del usuario.                            ║
-║                         ║                                                                            ║
-║ ❖ os.path.join          ║ Construir rutas de archivos/carpeta de forma segura y portable.            ║
-║                         ║ 
-║ ❖ os._exit              ║ Se utiliza para salir inmediatamente de un proceso.                        ║
-║                         ║  
-║ ❖ shlex                 ║ Dividir cadenas de texto en "Tokens".                                      ║
-║                         ║ 
-║ ❖ signal                ║ Gestionar señales del sistema operativo (Ctrl + C).                        ║
-║                         ║ 
-║ ❖ subprocess            ║ Ejecutar procesos y comandos externos.                                     ║
-║                         ║ 
-║ ❖ sys                   ║ Permite interactuar directamente con el intérprete de Python.              ║
-║                         ║ 
-║ ❖ time                  ║ Trabajar con fechas, horas y retrasos temporales.                          ║
-║                         ║ 
-║ ❖ threading             ║ Permite crear y manejar "hilos" de ejecución.                              ║
-║                         ║ 
-║ ❖ urllib.parse          ║ Analizar, crear, manipular y descomponer URLs (direcciones web).           ║
-║                         ║ 
-║ ❖ webbrowser            ║ Permite abrir automáticamente páginas web (URLs).                          ║
-║                         ║ 
-║ ❖ wx                    ║ Es un “wrapper” (envoltorio) de la librería C++ wxWidgets.                 ║
-║                         ║ 
-║ ❖ wx.aui                ║ Importa el submódulo Advanced User Interface (AUI).                        ║
-║                         ║ 
-║ ❖ wx.adv                ║ Importa controles y widgets “avanzados”.                                   ║
-║                         ║ 
+║ ❖ signal                ║ EN: Manage operating system signals (Ctrl + C).                          ║
+║                         ║ ES: Gestionar señales del sistema operativo (Ctrl + C).                  ║
+╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ ❖ subprocess            ║ EN: Execute external processes and commands.                             ║
+║                         ║ ES: Ejecutar procesos y comandos externos.                               ║
+╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ ❖ sys                   ║ EN: Allows you to interact directly with the Python interpreter.         ║
+║                         ║ ES: Permite interactuar directamente con el intérprete de Python.        ║
+╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ ❖ time                  ║ EN: Working with dates, times and time delays.                           ║
+║                         ║ ES: Trabajar con fechas, horas y retrasos temporales.                    ║
+╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ ❖ threading             ║ EN: Allows you to create and manage "threads" of execution.              ║
+║                         ║ ES: Permite crear y manejar "hilos" de ejecución.                        ║
+╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ ❖ urllib.parse          ║ EN: Analyze, create, manipulate and decompose URLs (web addresses).      ║
+║                         ║ ES: Analizar, crear, manipular y descomponer URLs (direcciones web).     ║
+╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ ❖ webbrowser            ║ EN: Allows you to automatically open web pages (URLs).                   ║
+║                         ║ ES: Permite abrir automáticamente páginas web (URLs).                    ║
+╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
+║ ❖ wx                    ║ EN: It is a “wrapper” of the C++ wxWidgets library.                      ║
+║                         ║ ES: Es un “wrapper” (envoltorio) de la librería C++ wxWidgets.           ║
 ╚═════════════════════════╩══════════════════════════════════════════════════════════════════════════╝
 
 ╔════════════════════════════════════════════════════════════════════════════════════════════════════╗
-║ Importación de librerias internas                                                                  ║
+║ Importing internal libraries / Importación de librerias internas                                   ║
 ╠════════════════════════════════════╦═══════════════════════════════════════════════════════════════╣
-║ Libreria                           ║ Alias                                                         ║
+║ Libraries / Bibliotecas            ║ Alias                                                         ║
 ╠════════════════════════════════════╬═══════════════════════════════════════════════════════════════╣
 ║ ❖ configurewindow.ConfigureWindow  ║ ConfigureWindow                                               ║
-║ ❖ debug                            ║                                                               ║
+║ ❖ debug                            ║ Debug                                                         ║
 ║ ❖ install.InstallWindow            ║ InstallWindow                                                 ║
 ║ ❖ lib.lng                          ║ Lng                                                           ║
+║ ❖ lib.playonlinux                  ║ PlayOnLinux                                                   ║
 ║ ❖ lib.Variables                    ║ Variables                                                     ║
-║ ❖ options                          ║                                                               ║
+║ ❖ options                          ║ Options                                                       ║
 ║ ❖ setupwindow.gui_server           ║ GuiServer                                                     ║
 ║ ❖ wine_versions.WineVersionsWindow ║ WineVersions                                                  ║
 ╚════════════════════════════════════╩═══════════════════════════════════════════════════════════════╝
@@ -94,16 +81,15 @@
 encoding = 'UTF-8'
 import os
 
-# Verificar si el sistema operativo es valido.
+# Check if the operating system is valid. / Verificar si el sistema operativo es valido.
 try:
     os.environ["POL_OS"]
 except:
     print("ERROR ! Please define POL_OS os.environment var first.")
     os._exit(1)
 
-# Librerias externas
+# Importing external libraries / Importación de bibliotecas externas 
 import collections
-import gi.repository
 import shlex
 import signal
 import subprocess
@@ -114,21 +100,23 @@ import urllib.parse
 import webbrowser
 import wx, wx.aui, wx.adv
 
-# Librerias internas
+# Importing internal libraries / Importación de librerias internas 
 import configurewindow.ConfigureWindow as ConfigureWindow
-import debug
+import debug as Debug
 import install.InstallWindow as InstallWindow
 import lib.lng as Lng
-import lib.playonlinux as playonlinux
+import lib.playonlinux as PlayOnLinux
 import lib.Variables as Variables
-import options
+import options as Options
 import setupwindow.gui_server as GuiServer
 import wine_versions.WineVersionsWindow as WineVersions
+from gettext import gettext as _
+from gi.repository import GLib
 
-# Establecer el nombre del programa
-gi.repository.set_prgname(os.environ["APPLICATION_TITLE"])
+# Set the program name / Establecer el nombre del programa
+GLib.set_prgname(os.environ["APPLICATION_TITLE"])
 
-# This thread manage updates / Gestion de actualizaciones.
+# This thread manage updates / Gestor de actualizaciones.
 class POLWeb(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
@@ -140,22 +128,21 @@ class POLWeb(threading.Thread):
         self.perc = -1
         self.updating = True
 
-    # Muestra dialogos en la barra de estados.
+    # Displays dialogs in the status bar. / Muestra dialogos en la barra de estados.
     def sendToStatusBar(self, message, gauge):
         self.sendToStatusBarStr = message
         self.Gauge = gauge
         self.Show = True
 
-    # Muestra el porcentaje del progreso.
+    # Displays the percentage of progress. / Muestra el porcentaje del progreso.
     def sendPercentage(self, n):
         self.perc = n
 
-    # Muestra un dialogo de alerta.
+    # Displays an alert dialog. / Muestra un dialogo de alerta.
     def sendAlert(self, message):
         self.sendAlertStr = message
 
-    # Consulta la ultima versión de PlayOnLinux
-    # Ultimo cambio: 2025-05-23
+    # Check out the latest version of PlayOnLinux / Consulta la ultima versión de PlayOnLinux
     def LastVersion(self):
         if (os.environ["POL_OS"] == "Mac"):
             fichier_online = "version_mac"
@@ -163,11 +150,10 @@ class POLWeb(threading.Thread):
             fichier_online = "version_freebsd"
         else:
             fichier_online = "version2"
-        return os.popen(
-            os.environ["POL_WGET"] + ' "' + os.environ["SITE"] + '/' + fichier_online + '.php?v=' + os.environ[
-                "VERSION"] + '" -T 30 -O-', 'r').read()
+        return os.popen(os.environ["POL_WGET"] + ' "' + os.environ["SITE"] + '/' + fichier_online + '.php?v=' + os.environ[
+                        "VERSION"] + '" -T 30 -O-', 'r').read()
 
-    # Verificación y actualización del listado de scripts de PlayOnLinux
+    # Check and update the PlayOnLinux script list / Verifica y actualiza el listado de scripts de PlayOnLinux
     def real_check(self):
         self.WebVersion = self.LastVersion()
 
@@ -191,7 +177,7 @@ class POLWeb(threading.Thread):
                     pass
 
             self.updating = False
-            if (playonlinux.VersionLower(os.environ["VERSION"], self.WebVersion)):
+            if (PlayOnLinux.VersionLower(os.environ["VERSION"], self.WebVersion)):
                 self.sendToStatusBar(_('An updated version of {0} is available').format(
                     os.environ["APPLICATION_TITLE"]) + " (" + self.WebVersion + ")", False)
                 if (os.environ["DEBIAN_PACKAGE"] == "FALSE"):
@@ -205,11 +191,11 @@ class POLWeb(threading.Thread):
 
         self.wantcheck = False
 
-    # Indicador de chequeos
+    # Check indicator / Indicador de chequeos
     def check(self):
         self.wantcheck = True
 
-    # Verificaciones en segundo plano
+    # Background checks / Verificaciones en segundo plano
     def run(self):
         self.check()
         while (1):
@@ -217,36 +203,36 @@ class POLWeb(threading.Thread):
                 self.real_check()
             time.sleep(1)
 
-
-# Diseño dinámico de paneles
+# Dynamic Panel Design / Diseño dinámico de paneles
 class PanelManager(wx.aui.AuiManager):
     def __init__(self, frame):
         wx.aui.AuiManager.__init__(self, frame)
         self.startPerspective = self.SavePerspective()
 
-    # Extrae el nombre del diseño (perspectiva) 
+    # Extract the design name (perspective) / Extraer el nombre del diseño (perspectiva) 
     def _getPerspectiveName(self):
         name = self.SavePerspective().split("=")
         name = name[1].split(";")
         name = name[0]
         return name
-
-    # Obtiene el layout actual y reemplaza el nombre por un marcador fijo, 
-    # ideal para guardar o comparar diseños de interfaz de forma anónima.
+    
+    # Obtain the current layout and replace the name with a fixed marker.
+    # Obtiene el layout actual y reemplaza el nombre por un marcador fijo.
     def getPerspective(self):
         return self.SavePerspective().replace(self._getPerspectiveName(), "PERSPECTIVE_NAME")
 
+    # Save the current interface design in the Playonlinux configuration, so that it can be restored later.
     # Guarda el diseño actual de la interfaz en la configuración de PlayOnLinux, para que pueda ser restaurado más adelante.
     def savePosition(self):
-        playonlinux.SetSettings("PANEL_PERSPECTIVE", self.getPerspective())
+        PlayOnLinux.SetSettings("PANEL_PERSPECTIVE", self.getPerspective())
 
-    # Restaura el diseño de la interfaz de usuario 
+    # Restore the user interface design / Restaura el diseño de la interfaz de usuario 
     def restorePosition(self):
         self.startPerspective = self.SavePerspective()
         self.Update()
         
         try:
-            setting = playonlinux.GetSettings("PANEL_PERSPECTIVE")
+            setting = PlayOnLinux.GetSettings("PANEL_PERSPECTIVE")
             if setting:
                 if (setting.count("Actions") < 2 or setting.count("dock_size") < 2 or not "PERSPECTIVE_NAME" in setting):
                     self.LoadPerspective(self.startPerspective)
@@ -256,59 +242,50 @@ class PanelManager(wx.aui.AuiManager):
         except wx._core.PyAssertionError:
             self.LoadPerspective(self.startPerspective)
 
-    # Gestor de paneles
+    # Allows adding an "coupling panel" / Permite agregar un "Panel Acoplable"
     def AddPane(self, data, settings):
         wx.aui.AuiManager.AddPane(self, data, settings)
 
+    # Save the (layout) position of the panels before closing or destroying the window
     # Guarda la posición (layout) de los paneles antes de cerrar o destruir la ventana
     def Destroy(self):
         self.savePosition()
 
-# Diseño de ventana principal
+# Main window design / Diseño de ventana principal
 class MainWindow(wx.Frame):
     def __init__(self, parent, id, title):
-        # Programa seleccionado
-        self.selected_program = None
-        self.GameCategories = self.LoadGameCategoriesFromFiles()
-
-        # Creación de la ventana principal
+        # Creation of the main window / Creación de la ventana principal
         wx.Frame.__init__(self, parent, 1000, title, size=(515, 450))
         self.SetMinSize((400, 400))
         self.SetIcon(wx.Icon(Variables.playonlinux_env + "/etc/playonlinux.png", wx.BITMAP_TYPE_ANY))
-
         self.windowList = {}
         self.registeredPid = []
         self.windowOpened = 0
 
-        # Manage updater
-        # Administrador de actualizaciones
+        # Manage updater / Administrador de actualizaciones
         self.updater = POLWeb()
         self.updater.start()
 
-        # These lists contain the dock links and images
-        # Estas listas contienen los enlaces y las imágenes del dock.
+        # These lists contain the dock links and images / Estas listas contienen los enlaces y las imágenes del dock.
         self.menuElem = {}
         self.menuImage = {}
 
-        # Catch CTRL+C
-        # Capturar CTRL+C
+        # Catch CTRL+C / Capturar CTRL+C
         signal.signal(signal.SIGINT, self.ForceClose)
 
-        # Window size
-        # Tamaño de la ventana.
+        # Window size / Tamaño de la ventana.
         try:
-            self.windowWidth = int(playonlinux.GetSettings("MAINWINDOW_WIDTH"))
-            self.windowHeight = int(playonlinux.GetSettings("MAINWINDOW_HEIGHT"))
+            self.windowWidth = int(PlayOnLinux.GetSettings("MAINWINDOW_WIDTH"))
+            self.windowHeight = int(PlayOnLinux.GetSettings("MAINWINDOW_HEIGHT"))
             self.SetSize((self.windowWidth, self.windowHeight))
         except:
             self.windowWidth = 500
             self.windowHeight = 450
 
-        # Window position
-        # Posición de la ventana
+        # Window position / Posición de la ventana
         try:
-            self.windowx = int(playonlinux.GetSettings("MAINWINDOW_X"))
-            self.windowy = int(playonlinux.GetSettings("MAINWINDOW_Y"))
+            self.windowx = int(PlayOnLinux.GetSettings("MAINWINDOW_X"))
+            self.windowy = int(PlayOnLinux.GetSettings("MAINWINDOW_Y"))
             self.screen_width = wx.Display().GetGeometry()[2]
             self.screen_height = wx.Display().GetGeometry()[3]
 
@@ -320,7 +297,7 @@ class MainWindow(wx.Frame):
             self.Center(wx.BOTH)
 
         try:
-            self.iconSize = int(playonlinux.GetSettings("ICON_SIZE"))
+            self.iconSize = int(PlayOnLinux.GetSettings("ICON_SIZE"))
         except:
             self.iconSize = 32
 
@@ -329,62 +306,51 @@ class MainWindow(wx.Frame):
 
         self.sendAlertStr = None
 
-        # Fonts
-        # Fuentes
+        # Implementation of fonts / Implementación de fuentes
         if (os.environ["POL_OS"] == "Mac"):
-            self.fontTitre = wx.Font(14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "",
-                                     wx.FONTENCODING_DEFAULT)
-            self.fontText = wx.Font(12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "",
-                                    wx.FONTENCODING_DEFAULT)
+            self.fontTitre = wx.Font(14, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "", wx.FONTENCODING_DEFAULT)
+            self.fontText  = wx.Font(12, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "", wx.FONTENCODING_DEFAULT)
         else:
-            self.fontTitre = wx.Font(10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "",
-                                     wx.FONTENCODING_DEFAULT)
-            self.fontText = wx.Font(8, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "",
-                                    wx.FONTENCODING_DEFAULT)
+            self.fontTitre = wx.Font(10, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, "", wx.FONTENCODING_DEFAULT)
+            self.fontText  = wx.Font( 8, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "", wx.FONTENCODING_DEFAULT)
 
-        # List game
-        # Listado de Juegos
-        self.scroll_panel = wx.ScrolledWindow(self, style=wx.VSCROLL | wx.HSCROLL)
-        self.scroll_panel.SetScrollRate(10, 10)
-        self.grid_sizer = wx.WrapSizer(wx.HORIZONTAL)
-        self.scroll_panel.SetSizer(self.grid_sizer)
-        self.Bind(wx.EVT_SIZE, self.OnResize)
+        # Central Panel (Programs) / Panel central (Programas)
+        self.ProgramsPanel = wx.ScrolledWindow(self, style=wx.VSCROLL | wx.HSCROLL)
+        self.ProgramsPanel.SetScrollRate(10, 10)
+        self.ProgramsPanelSizer = wx.WrapSizer(wx.HORIZONTAL)
+        self.ProgramsPanel.SetSizer(self.ProgramsPanelSizer)
         
-        # Panel Derecho (Personalización)
-        self.menu_gauche = wx.ScrolledWindow(self, -1, style=wx.VSCROLL)
-        self.menu_gauche.SetScrollRate(10, 10)
-        self.menu_gauche.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNFACE))
+        # Right Panel (Personalization) / Panel Derecho (Personalización)
+        self.PersonalizationPanel = wx.ScrolledWindow(self, -1, style=wx.VSCROLL)
+        self.PersonalizationPanel.SetScrollRate(10, 10)
+        self.PersonalizationPanelSizer = wx.BoxSizer(wx.VERTICAL)       
+        self.PersonalizationPanel.SetSizer(self.PersonalizationPanelSizer)
 
-        # Panel Izquierdo (Categorias)
-        self.category_panel = wx.ScrolledWindow(self, -1, style=wx.VSCROLL)
-        self.category_panel.SetScrollRate(10, 10)
-        self.category_panel.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNFACE))
+        # Left Panel (Categories) / Panel Izquierdo (Categorias)
+        self.CategoryPanel = wx.ScrolledWindow(self, -1, style=wx.VSCROLL)
+        self.CategoryPanel.SetScrollRate(10, 10)
+        self.CategoryPanelSizer = wx.BoxSizer(wx.VERTICAL)
+        self.CategoryPanel.SetSizer(self.CategoryPanelSizer)
+        
+        # Search bar in categories / Barra de búsqueda en categorias
+        self.CategorySearchBox = wx.SearchCtrl(self.CategoryPanel, style=wx.TE_PROCESS_ENTER)
+        self.CategorySearchBox.ShowSearchButton(True)
+        self.CategorySearchBox.ShowCancelButton(True)
+        self.CategorySearchBox.SetDescriptiveText(_("Search"))
 
-        self.category_sizer = wx.BoxSizer(wx.VERTICAL)
-        self.category_panel.SetSizer(self.category_sizer)
+        self.CategorySearchBox.Bind(wx.EVT_TEXT, self.OnSearch)
+        self.CategorySearchBox.Bind(wx.EVT_TEXT_ENTER, self.OnSearch)
+        self.CategorySearchBox.Bind(wx.EVT_SEARCHCTRL_CANCEL_BTN, self.OnCategoryClear)
+        self.CategoryPanelSizer.Add(self.CategorySearchBox, 5, wx.EXPAND | wx.ALL, 5)
+        
 
-        # Barra de búsqueda
-        self.category_searchbox = wx.SearchCtrl(self.category_panel, style=wx.TE_PROCESS_ENTER)
-        self.category_searchbox.ShowSearchButton(True)
-        self.category_searchbox.ShowCancelButton(True)
-        self.category_searchbox.SetDescriptiveText(_("Search"))
-
-        self.category_searchbox.Bind(wx.EVT_TEXT, self.OnSearch)
-        self.category_searchbox.Bind(wx.EVT_TEXT_ENTER, self.OnSearch)
-        self.category_searchbox.Bind(wx.EVT_SEARCHCTRL_CANCEL_BTN, self.OnCategoryClear)
-
-        self.category_sizer.Add(self.category_searchbox, 0, wx.EXPAND | wx.ALL, 5)
-
-        # Asignar sizer al panel
-        self.category_panel.SetSizer(self.category_sizer)
-
-        # Cargar Paneles
+        # Panel assembly / Montaje de paneles
         self._mgr = PanelManager(self)
-        self._mgr.AddPane(self.scroll_panel, wx.CENTER)
-        self._mgr.AddPane(self.menu_gauche,
+        self._mgr.AddPane(self.ProgramsPanel, wx.CENTER)
+        self._mgr.AddPane(self.PersonalizationPanel,
             wx.aui.AuiPaneInfo()
-                .Name('Actions')
-                .Caption('Game Details')
+                .Name(_('Actions'))
+                .Caption(_('Game Details'))
                 .Right()
                 .BestSize((200, 450))
                 .MinSize((200, -1))
@@ -393,10 +359,10 @@ class MainWindow(wx.Frame):
                 .Floatable(False)
                 .Movable(False)
                 .PaneBorder(False))
-        self._mgr.AddPane(self.category_panel,
+        self._mgr.AddPane(self.CategoryPanel,
             wx.aui.AuiPaneInfo()
-                .Name('Categories')
-                .Caption('Categorías')
+                .Name(_('Categories'))
+                .Caption(_('Categories'))
                 .Left()
                 .BestSize((150, 450))
                 .MinSize((150, -1))
@@ -406,27 +372,30 @@ class MainWindow(wx.Frame):
                 .Movable(False)
                 .PaneBorder(False))
 
+        self.Bind(wx.EVT_SIZE, self.OnResize)
+        self.GameCategories = self.LoadGameCategoriesFromFiles()
+        self.SelectedProgram = None
         self.selected_category = "all"
         self.GenerateMenuCategory()
         self._mgr.Update()
-        self.filemenu = wx.Menu()
 
-        ### On MacOS X, preference is always on the main menu
+        # Generates menus bar / Genera barra de menus
+        # File menu / Menu de Archivos
+        self.FileMenu = wx.Menu()
         if (os.environ["POL_OS"] == "Mac"):
-            prefItem = self.filemenu.Append(wx.ID_PREFERENCES, text="&Preferences")
+            # On MacOS X, preference is always on the main menu
+            # En MacOS X, la preferencia siempre está en el menú principal
+            prefItem = self.FileMenu.Append(wx.ID_PREFERENCES, text="&Preferences")
             self.Bind(wx.EVT_MENU, self.Options, prefItem)
 
-        ### File menu
-        # Submenu de Archivos
-        self.filemenu.Append(wx.ID_OPEN, _("Run"))
-        self.filemenu.Append(wx.ID_ADD, _("Install"))
-        self.filemenu.Append(wx.ID_DELETE, _("Remove"))
-        self.filemenu.AppendSeparator()
-        # self.filemenu.Append(216, _("Donate")) # Link no funtion
-        self.filemenu.Append(wx.ID_EXIT, _("Exit"))
+        self.FileMenu.Append(wx.ID_OPEN, _("Run"))
+        self.FileMenu.Append(wx.ID_ADD, _("Install"))
+        self.FileMenu.Append(wx.ID_DELETE, _("Remove"))
+        self.FileMenu.AppendSeparator()
+        self.FileMenu.Append(216, _("Donate"))
+        self.FileMenu.Append(wx.ID_EXIT, _("Exit"))
 
-        ### Display menu
-        # Submenu de Vista
+        # Display menu / Menu de Vista
         self.displaymenu = wx.Menu()
         self.icon16 = self.displaymenu.AppendRadioItem(501, _("Small icons"))
         self.icon24 = self.displaymenu.AppendRadioItem(502, _("Medium icons"))
@@ -441,42 +410,46 @@ class MainWindow(wx.Frame):
         if (self.iconSize == 48):
             self.icon48.Check(True)
 
-        # Submenu para desarrolladores
-        self.expertmenu = wx.Menu()
-        self.expertmenu.Append(107, _("Manage Wine versions"))
+        # Expert menu / Menu avanzado
+        self.ExpertMenu = wx.Menu()
+        self.ExpertMenu.Append(107, _("Manage Wine versions"))
         if (os.environ["POL_OS"] == "Mac"):
-            self.expertmenu.AppendSeparator()
-            self.expertmenu.Append(113, _("Read a PC CD-Rom"))
-        self.expertmenu.AppendSeparator()
-        self.expertmenu.Append(108, _("Run a local script"))
-        self.expertmenu.Append(109, _("{0} console").format(os.environ["APPLICATION_TITLE"]))
-        self.expertmenu.Append(115, _('Close all {0} software').format(os.environ["APPLICATION_TITLE"]))
-        self.expertmenu.AppendSeparator()
-        self.expertmenu.Append(110, _("{0} debugger").format(os.environ["APPLICATION_TITLE"]))
+            self.ExpertMenu.AppendSeparator()
+            self.ExpertMenu.Append(113, _("Read a PC CD-Rom"))
+        else:
+            self.ExpertMenu.AppendSeparator()
+        self.ExpertMenu.Append(108, _("Run a local script"))
+        self.ExpertMenu.Append(109, _("{0} console").format(os.environ["APPLICATION_TITLE"]))
+        self.ExpertMenu.Append(115, _('Close all {0} software').format(os.environ["APPLICATION_TITLE"]))
+        self.ExpertMenu.AppendSeparator()
+        self.ExpertMenu.Append(110, _("{0} debugger").format(os.environ["APPLICATION_TITLE"]))
 
-        # Submenu de opciones
-        self.optionmenu = wx.Menu()
-        self.optionmenu.Append(211, _("Internet"))
-        self.optionmenu.Append(212, _("File associations"))
-        self.optionmenu.Append(214, _("Plugin manager"))
+        # Option Menu / Menu de opciones
+        self.OptionMenu = wx.Menu()
+        self.OptionMenu.Append(211, _("Internet"))
+        self.OptionMenu.Append(212, _("File associations"))
+        self.OptionMenu.Append(214, _("Plugin manager"))
 
-        # Submenu de Soporte
-        self.supportmenu = wx.Menu()
-        self.supportmenu.Append(400, _("Supported software"))
-        self.supportmenu.Append(401, _("News"))
-        self.supportmenu.Append(402, _("Documentation"))
-        self.supportmenu.Append(403, _("Forums"))
-        self.supportmenu.Append(404, _("Bugs"))
-        self.supportmenu.AppendSeparator()
-        self.supportmenu.Append(405, _("Twitter"))
-        self.supportmenu.Append(406, _("Google+"))
-        self.supportmenu.Append(407, _("Facebook"))
+        # Menu de Redes Sociales
+        self.SocialMenu = wx.Menu()
+        self.SocialMenu.Append(405, _("Twitter"))
+        self.SocialMenu.Append(406, _("Github"))
+        self.SocialMenu.Append(407, _("Facebook"))
 
-        # Submenu de Ayuda
-        self.help_menu = wx.Menu()
-        self.help_menu.Append(wx.ID_ABOUT, _('About {0}').format(os.environ["APPLICATION_TITLE"]))
-        self.pluginsmenu = wx.Menu()
+        # Support menu / Menu de Soporte
+        self.SupportMenu = wx.Menu()
+        self.SupportMenu.Append(400, _("Supported software"))
+        self.SupportMenu.Append(401, _("News"))
+        self.SupportMenu.Append(402, _("Documentation"))
+        self.SupportMenu.Append(403, _("Forums"))
+        self.SupportMenu.Append(404, _("Bugs"))
 
+        # Help Menu / Submenu de Ayuda
+        self.HelpMenu = wx.Menu()
+        self.HelpMenu.Append(wx.ID_ABOUT, _('About {0}').format(os.environ["APPLICATION_TITLE"]))
+
+        # Plugins Menu / Menu de Plugins
+        self.PluginsMenu = wx.Menu()
         files = os.listdir(Variables.playonlinux_rep + "/plugins")
         files.sort()
         self.plugin_list = []
@@ -485,7 +458,7 @@ class MainWindow(wx.Frame):
         while (self.i < len(files)):
             if (os.path.exists(Variables.playonlinux_rep + "/plugins/" + files[self.i] + "/scripts/menu")):
                 if (os.path.exists(Variables.playonlinux_rep + "/plugins/" + files[self.i] + "/enabled")):
-                    self.plugin_item = wx.MenuItem(self.expertmenu, 300 + self.j, files[self.i])
+                    self.plugin_item = wx.MenuItem(self.ExpertMenu, 300 + self.j, files[self.i])
 
                     self.icon_look_for = Variables.playonlinux_rep + "/plugins/" + files[self.i] + "/icon"
                     if (os.path.exists(self.icon_look_for)):
@@ -494,19 +467,19 @@ class MainWindow(wx.Frame):
                         self.bitmap = wx.Bitmap(Variables.playonlinux_env + "/etc/playonlinux16.png")
 
                     self.plugin_item.SetBitmap(self.bitmap)
-                    self.pluginsmenu.Append(self.plugin_item)
+                    self.PluginsMenu.Append(self.plugin_item)
                     self.Bind(wx.EVT_MENU, self.run_plugin, id=300 + self.j)
                     self.plugin_list.append(files[self.i])
                     self.j += 1
             self.i += 1
 
         if (self.j > 0):
-            self.pluginsmenu.AppendSeparator()
+            self.PluginsMenu.AppendSeparator()
 
-        self.option_item_p = wx.MenuItem(self.pluginsmenu, 214, _("Plugin manager"))
+        self.option_item_p = wx.MenuItem(self.PluginsMenu, 214, _("Plugin manager"))
         self.option_item_p.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/etc/onglet/package-x-generic.png"))
 
-        self.pluginsmenu.Append(self.option_item_p)
+        self.PluginsMenu.Append(self.option_item_p)
 
         self.last_string = ""
 
@@ -524,60 +497,59 @@ class MainWindow(wx.Frame):
         self.jauge_update.Hide()
         self.SetStatusBar(self.sb)
 
-        # self.helpmenu = wx.MenuItem()
-        # self.helpmenu.Append(wx.ID_ABOUT, _("About"))
+        # Menus bar / Barra de menu
+        self.MenuBar = wx.MenuBar()
+        self.MenuBar.Append(self.FileMenu, _("File"))
+        # self.MenuBar.Append(self.displaymenu, _("Display"))
+        self.MenuBar.Append(self.ExpertMenu, _("Tools"))
+        self.MenuBar.Append(self.OptionMenu, _("Settings"))
+        self.MenuBar.Append(self.PluginsMenu, _("Plugins"))
+        self.MenuBar.Append(self.SupportMenu, _("Support"))
+        self.MenuBar.Append(self.SocialMenu, _("Social"))
+        self.MenuBar.Append(self.HelpMenu, _("Help"))
+        # self.MenuBar.Append(self.HelpMenu, _("About"))
 
-        # barra de tareas
-        self.menubar = wx.MenuBar()
-        self.menubar.Append(self.filemenu, _("File"))
-        # self.menubar.Append(self.displaymenu, _("Display")) # La vista a sido cambiada.
-        self.menubar.Append(self.expertmenu, _("Tools"))
-        self.menubar.Append(self.optionmenu, _("Settings"))
-        self.menubar.Append(self.pluginsmenu, _("Plugins"))
-        self.menubar.Append(self.supportmenu, _("Support"))
-        self.menubar.Append(self.help_menu, _("&Help"))
-
-        # self.menubar.Append(self.help_menu, _("About"))
-
-        self.SetMenuBar(self.menubar)
+        self.SetMenuBar(self.MenuBar)
         iconSize = (32, 32)
 
-        # Barra de herramientas
-        self.toolbar = self.CreateToolBar(wx.TB_TEXT)
-        self.toolbar.SetToolBitmapSize(iconSize)
-        self.searchbox = wx.SearchCtrl(self.toolbar, 124, style=wx.RAISED_BORDER)
-        self.playTool = self.toolbar.AddTool(wx.ID_OPEN, _("Run"), wx.Bitmap(
-            Variables.playonlinux_env + "/resources/images/toolbar/play.png"))
-        self.stopTool = self.toolbar.AddTool(123, _("Close"), wx.Bitmap(
-            Variables.playonlinux_env + "/resources/images/toolbar/stop.png"))
+        # Tool bar / Barra de herramientas
+        self.ToolBar = self.CreateToolBar(wx.TB_TEXT)
+        self.ToolBar.SetToolBitmapSize(iconSize)
+        self.searchbox = wx.SearchCtrl(self.ToolBar, 124, style=wx.RAISED_BORDER)
+        self.playTool = self.ToolBar.AddTool(wx.ID_OPEN, _("Run"), wx.Bitmap(
+            Variables.playonlinux_env + "/resources/images/ToolBar/play.png"))
+        self.stopTool = self.ToolBar.AddTool(123, _("Close"), wx.Bitmap(
+            Variables.playonlinux_env + "/resources/images/ToolBar/stop.png"))
 
-        self.toolbar.AddSeparator()
-        self.toolbar.AddTool(wx.ID_ADD, _("Install"),
-                                  wx.Bitmap(Variables.playonlinux_env + "/resources/images/toolbar/install.png"))
-        self.removeTool = self.toolbar_remove = self.toolbar.AddTool(wx.ID_DELETE, _("Remove"), wx.Bitmap(
-            Variables.playonlinux_env + "/resources/images/toolbar/delete.png"))
-        self.toolbar.AddSeparator()
-        self.toolbar.AddTool(121, _("Configure"),
-                                  wx.Bitmap(Variables.playonlinux_env + "/resources/images/toolbar/configure.png"))
+        self.ToolBar.AddSeparator()
+        self.ToolBar.AddTool(wx.ID_ADD, _("Install"),
+                                  wx.Bitmap(Variables.playonlinux_env + "/resources/images/ToolBar/install.png"))
+        self.removeTool = self.ToolBar_remove = self.ToolBar.AddTool(wx.ID_DELETE, _("Remove"), wx.Bitmap(
+            Variables.playonlinux_env + "/resources/images/ToolBar/delete.png"))
+        self.ToolBar.AddSeparator()
+        self.ToolBar.AddTool(121, _("Configure"),
+                                  wx.Bitmap(Variables.playonlinux_env + "/resources/images/ToolBar/configure.png"))
 
         try:
-            self.toolbar.AddStretchableSpace()
+            self.ToolBar.AddStretchableSpace()
             self.SpaceHack = False
         except:
             #  wxpython 2.8 does not support AddStretchableSpace(). This is a dirty workaround for this.
-            self.dirtyHack = wx.StaticText(self.toolbar)
+            self.dirtyHack = wx.StaticText(self.ToolBar)
             self.SpaceHack = True
-            self.toolbar.AddControl(self.dirtyHack)
+            self.ToolBar.AddControl(self.dirtyHack)
             self.UpdateSearchHackSize()
 
-        # Barra de busqueda / Movilizada
-        #try:
-        #    self.toolbar.AddControl(self.searchbox, _("Search"))
-        #except:
-        #    self.toolbar.AddControl(self.searchbox)
-        #    self.searchbox.SetDescriptiveText(_("Search"))
-
-        self.toolbar.Realize()
+        # Search box / Caja de busqueda
+        '''
+        try:
+            self.ToolBar.AddControl(self.searchbox, _("Search"))
+        except:
+            self.ToolBar.AddControl(self.searchbox)
+            self.searchbox.SetDescriptiveText(_("Search"))
+        '''
+        # Event control / Control de eventos
+        self.ToolBar.Realize()
         self.Reload(self)
         self.Bind(wx.EVT_MENU, self.Run, id=wx.ID_OPEN)
         self.Bind(wx.EVT_MENU, self.RKill, id=123)
@@ -587,13 +559,13 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_MENU, self.ClosePol, id=wx.ID_EXIT)
         self.Bind(wx.EVT_MENU, self.UninstallGame, id=wx.ID_DELETE)
 
-        # Display
+        # Display / Eventos del menu de vista
         self.Bind(wx.EVT_MENU, self.iconDisplay, id=501)
         self.Bind(wx.EVT_MENU, self.iconDisplay, id=502)
         self.Bind(wx.EVT_MENU, self.iconDisplay, id=503)
         self.Bind(wx.EVT_MENU, self.iconDisplay, id=504)
 
-        # Expert
+        # Expert / Eventos del menu avanzado
         self.Bind(wx.EVT_MENU, self.Reload, id=101)
         self.Bind(wx.EVT_MENU, self.WineVersion, id=107)
         self.Bind(wx.EVT_MENU, self.Executer, id=108)
@@ -606,7 +578,7 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_MENU, self.Package, id=122)
         self.Bind(wx.EVT_TEXT, self.Reload, id=124)
 
-        # Options
+        # Options / Eventos del menu de opciones
         self.Bind(wx.EVT_MENU, self.Options, id=210)
         self.Bind(wx.EVT_MENU, self.Options, id=211)
         self.Bind(wx.EVT_MENU, self.Options, id=212)
@@ -620,14 +592,19 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_TREE_ITEM_ACTIVATED, self.Run, id=105)
         self.Bind(wx.EVT_TREE_SEL_CHANGED, self.Select, id=105)
 
-        # Support
+        # Social / Eventos del menu de redes sociales
+        self.Bind(wx.EVT_MENU, self.runSupport, id=405)
+        self.Bind(wx.EVT_MENU, self.runSupport, id=406)
+        self.Bind(wx.EVT_MENU, self.runSupport, id=407)
+
+        # Support / Eventos del menu de soporte
         self.Bind(wx.EVT_MENU, self.runSupport, id=400)
         self.Bind(wx.EVT_MENU, self.runSupport, id=401)
         self.Bind(wx.EVT_MENU, self.runSupport, id=402)
         self.Bind(wx.EVT_MENU, self.runSupport, id=403)
         self.Bind(wx.EVT_MENU, self.runSupport, id=404)
 
-        # PlayOnLinux main timer
+        # PlayOnLinux main timer / Temporizador principal de PlayOnlinux
         self.timer = wx.Timer(self, 1)
         self.Bind(wx.EVT_TIMER, self.TimerAction, self.timer)
         self.timer.Start(1000)
@@ -635,6 +612,7 @@ class MainWindow(wx.Frame):
         self.Timer_LastIconList = None
 
         # SetupWindow timer. The server is in another thread and GUI must be run from the main thread
+        # SetupWindow Timer. El servidor está en otro hilo y la GUI debe ejecutarse desde el hilo principal.
         self.SetupWindowTimer = wx.Timer(self, 2)
         self.Bind(wx.EVT_TIMER, self.SetupWindowAction, self.SetupWindowTimer)
         self.SetupWindowTimer_action = None
@@ -642,6 +620,7 @@ class MainWindow(wx.Frame):
         self.SetupWindowTimer_delay = 100
 
         # Pop-up menu for game list: beginning
+        # Menú emergente para la lista de juegos: comienzo
         self.Bind(wx.EVT_TREE_ITEM_MENU, self.RMBInGameList, id=105)
         self.Bind(wx.EVT_MENU, self.RWineConfigurator, id=230)
         self.Bind(wx.EVT_MENU, self.RRegistryEditor, id=231)
@@ -651,9 +630,9 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_MENU, self.RKill, id=235)
         self.Bind(wx.EVT_MENU, self.ReadMe, id=236)
         self.Bind(wx.EVT_SIZE, self.ResizeWindow)
+        
         self._mgr.restorePosition()
-
-        self.menu_gauche.SetAutoLayout(True)
+        self.PersonalizationPanel.SetAutoLayout(True)
 
     def LoadGameCategoriesFromFiles(self):
         dataDir = os.path.expanduser("~/.PlayOnLinux/icones/data/")
@@ -669,8 +648,8 @@ class MainWindow(wx.Frame):
 
     def GenerateMenuCategory(self):
         # Limpia el panel izquierdo
-        self.category_panel.Freeze()
-        for child in self.category_panel.GetChildren():
+        self.CategoryPanel.Freeze()
+        for child in self.CategoryPanel.GetChildren():
             child.Destroy()
         self.menuElem = {}
 
@@ -689,7 +668,7 @@ class MainWindow(wx.Frame):
         catCounts = collections.Counter(self.GameCategories.get(game, "other") for game in self.games)
         # Solo muestra categorías activas
         ActiveCategories = [
-            (key, label, icon) for key, label, icon in categories
+            (key, label, icon) for key, label, icon in Categories
             if key == "all" or catCounts.get(key, 0) > 0
         ]
 
@@ -698,8 +677,8 @@ class MainWindow(wx.Frame):
         side_margin = 2
 
         # Barra de búsqueda (si la quieres)
-        if hasattr(self, "category_searchbox"):
-            sizer.Add(self.category_searchbox, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, side_margin)
+        if hasattr(self, "CategorySearchBox"):
+            sizer.Add(self.CategorySearchBox, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, side_margin)
             sizer.Add((0, 6))
 
         # Botones de categorías activas
@@ -708,23 +687,23 @@ class MainWindow(wx.Frame):
             btn_panel = self.MenuGaucheAddSimpleButton(
                 f"cat_{i}", label, i, icon_path,
                 lambda evt, c=key: self.OnCategorySelected(c),
-                parent=self.category_panel
+                parent=self.CategoryPanel
             )
             sizer.Add(btn_panel, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, side_margin)
 
-        self.category_panel.SetSizer(sizer)
-        self.category_panel.Layout()
-        self.category_panel.Thaw()
+        self.CategoryPanel.SetSizer(sizer)
+        self.CategoryPanel.Layout()
+        self.CategoryPanel.Thaw()
 
     def OnCategoryClear(self, event):
-        self.category_searchbox.SetValue("")
+        self.CategorySearchBox.SetValue("")
         self.OnSearch(None)
 
     def OnResize(self, event):
         event.Skip()
         
         # Ajustar tamaño del panel derecho
-        pane_info = self._mgr.GetPane(self.menu_gauche)
+        pane_info = self._mgr.GetPane(self.PersonalizationPanel)
         pane_info.BestSize((270, self.GetSize().height - 50))
         self._mgr.Update()
         
@@ -733,15 +712,15 @@ class MainWindow(wx.Frame):
             for item in self.menuElem.values():
                 item.Wrap(250)  # Reajustar texto al nuevo ancho
         
-        self.scroll_panel.Layout()
-        self.scroll_panel.FitInside()
+        self.ProgramsPanel.Layout()
+        self.ProgramsPanel.FitInside()
         event.Skip()
 
     def LaunchGame(self, event):
         widget = event.GetEventObject()
         game_name = widget.GetName()
         if game_name:
-            self.selected_program = game_name  # <--- guardar la selección
+            self.SelectedProgram = game_name  # <--- guardar la selección
             shortcut_path = os.path.expanduser(f'~/.PlayOnLinux/shortcuts/\"{game_name}\"')
             os.system(f'{shortcut_path} &')
 
@@ -750,7 +729,7 @@ class MainWindow(wx.Frame):
         game_name = widget.GetName()
 
         # Guardamos el juego como seleccionado (sirve para otros botones)
-        self.selected_program = game_name
+        self.SelectedProgram = game_name
 
         # Creamos el menú contextual
         menu = wx.Menu()
@@ -768,13 +747,13 @@ class MainWindow(wx.Frame):
         menu.Destroy()
 
     def ConfigureGame(self):
-        if self.selected_program:
-            print(f"Configurar: {self.selected_program}")
+        if self.SelectedProgram:
+            print(f"Configurar: {self.SelectedProgram}")
             # Aquí iría el código real para abrir la configuración
 
     def RemoveGame(self):
-        if self.selected_program:
-            print(f"Quitar: {self.selected_program}")
+        if self.SelectedProgram:
+            print(f"Quitar: {self.SelectedProgram}")
             # Aquí iría el código real para eliminar el juego
 
     def OnHover(self, event):
@@ -910,7 +889,7 @@ class MainWindow(wx.Frame):
     def ReadMe(self, event):
         game_exec = self.GetSelectedProgram()
         if (os.path.exists(os.environ["POL_USER_ROOT"] + "/configurations/manuals/" + game_exec)):
-            playonlinux.POL_Open(os.environ["POL_USER_ROOT"] + "/configurations/manuals/" + game_exec)
+            PlayOnLinux.POL_Open(os.environ["POL_USER_ROOT"] + "/configurations/manuals/" + game_exec)
         else:
             wx.MessageBox(_("No manual found for {0}").format(game_exec), os.environ["APPLICATION_TITLE"])
 
@@ -925,6 +904,7 @@ class MainWindow(wx.Frame):
         except:
             pass
 
+    # Gestion de Menu de soporte
     def runSupport(self, event):
         urlId = event.GetId() - 400
         urlPrefix = "http://www." + os.environ["POL_DNS"] + "/en"
@@ -941,15 +921,15 @@ class MainWindow(wx.Frame):
 
         if (urlId == 5):
             if (os.environ["POL_OS"] == "Mac"):
-                url = "https://twitter.com/PlayOnMac"
+                url = "https://x.com/PlayOnMac"
             else:
-                url = "https://twitter.com/PlayOnLinux"
+                url = "https://x.com/PlayOnLinux"
 
         if (urlId == 6):
             if (os.environ["POL_OS"] == "Mac"):
-                url = "http://plus.google.com/u/0/105992880311102680198"
+                url = "https://github.com/PhoenicisOrg"
             else:
-                url = "https://plus.google.com/+playonlinux"
+                url = "https://github.com/PhoenicisOrg"
 
         if (urlId == 7):
             if (os.environ["POL_OS"] == "Mac"):
@@ -957,7 +937,7 @@ class MainWindow(wx.Frame):
             else:
                 url = "https://www.facebook.com/playonlinux"
 
-        playonlinux.POL_Open(url)
+        PlayOnLinux.POL_Open(url)
 
     def iconDisplay(self, event):
         iconEvent = event.GetId()
@@ -971,11 +951,11 @@ class MainWindow(wx.Frame):
         if (iconEvent == 504):
             self.iconSize = 48
 
-        playonlinux.SetSettings("ICON_SIZE", str(self.iconSize))
-        self.scroll_panel.SetImageList(self.imagesEmpty)
+        PlayOnLinux.SetSettings("ICON_SIZE", str(self.iconSize))
+        self.ProgramsPanel.SetImageList(self.imagesEmpty)
         self.images.Destroy()
         self.images = wx.ImageList(self.iconSize, self.iconSize)
-        self.scroll_panel.SetImageList(self.images)
+        self.ProgramsPanel.SetImageList(self.images)
 
         self.Reload(self)
 
@@ -990,11 +970,11 @@ class MainWindow(wx.Frame):
 
     def GoToAppDir(self, event):
         self.game_exec = self.GetSelectedProgram()
-        if not playonlinux.GetSettings("OPEN_IN", playonlinux.getPrefix(self.game_exec)):
-            playonlinux.open_folder(self.game_exec)
+        if not PlayOnLinux.GetSettings("OPEN_IN", PlayOnLinux.getPrefix(self.game_exec)):
+            PlayOnLinux.open_folder(self.game_exec)
         else:
-            playonlinux.open_folder(self.game_exec,
-                                    playonlinux.GetSettings("OPEN_IN", playonlinux.getPrefix(self.game_exec)))
+            PlayOnLinux.open_folder(self.game_exec,
+                                    PlayOnLinux.GetSettings("OPEN_IN", PlayOnLinux.getPrefix(self.game_exec)))
 
     def ChangeIcon(self, event):
         self.IconDir = Variables.homedir + "/.local/share/icons/"
@@ -1032,19 +1012,19 @@ class MainWindow(wx.Frame):
 
     # Genera el menu del panel izquierdo
     def GenerateMenuCategory(self):
-        self.category_panel.Freeze()
-        for child in self.category_panel.GetChildren():
+        self.CategoryPanel.Freeze()
+        for child in self.CategoryPanel.GetChildren():
             child.Destroy()
         self.menuElem = {}
 
-        self.category_panel.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNFACE))
+        self.CategoryPanel.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNFACE))
         sizer = wx.BoxSizer(wx.VERTICAL)
 
         # Barra de búsqueda
-        self.category_searchbox = wx.SearchCtrl(self.category_panel, style=wx.TE_PROCESS_ENTER)
-        self.category_searchbox.SetDescriptiveText(_("Search"))
-        self.category_searchbox.Bind(wx.EVT_TEXT, self.OnSearch)
-        sizer.Add(self.category_searchbox, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, 2)
+        self.CategorySearchBox = wx.SearchCtrl(self.CategoryPanel, style=wx.TE_PROCESS_ENTER)
+        self.CategorySearchBox.SetDescriptiveText(_("Search"))
+        self.CategorySearchBox.Bind(wx.EVT_TEXT, self.OnSearch)
+        sizer.Add(self.CategorySearchBox, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, 2)
         sizer.Add((0, 6))  # Espaciador opcional
 
         icons_dir = "/usr/share/playonlinux/resources/images/install/32/"
@@ -1081,27 +1061,27 @@ class MainWindow(wx.Frame):
             btn_panel = self.MenuGaucheAddSimpleButton(
                 f"cat_{i}", label, i, icon_path,
                 lambda evt, c=key: self.OnCategorySelected(c),  # key, no label
-                parent=self.category_panel
+                parent=self.CategoryPanel
             )
             sizer.Add(btn_panel, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 2)
 
-        self.category_panel.SetSizer(sizer)
-        self.category_panel.Layout()
-        self.category_panel.Thaw()
+        self.CategoryPanel.SetSizer(sizer)
+        self.CategoryPanel.Layout()
+        self.CategoryPanel.Thaw()
 
     # Genera el menu del panel derecho
     def GenerateMenuPanel(self, shortcut=None):
-        self.menu_gauche.Freeze()
-        for child in self.menu_gauche.GetChildren():
+        self.PersonalizationPanel.Freeze()
+        for child in self.PersonalizationPanel.GetChildren():
             child.Destroy()
         self.menuElem = {}
 
-        self.menu_gauche.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNFACE))
+        self.PersonalizationPanel.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNFACE))
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add((0, 12))
 
         # Título principal
-        self.MenuGaucheAddTitle("main_title", "PlayOnLinux", 0, parent=self.menu_gauche, sizer=sizer)
+        self.MenuGaucheAddTitle("main_title", "PlayOnLinux", 0, parent=self.PersonalizationPanel, sizer=sizer)
         sizer.Add((0, 12))
 
         # Botón para instalar programa
@@ -1111,7 +1091,7 @@ class MainWindow(wx.Frame):
             1,
             "/usr/share/playonlinux/resources/images/menu/add.png",
             self.InstallMenu,
-            parent=self.menu_gauche
+            parent=self.PersonalizationPanel
         )
         sizer.Add(btn_install, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 2)
 
@@ -1122,20 +1102,20 @@ class MainWindow(wx.Frame):
             2,
             "/usr/share/playonlinux/resources/images/menu/settings.png",
             self.Configure,
-            parent=self.menu_gauche
+            parent=self.PersonalizationPanel
         )
         sizer.Add(btn_prefs, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 2)
 
         # Si hay acceso directo seleccionado, muestra icono y acciones
         if shortcut:
-            self.MenuGaucheAddTitle("game_title", shortcut, 3, parent=self.menu_gauche, sizer=sizer)
+            self.MenuGaucheAddTitle("game_title", shortcut, 3, parent=self.PersonalizationPanel, sizer=sizer)
             sizer.Add((0, 8))
 
             icon_path = os.path.join(Variables.playonlinux_rep, "icones/full_size", shortcut)
             if os.path.exists(icon_path):
                 img = wx.Image(icon_path)
                 img.Rescale(64, 64)
-                icon_bitmap = wx.StaticBitmap(self.menu_gauche, bitmap=img.ConvertToBitmap())
+                icon_bitmap = wx.StaticBitmap(self.PersonalizationPanel, bitmap=img.ConvertToBitmap())
                 sizer.Add(icon_bitmap, 0, wx.ALIGN_CENTER | wx.BOTTOM, 2)
 
             actions = [
@@ -1150,17 +1130,17 @@ class MainWindow(wx.Frame):
                     4 + i,
                     os.path.join(Variables.playonlinux_env, "resources/images/menu", icon),
                     handler,
-                    parent=self.menu_gauche
+                    parent=self.PersonalizationPanel
                 )
                 sizer.Add(btn_action, 0, wx.EXPAND | wx.LEFT | wx.RIGHT | wx.BOTTOM, 2)
 
-        self.menu_gauche.SetSizer(sizer)
-        self.menu_gauche.Layout()
-        self.menu_gauche.Thaw()
+        self.PersonalizationPanel.SetSizer(sizer)
+        self.PersonalizationPanel.Layout()
+        self.PersonalizationPanel.Thaw()
 
     # Buscar Juegos
     def OnSearch(self, event):
-        self.filtered_query = self.category_searchbox.GetValue().lower()
+        self.filtered_query = self.CategorySearchBox.GetValue().lower()
         self.Reload()
 
     # Filtrar por categorias
@@ -1171,7 +1151,7 @@ class MainWindow(wx.Frame):
     # Boton de los paneles
     def MenuGaucheAddSimpleButton(self, id, text, pos, icon_path, handler, parent=None):
         if parent is None:
-            parent = self.menu_gauche
+            parent = self.PersonalizationPanel
 
         btn_panel = wx.Panel(parent)
         btn_panel.SetBackgroundColour(wx.NullColour)
@@ -1230,7 +1210,7 @@ class MainWindow(wx.Frame):
         panel.Refresh()
 
     def MenuGaucheAddButton(self, id, text, pos, icon_path, handler, small=False):
-        btn_panel = wx.Panel(self.menu_gauche, pos=(0, 20 + pos * 40), size=(270, 40))
+        btn_panel = wx.Panel(self.PersonalizationPanel, pos=(0, 20 + pos * 40), size=(270, 40))
         btn_panel.SetBackgroundColour(wx.Colour(250, 250, 250))
         
         # Icono
@@ -1261,7 +1241,7 @@ class MainWindow(wx.Frame):
 
     def MenuGaucheAddSeparator(self, pos):
         sep = wx.StaticLine(
-            self.menu_gauche,
+            self.PersonalizationPanel,
             pos=(15, 20 + pos * 40),
             size=(240, 1),
             style=wx.LI_HORIZONTAL
@@ -1271,7 +1251,7 @@ class MainWindow(wx.Frame):
         return sep
 
     def MenuGaucheAddInfoPanel(self, id, info_items, start_pos):
-        panel = wx.Panel(self.menu_gauche, pos=(0, 20 + start_pos * 40), size=(270, len(info_items) * 25 + 10))
+        panel = wx.Panel(self.PersonalizationPanel, pos=(0, 20 + start_pos * 40), size=(270, len(info_items) * 25 + 10))
         panel.SetBackgroundColour(wx.Colour(245, 245, 245))
         
         for i, (key, value) in enumerate(info_items.items()):
@@ -1287,7 +1267,7 @@ class MainWindow(wx.Frame):
         details = {}
         try:
             # Ejemplo de información que puedes obtener
-            prefix = playonlinux.getPrefix(game_name)
+            prefix = PlayOnLinux.getPrefix(game_name)
             details[_("Prefix")] = prefix
             details[_("Wine version")] = self.getWineVersion(game_name)
             details[_("Install date")] = time.ctime(os.path.getctime(
@@ -1301,7 +1281,7 @@ class MainWindow(wx.Frame):
     # Agregar Titulo para el panel para la derecha
     def MenuGaucheAddTitle(self, id, text, pos, parent=None, sizer=None):
         if parent is None:
-            parent = self.menu_gauche
+            parent = self.PersonalizationPanel
         if sizer is None:
             sizer = parent.GetSizer() if parent.GetSizer() else wx.BoxSizer(wx.VERTICAL)
             parent.SetSizer(sizer)
@@ -1334,17 +1314,17 @@ class MainWindow(wx.Frame):
             self.bitmap = wx.Image(menu_icone)
             self.bitmap.Rescale(16, 16, wx.IMAGE_QUALITY_HIGH)
             self.bitmap = self.bitmap.ConvertToBitmap()
-            self.menuImage[id] = wx.StaticBitmap(self.menu_gauche, id=-1, bitmap=self.bitmap, pos=(10, 15 + pos * 20))
+            self.menuImage[id] = wx.StaticBitmap(self.PersonalizationPanel, id=-1, bitmap=self.bitmap, pos=(10, 15 + pos * 20))
 
         except:
             pass
 
         if (url == None):
-            self.menuElem[id] = wx.lib.agw.hyperlink.HyperLinkCtrl(self.menu_gauche, 10000 + pos, text,
+            self.menuElem[id] = wx.lib.agw.hyperlink.HyperLinkCtrl(self.PersonalizationPanel, 10000 + pos, text,
                                                                pos=(35, 15 + pos * 20))
             self.menuElem[id].AutoBrowse(False)
         else:
-            self.menuElem[id] = wx.lib.agw.hyperlink.HyperLinkCtrl(self.menu_gauche, 10000 + pos, text,
+            self.menuElem[id] = wx.lib.agw.hyperlink.HyperLinkCtrl(self.PersonalizationPanel, 10000 + pos, text,
                                                                pos=(35, 15 + pos * 20))
             self.menuElem[id].setURL(url)
 
@@ -1365,9 +1345,9 @@ class MainWindow(wx.Frame):
             webbrowser.open("http://www.playonlinux.com/en/Donate.html")
 
     def Reload(self, event=None):
-        for child in self.scroll_panel.GetChildren():
+        for child in self.ProgramsPanel.GetChildren():
             child.Destroy()
-        self.grid_sizer.Clear(True)
+        self.ProgramsPanelSizer.Clear(True)
 
         # Obtiene lista de accesos directos (juegos)
         shortcuts_path = os.path.join(Variables.playonlinux_rep, "shortcuts")
@@ -1383,7 +1363,7 @@ class MainWindow(wx.Frame):
 
         display_size = (240, 120)
 
-        search_query = self.category_searchbox.GetValue().lower() if hasattr(self, "category_searchbox") else ""
+        search_query = self.CategorySearchBox.GetValue().lower() if hasattr(self, "CategorySearchBox") else ""
         selected_cat = getattr(self, "selected_category", "all")
 
         for game in self.games:
@@ -1398,7 +1378,7 @@ class MainWindow(wx.Frame):
             if os.path.isdir(os.path.join(shortcuts_path, game)):
                 continue
 
-            item_panel = wx.Panel(self.scroll_panel)
+            item_panel = wx.Panel(self.ProgramsPanel)
             box = wx.BoxSizer(wx.VERTICAL)
 
             paths = [
@@ -1455,10 +1435,10 @@ class MainWindow(wx.Frame):
             box.Add(label, 0, wx.ALIGN_CENTER | wx.TOP, 0)
 
             item_panel.SetSizer(box)
-            self.grid_sizer.Add(item_panel, 0, wx.ALIGN_CENTER | wx.ALL, 0)
+            self.ProgramsPanelSizer.Add(item_panel, 0, wx.ALIGN_CENTER | wx.ALL, 0)
 
-        self.scroll_panel.Layout()
-        self.scroll_panel.FitInside()
+        self.ProgramsPanel.Layout()
+        self.ProgramsPanel.FitInside()
         self.GenerateMenuPanel(None)
 
     def RConfigure(self, function_to_run, *args):
@@ -1474,13 +1454,13 @@ class MainWindow(wx.Frame):
         try:
             self.optionFrame.SetFocus()
         except:
-            self.optionFrame = options.MainWindow(self, -1, _("{0} settings").format(os.environ["APPLICATION_TITLE"]),
+            self.optionFrame = Options.MainWindow(self, -1, _("{0} settings").format(os.environ["APPLICATION_TITLE"]),
                                                   2)
             if (onglet == 211):
-                self.optionFrame = options.MainWindow(self, -1,
+                self.optionFrame = Options.MainWindow(self, -1,
                                                       _("{0} settings").format(os.environ["APPLICATION_TITLE"]), 0)
             if (onglet == 214):
-                self.optionFrame = options.MainWindow(self, -1,
+                self.optionFrame = Options.MainWindow(self, -1,
                                                       _("{0} settings").format(os.environ["APPLICATION_TITLE"]), 1)
             self.optionFrame.Center(wx.BOTH)
             self.optionFrame.Show(True)
@@ -1496,7 +1476,7 @@ class MainWindow(wx.Frame):
             self.debugFrame.Show()
             self.debugFrame.SetFocus()
         except:
-            self.debugFrame = debug.MainWindow(None, -1, _("{0} debugger").format(os.environ["APPLICATION_TITLE"]))
+            self.debugFrame = Debug.MainWindow(None, -1, _("{0} debugger").format(os.environ["APPLICATION_TITLE"]))
             self.debugFrame.Center(wx.BOTH)
             self.debugFrame.Show()
 
@@ -1570,25 +1550,25 @@ class MainWindow(wx.Frame):
             self.wversion.Show(True)
 
     def GetSelectedProgram(self):
-        return self.selected_program
+        return self.SelectedProgram
 
     def Run(self, event, s_debug=False):
 
         game_exec = self.GetSelectedProgram()
-        game_prefix = playonlinux.getPrefix(game_exec)
+        game_prefix = PlayOnLinux.getPrefix(game_exec)
 
         if (s_debug == False):
-            playonlinux.SetDebugState(game_exec, game_prefix, False)
+            PlayOnLinux.SetDebugState(game_exec, game_prefix, False)
 
         if (os.path.exists(os.environ["POL_USER_ROOT"] + "/wineprefix/" + game_prefix)):
             if (game_exec != ""):
-                if (playonlinux.GetDebugState(game_exec)):
+                if (PlayOnLinux.GetDebugState(game_exec)):
                     try:
                         self.debugFrame.analyseReal(0, game_prefix)
                         self.debugFrame.Show()
                         self.debugFrame.SetFocus()
                     except:
-                        self.debugFrame = debug.MainWindow(None, -1,
+                        self.debugFrame = Debug.MainWindow(None, -1,
                                                            _("{0} debugger").format(os.environ["APPLICATION_TITLE"]),
                                                            game_prefix, 0)
                         self.debugFrame.Center(wx.BOTH)
@@ -1604,15 +1584,15 @@ class MainWindow(wx.Frame):
 
     def RunDebug(self, event):
         game_exec = self.GetSelectedProgram()
-        game_prefix = playonlinux.getPrefix(game_exec)
-        playonlinux.SetDebugState(game_exec, game_prefix, True)
+        game_prefix = PlayOnLinux.getPrefix(game_exec)
+        PlayOnLinux.SetDebugState(game_exec, game_prefix, True)
         self.Run(self, True)
 
     def sendfeedback(self, event):
         game_exec = self.GetSelectedProgram()
-        game_log = str(playonlinux.getLog(game_exec))
+        game_log = str(PlayOnLinux.getLog(game_exec))
         if game_log:
-            playonlinux.POL_Open(
+            PlayOnLinux.POL_Open(
                 "http://www." + os.environ["POL_DNS"] + "/repository/feedback.php?script=" + urllib.parse.quote_plus(
                     game_log))
 
@@ -1658,16 +1638,16 @@ class MainWindow(wx.Frame):
             print("Registered PID: %d (%s)" % (pid, 'Present' if pid_exists else 'Missing'))
         self.registeredPid = pids
 
-        if (playonlinux.GetSettings(
+        if (PlayOnLinux.GetSettings(
                 "DONT_ASK_BEFORE_CLOSING") == "TRUE" or self.registeredPid == [] or wx.YES == wx.MessageBox(
                 _('Are you sure you want to close all {0} windows?').format(os.environ["APPLICATION_TITLE"]), os.environ["APPLICATION_TITLE"], style=wx.YES_NO | wx.ICON_QUESTION)):
             self.SizeToSave = self.GetSize()
             self.PositionToSave = self.GetPosition()
             # Save size and position
-            playonlinux.SetSettings("MAINWINDOW_WIDTH", str(self.SizeToSave[0]))
-            playonlinux.SetSettings("MAINWINDOW_HEIGHT", str(self.SizeToSave[1] - Variables.windows_add_playonmac * 56))
-            playonlinux.SetSettings("MAINWINDOW_X", str(self.PositionToSave[0]))
-            playonlinux.SetSettings("MAINWINDOW_Y", str(self.PositionToSave[1]))
+            PlayOnLinux.SetSettings("MAINWINDOW_WIDTH", str(self.SizeToSave[0]))
+            PlayOnLinux.SetSettings("MAINWINDOW_HEIGHT", str(self.SizeToSave[1] - Variables.windows_add_playonmac * 56))
+            PlayOnLinux.SetSettings("MAINWINDOW_X", str(self.PositionToSave[0]))
+            PlayOnLinux.SetSettings("MAINWINDOW_Y", str(self.PositionToSave[1]))
 
             self._mgr.Destroy()
 
@@ -1824,14 +1804,14 @@ class PlayOnLinuxApp(wx.App):
                     os.environ["APPLICATION_TITLE"]), _("Error"))
 
         if (os.environ["DEBIAN_PACKAGE"] == "FALSE"):
-            if (playonlinux.GetSettings("SEND_REPORT") == ""):
+            if (PlayOnLinux.GetSettings("SEND_REPORT") == ""):
                 if (wx.YES == wx.MessageBox(_(
                         'Do you want to help {0} to make a compatibility database?\n\nIf you click yes, the following things will be sent to us anonymously the first time you run a Windows program:\n\n- Your graphic card model\n- Your OS version\n- If graphic drivers are installed or not.\n\n\nThese information will be very precious for us to help people.').format(
                         os.environ["APPLICATION_TITLE"]), os.environ["APPLICATION_TITLE"],
                                             style=wx.YES_NO | wx.ICON_QUESTION)):
-                    playonlinux.SetSettings("SEND_REPORT", "TRUE")
+                    PlayOnLinux.SetSettings("SEND_REPORT", "TRUE")
                 else:
-                    playonlinux.SetSettings("SEND_REPORT", "FALSE")
+                    PlayOnLinux.SetSettings("SEND_REPORT", "FALSE")
 
         #### Other import checks
         self.singleCheckFatal("nc", package="Netcat")
@@ -1893,7 +1873,7 @@ class PlayOnLinuxApp(wx.App):
                     os.environ["APPLICATION_TITLE"], style=wx.YES_NO | wx.ICON_QUESTION)):
                 subprocess.Popen(["bash", Variables.playonlinux_env + "/bash/playonlinux-pkg", "-i", filename])
         else:
-            playonlinux.open_document(filename, file_extension.lower())
+            PlayOnLinux.open_document(filename, file_extension.lower())
 
     def MacOpenURL(self, url):
         if (os.environ["POL_OS"] == "Mac" and not "playonmac://" in url):
@@ -1912,19 +1892,16 @@ class PlayOnLinuxApp(wx.App):
         # sys.exit()
         self.BringWindowToFront()
 
-
-# Idea taken from flacon
+# Idea taken from flacon / # Idea tomada del flacon
 def setSigchldHandler():
     signal.signal(signal.SIGCHLD, handleSigchld)
     if hasattr(signal, 'siginterrupt'):
         signal.siginterrupt(signal.SIGCHLD, False)
 
-
+# Apparently some UNIX systems automatically resent the SIGCHLD handler to SIG_DFL.  Reset it just in case.
+# Al parecer, algunos sistemas UNIX reenvían automáticamente el controlador SIGCHLD a SIG_DFL. Reinícielo por si acaso.
 def handleSigchld(number, frame):
-    # Apparently some UNIX systems automatically resent the SIGCHLD
-    # handler to SIG_DFL.  Reset it just in case.
     setSigchldHandler()
-
 
 setSigchldHandler()
 Lng.Lang()
@@ -1933,4 +1910,3 @@ wx.Log.EnableLogging(False)
 
 app = PlayOnLinuxApp(redirect=False)
 app.MainLoop()
-# sys.exit(0)
