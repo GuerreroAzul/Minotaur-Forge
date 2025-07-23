@@ -25,9 +25,6 @@
 ║ ❖ collections           ║ EN: Contains advanced data types.                                        ║
 ║                         ║ ES: Contiene tipos de datos avanzados.                                   ║
 ╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
-║ ❖ gettext               ║ EN: Provides internationalization services (I18N).                       ║
-║                         ║ ES: Proporciona servicios de internacionalización (I18N).                ║
-╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
 ║ ❖ gi.repository (Glib)  ║ EN: It is a base library for GNOME/GTK applications.                     ║
 ║                         ║ ES: Es una biblioteca base para aplicaciones GNOME/GTK.                  ║
 ╠═════════════════════════╬══════════════════════════════════════════════════════════════════════════╣
@@ -110,8 +107,8 @@ import lib.Variables as Variables
 import options as Options
 import setupwindow.gui_server as GuiServer
 import wine_versions.WineVersionsWindow as WineVersions
-from gettext import gettext as _
 from gi.repository import GLib
+from gettext import gettext as _
 
 # Set the program name / Establecer el nombre del programa
 GLib.set_prgname(os.environ["APPLICATION_TITLE"])
@@ -120,127 +117,94 @@ GLib.set_prgname(os.environ["APPLICATION_TITLE"])
 class POLWeb(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
-        self.sendToStatusBarStr = ""
-        self.sendAlertStr = None
+        self.SendToStatusBarStr = ""
+        self.SendAlertStr = None
         self.Gauge = False
         self.WebVersion = ""
         self.Show = False
-        self.perc = -1
-        self.updating = True
+        self.Perc = -1
+        self.Updating = True
 
-    # Displays dialogs in the status bar. / Muestra dialogos en la barra de estados.
-    def sendToStatusBar(self, message, gauge):
-        self.sendToStatusBarStr = message
-        self.Gauge = gauge
-        self.Show = True
-
-    # Displays the percentage of progress. / Muestra el porcentaje del progreso.
-    def sendPercentage(self, n):
-        self.perc = n
-
-    # Displays an alert dialog. / Muestra un dialogo de alerta.
-    def sendAlert(self, message):
-        self.sendAlertStr = message
+    # Check indicator / Indicador de chequeos
+    def Check(self):
+        self.WantCheck = True
 
     # Check out the latest version of PlayOnLinux / Consulta la ultima versión de PlayOnLinux
     def LastVersion(self):
         if (os.environ["POL_OS"] == "Mac"):
-            fichier_online = "version_mac"
+            FichierOnline = "version_mac"
         elif (os.environ["POL_OS"] == "FreeBSD"):
-            fichier_online = "version_freebsd"
+            FichierOnline = "version_freebsd"
         else:
-            fichier_online = "version2"
-        return os.popen(os.environ["POL_WGET"] + ' "' + os.environ["SITE"] + '/' + fichier_online + '.php?v=' + os.environ[
+            FichierOnline = "version2"
+        return os.popen(os.environ["POL_WGET"] + ' "' + os.environ["SITE"] + '/' + FichierOnline + '.php?v=' + os.environ[
                         "VERSION"] + '" -T 30 -O-', 'r').read()
 
     # Check and update the PlayOnLinux script list / Verifica y actualiza el listado de scripts de PlayOnLinux
-    def real_check(self):
+    def RealCheck(self):
         self.WebVersion = self.LastVersion()
 
         if (self.WebVersion == ""):
-            self.sendToStatusBar(
+            self.SendToStatusBar(
                 _('{0} website is unavailable. Please check your connection').format(os.environ["APPLICATION_TITLE"]),
                 False)
         else:
-            self.sendToStatusBar(_("Refreshing {0}").format(os.environ["APPLICATION_TITLE"]), True)
-            self.sendPercentage(0)
-            self.updating = True
+            self.SendToStatusBar(_("Refreshing {0}").format(os.environ["APPLICATION_TITLE"]), True)
+            self.SendPercentage(0)
+            self.Updating = True
             exe = ['bash', Variables.playonlinux_env + "/bash/pol_update_list"]
 
-            p = subprocess.Popen(exe, stdout=subprocess.PIPE, bufsize=1, universal_newlines=True,
-                                 preexec_fn=lambda: os.setpgid(os.getpid(), os.getpid()))
+            x = subprocess.Popen(exe, stdout=subprocess.PIPE, bufsize=1, universal_newlines=True,
+                preexec_fn=lambda: os.setpgid(os.getpid(), os.getpid()))
 
-            for line in iter(p.stdout.readline, ''):
+            for line in iter(x.stdout.readline, ''):
                 try:
-                    self.sendPercentage(int(line))
+                    self.SendPercentage(int(line))
                 except ValueError:
                     pass
 
-            self.updating = False
+            self.Updating = False
             if (PlayOnLinux.VersionLower(os.environ["VERSION"], self.WebVersion)):
-                self.sendToStatusBar(_('An updated version of {0} is available').format(
+                self.SendToStatusBar(_('An updated version of {0} is available').format(
                     os.environ["APPLICATION_TITLE"]) + " (" + self.WebVersion + ")", False)
                 if (os.environ["DEBIAN_PACKAGE"] == "FALSE"):
-                    self.sendAlert(_('An updated version of {0} is available').format(
+                    self.SendAlert(_('An updated version of {0} is available').format(
                         os.environ["APPLICATION_TITLE"]) + " (" + self.WebVersion + ")")
                 os.environ["POL_UPTODATE"] = "FALSE"
             else:
                 self.Show = False
-                self.perc = -1
+                self.Perc = -1
                 os.environ["POL_UPTODATE"] = "TRUE"
 
-        self.wantcheck = False
-
-    # Check indicator / Indicador de chequeos
-    def check(self):
-        self.wantcheck = True
+        self.WantCheck = False
 
     # Background checks / Verificaciones en segundo plano
-    def run(self):
+    def Run(self):
         self.check()
         while (1):
-            if (self.wantcheck == True):
-                self.real_check()
+            if (self.WantCheck == True):
+                self.RealCheck()
             time.sleep(1)
+
+    # Displays an alert dialog. / Muestra un dialogo de alerta.
+    def SendAlert(self, message):
+        self.SendAlertStr = message
+
+    # Displays the percentage of progress. / Muestra el porcentaje del progreso.
+    def SendPercentage(self, n):
+        self.Perc = n
+
+    # Displays dialogs in the status bar. / Muestra dialogos en la barra de estados.
+    def SendToStatusBar(self, message, gauge):
+        self.SendToStatusBarStr = message
+        self.Gauge = gauge
+        self.Show = True
 
 # Dynamic Panel Design / Diseño dinámico de paneles
 class PanelManager(wx.aui.AuiManager):
     def __init__(self, frame):
         wx.aui.AuiManager.__init__(self, frame)
-        self.startPerspective = self.SavePerspective()
-
-    # Extract the design name (perspective) / Extraer el nombre del diseño (perspectiva) 
-    def _getPerspectiveName(self):
-        name = self.SavePerspective().split("=")
-        name = name[1].split(";")
-        name = name[0]
-        return name
-    
-    # Obtain the current layout and replace the name with a fixed marker.
-    # Obtiene el layout actual y reemplaza el nombre por un marcador fijo.
-    def getPerspective(self):
-        return self.SavePerspective().replace(self._getPerspectiveName(), "PERSPECTIVE_NAME")
-
-    # Save the current interface design in the Playonlinux configuration, so that it can be restored later.
-    # Guarda el diseño actual de la interfaz en la configuración de PlayOnLinux, para que pueda ser restaurado más adelante.
-    def savePosition(self):
-        PlayOnLinux.SetSettings("PANEL_PERSPECTIVE", self.getPerspective())
-
-    # Restore the user interface design / Restaura el diseño de la interfaz de usuario 
-    def restorePosition(self):
-        self.startPerspective = self.SavePerspective()
-        self.Update()
-        
-        try:
-            setting = PlayOnLinux.GetSettings("PANEL_PERSPECTIVE")
-            if setting:
-                if (setting.count("Actions") < 2 or setting.count("dock_size") < 2 or not "PERSPECTIVE_NAME" in setting):
-                    self.LoadPerspective(self.startPerspective)
-                else:
-                    setting = setting.replace("PERSPECTIVE_NAME", self._getPerspectiveName())
-                    self.LoadPerspective(setting)
-        except wx._core.PyAssertionError:
-            self.LoadPerspective(self.startPerspective)
+        self.StartPerspective = self.SavePerspective()
 
     # Allows adding an "coupling panel" / Permite agregar un "Panel Acoplable"
     def AddPane(self, data, settings):
@@ -249,7 +213,40 @@ class PanelManager(wx.aui.AuiManager):
     # Save the (layout) position of the panels before closing or destroying the window
     # Guarda la posición (layout) de los paneles antes de cerrar o destruir la ventana
     def Destroy(self):
-        self.savePosition()
+        self.SavePosition()
+
+    # Obtain the current layout and replace the name with a fixed marker.
+    # Obtiene el layout actual y reemplaza el nombre por un marcador fijo.
+    def GetPerspective(self):
+        return self.SavePerspective().replace(self._GetPerspectiveName(), "PERSPECTIVE_NAME")
+
+    # Extract the design name (perspective) / Extraer el nombre del diseño (perspectiva) 
+    def _GetPerspectiveName(self):
+        Name = self.SavePerspective().split("=")
+        Name = Name[1].split(";")
+        Name = Name[0]
+        return Name
+
+    # Restore the user interface design / Restaura el diseño de la interfaz de usuario 
+    def RestorePosition(self):
+        self.StartPerspective = self.SavePerspective()
+        self.Update()
+        
+        try:
+            Setting = PlayOnLinux.GetSettings("PANEL_PERSPECTIVE")
+            if Setting:
+                if (Setting.count("Actions") < 2 or Setting.count("dock_size") < 2 or not "PERSPECTIVE_NAME" in Setting):
+                    self.LoadPerspective(self.StartPerspective)
+                else:
+                    Setting = Setting.replace("PERSPECTIVE_NAME", self._GetPerspectiveName())
+                    self.LoadPerspective(Setting)
+        except wx._core.PyAssertionError:
+            self.LoadPerspective(self.StartPerspective)
+
+    # Save the current interface design in the Playonlinux configuration, so that it can be restored later.
+    # Guarda el diseño actual de la interfaz en la configuración de PlayOnLinux, para que pueda ser restaurado más adelante.
+    def SavePosition(self):
+        PlayOnLinux.SetSettings("PANEL_PERSPECTIVE", self.GetPerspective())
 
 # Main window design / Diseño de ventana principal
 class MainWindow(wx.Frame):
@@ -263,8 +260,8 @@ class MainWindow(wx.Frame):
         self.windowOpened = 0
 
         # Manage updater / Administrador de actualizaciones
-        self.updater = POLWeb()
-        self.updater.start()
+        self.Updater = POLWeb()
+        self.Updater.start()
 
         # These lists contain the dock links and images / Estas listas contienen los enlaces y las imágenes del dock.
         self.menuElem = {}
@@ -304,7 +301,7 @@ class MainWindow(wx.Frame):
         self.images = wx.ImageList(self.iconSize, self.iconSize)
         self.imagesEmpty = wx.ImageList(1, 1)
 
-        self.sendAlertStr = None
+        self.SendAlertStr = None
 
         # Implementation of fonts / Implementación de fuentes
         if (os.environ["POL_OS"] == "Mac"):
@@ -315,7 +312,7 @@ class MainWindow(wx.Frame):
             self.fontText  = wx.Font( 8, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, "", wx.FONTENCODING_DEFAULT)
 
         # Central Panel (Programs) / Panel central (Programas)
-        self.ProgramsPanel = wx.ScrolledWindow(self, style=wx.VSCROLL | wx.HSCROLL)
+        self.ProgramsPanel = wx.ScrolledWindow(self, 105, style=wx.VSCROLL | wx.HSCROLL)
         self.ProgramsPanel.SetScrollRate(10, 10)
         self.ProgramsPanelSizer = wx.WrapSizer(wx.HORIZONTAL)
         self.ProgramsPanel.SetSizer(self.ProgramsPanelSizer)
@@ -348,9 +345,8 @@ class MainWindow(wx.Frame):
         self._mgr = PanelManager(self)
         self._mgr.AddPane(self.ProgramsPanel, wx.CENTER)
         self._mgr.AddPane(self.PersonalizationPanel,
-            wx.aui.AuiPaneInfo()
-                .Name(_('Actions'))
-                .Caption(_('Game Details'))
+            wx.aui.AuiPaneInfo().Name(_('Actions'))
+                .Caption(_('Actions'))
                 .Right()
                 .BestSize((200, 450))
                 .MinSize((200, -1))
@@ -392,10 +388,11 @@ class MainWindow(wx.Frame):
         self.FileMenu.Append(wx.ID_ADD, _("Install"))
         self.FileMenu.Append(wx.ID_DELETE, _("Remove"))
         self.FileMenu.AppendSeparator()
-        self.FileMenu.Append(216, _("Donate"))
+        #self.FileMenu.Append(216, _("Donate"))
         self.FileMenu.Append(wx.ID_EXIT, _("Exit"))
 
         # Display menu / Menu de Vista
+        '''
         self.displaymenu = wx.Menu()
         self.icon16 = self.displaymenu.AppendRadioItem(501, _("Small icons"))
         self.icon24 = self.displaymenu.AppendRadioItem(502, _("Medium icons"))
@@ -409,40 +406,107 @@ class MainWindow(wx.Frame):
             self.icon32.Check(True)
         if (self.iconSize == 48):
             self.icon48.Check(True)
+        '''
 
         # Expert menu / Menu avanzado
         self.ExpertMenu = wx.Menu()
-        self.ExpertMenu.Append(107, _("Manage Wine versions"))
+
+        # Manager Wine Version / Manejador de versiones de Wine
+        self.OptionManagerWineVer = wx.MenuItem(self.ExpertMenu, 107, _("Manage Wine versions"))
+        self.OptionManagerWineVer.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/etc/onglet/wine.png"))
+        self.ExpertMenu.Append(self.OptionManagerWineVer)
+
+        # Read a PC CD-Rom
         if (os.environ["POL_OS"] == "Mac"):
             self.ExpertMenu.AppendSeparator()
             self.ExpertMenu.Append(113, _("Read a PC CD-Rom"))
         else:
             self.ExpertMenu.AppendSeparator()
-        self.ExpertMenu.Append(108, _("Run a local script"))
-        self.ExpertMenu.Append(109, _("{0} console").format(os.environ["APPLICATION_TITLE"]))
-        self.ExpertMenu.Append(115, _('Close all {0} software').format(os.environ["APPLICATION_TITLE"]))
-        self.ExpertMenu.AppendSeparator()
-        self.ExpertMenu.Append(110, _("{0} debugger").format(os.environ["APPLICATION_TITLE"]))
+        
+        # Run a local script / Cargar un script local
+        self.OptionRunLocalScript = wx.MenuItem(self.ExpertMenu, 108, _("Run a local script"))
+        self.OptionRunLocalScript.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/media-playback-start.png"))
+        self.ExpertMenu.Append(self.OptionRunLocalScript)
+
+        # PlayOnLinux Console / Consola PlayOnLinux
+        self.OptionConsole = wx.MenuItem(self.ExpertMenu, 109, _("Open Console"))
+        self.OptionConsole.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/polshell.png"))
+        self.ExpertMenu.Append(self.OptionConsole)
+
+        # Close all PlayOnlinux software / Cerrar todas los programas PlayOnLinux
+        self.OptionCloseSoftware = wx.MenuItem(self.ExpertMenu, 115, _("Close all software"))
+        self.OptionCloseSoftware.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/window-close.png"))
+        self.ExpertMenu.Append(self.OptionCloseSoftware)
+
+        # Debugger / Depurador
+        self.OptionDebugger = wx.MenuItem(self.ExpertMenu, 110, _("Debugger"))
+        self.OptionDebugger.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/bug.png"))
+        self.ExpertMenu.Append(self.OptionDebugger)
 
         # Option Menu / Menu de opciones
-        self.OptionMenu = wx.Menu()
-        self.OptionMenu.Append(211, _("Internet"))
-        self.OptionMenu.Append(212, _("File associations"))
-        self.OptionMenu.Append(214, _("Plugin manager"))
+        self.SettingMenu = wx.Menu()
 
-        # Menu de Redes Sociales
+        # Internet
+        self.OptionInternet = wx.MenuItem(self.SettingMenu, 211, _("Internet"))
+        self.OptionInternet.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/internet.png"))
+        self.SettingMenu.Append(self.OptionInternet)
+
+        # File Associations / Asociacion de Archivos
+        self.OptionFileAssociation = wx.MenuItem(self.SettingMenu, 212, _("File associations"))
+        self.OptionFileAssociation.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/extensions.png"))       
+        self.SettingMenu.Append(self.OptionFileAssociation)
+
+        # Plugin Manager / Manejador de extensiones
+        self.OptionPluginManager = wx.MenuItem(self.SettingMenu, 214, _("Plugin manager"))
+        self.OptionPluginManager.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/etc/onglet/package-x-generic.png"))
+        self.SettingMenu.Append(self.OptionPluginManager)
+
+        # Social Menu / Menu de Redes Sociales
         self.SocialMenu = wx.Menu()
-        self.SocialMenu.Append(405, _("Twitter"))
-        self.SocialMenu.Append(406, _("Github"))
-        self.SocialMenu.Append(407, _("Facebook"))
 
-        # Support menu / Menu de Soporte
+        # Twitter
+        self.OptionTwitter = wx.MenuItem(self.SocialMenu, 405, _("Twitter"))
+        self.OptionTwitter.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/etc/onglet/internet-web-browser.png"))
+        self.SocialMenu.Append(self.OptionTwitter)
+
+        # Github
+        self.OptionGithub = wx.MenuItem(self.SocialMenu, 406, _("Github"))
+        self.OptionGithub.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/etc/onglet/preferences-desktop-theme.png"))
+        self.SocialMenu.Append(self.OptionGithub)
+    
+        # Facebook
+        self.OptionFacebook = wx.MenuItem(self.SocialMenu, 407, _("Facebook"))
+        self.OptionFacebook.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/etc/onglet/internet-group-chat.png"))
+        self.SocialMenu.Append(self.OptionFacebook)
+
+
+        # Support Menu / Menu de Soporte
         self.SupportMenu = wx.Menu()
-        self.SupportMenu.Append(400, _("Supported software"))
-        self.SupportMenu.Append(401, _("News"))
-        self.SupportMenu.Append(402, _("Documentation"))
-        self.SupportMenu.Append(403, _("Forums"))
-        self.SupportMenu.Append(404, _("Bugs"))
+
+        # Supported software / Soporte Programas
+        self.OptionSupportedSoftware = wx.MenuItem(self.SupportMenu, 400, _("Supported software"))
+        self.OptionSupportedSoftware.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/call-start.png"))       
+        self.SupportMenu.Append(self.OptionSupportedSoftware)
+
+        # News / Noticias
+        self.OptionNews = wx.MenuItem(self.SupportMenu, 401, _("News"))
+        self.OptionNews.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/icones/document-new.png"))       
+        self.SupportMenu.Append(self.OptionNews)
+
+        # Documentation / Documentación
+        self.OptionDocumentation = wx.MenuItem(self.SupportMenu, 402, _("Documentation"))
+        self.OptionDocumentation.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/setups/about.png"))       
+        self.SupportMenu.Append(self.OptionDocumentation)
+
+        # Forums / Foros
+        self.OptionForums = wx.MenuItem(self.SupportMenu, 403, _("Forums"))
+        self.OptionForums.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/people.png"))       
+        self.SupportMenu.Append(self.OptionForums)
+
+        # Bugs / Errores
+        self.OptionBugs = wx.MenuItem(self.SupportMenu, 404, _("Bugs"))
+        self.OptionBugs.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/resources/images/menu/bug.png"))       
+        self.SupportMenu.Append(self.OptionBugs)
 
         # Help Menu / Submenu de Ayuda
         self.HelpMenu = wx.Menu()
@@ -452,37 +516,41 @@ class MainWindow(wx.Frame):
         self.PluginsMenu = wx.Menu()
         files = os.listdir(Variables.playonlinux_rep + "/plugins")
         files.sort()
-        self.plugin_list = []
+        self.PluginList = []
         self.i = 0
         self.j = 0
+
+        # Plugins
         while (self.i < len(files)):
             if (os.path.exists(Variables.playonlinux_rep + "/plugins/" + files[self.i] + "/scripts/menu")):
                 if (os.path.exists(Variables.playonlinux_rep + "/plugins/" + files[self.i] + "/enabled")):
-                    self.plugin_item = wx.MenuItem(self.ExpertMenu, 300 + self.j, files[self.i])
+                    self.OptionPlugin = wx.MenuItem(self.ExpertMenu, 300 + self.j, files[self.i])
+                    self.OptionPluginIcon = Variables.playonlinux_rep + "/plugins/" + files[self.i] + "/icon"
 
-                    self.icon_look_for = Variables.playonlinux_rep + "/plugins/" + files[self.i] + "/icon"
-                    if (os.path.exists(self.icon_look_for)):
-                        self.bitmap = wx.Bitmap(self.icon_look_for)
+                    if (os.path.exists(self.OptionPluginIcon)):
+                        self.bitmap = wx.Bitmap(self.OptionPluginIcon)
                     else:
                         self.bitmap = wx.Bitmap(Variables.playonlinux_env + "/etc/playonlinux16.png")
 
-                    self.plugin_item.SetBitmap(self.bitmap)
-                    self.PluginsMenu.Append(self.plugin_item)
+                    self.OptionPlugin.SetBitmap(self.bitmap)
+                    self.PluginsMenu.Append(self.OptionPlugin)
                     self.Bind(wx.EVT_MENU, self.run_plugin, id=300 + self.j)
-                    self.plugin_list.append(files[self.i])
+                    self.PluginList.append(files[self.i])
                     self.j += 1
             self.i += 1
 
         if (self.j > 0):
             self.PluginsMenu.AppendSeparator()
 
-        self.option_item_p = wx.MenuItem(self.PluginsMenu, 214, _("Plugin manager"))
-        self.option_item_p.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/etc/onglet/package-x-generic.png"))
+        # Plugin Manager / Manejador de Plugin
+        self.OptionPluginManager = wx.MenuItem(self.PluginsMenu, 214, _("Plugin manager"))
+        self.OptionPluginManager.SetBitmap(wx.Bitmap(Variables.playonlinux_env + "/etc/onglet/package-x-generic.png"))
 
-        self.PluginsMenu.Append(self.option_item_p)
+        self.PluginsMenu.Append(self.OptionPluginManager)
 
         self.last_string = ""
 
+        # Barra de estado
         self.sb = wx.StatusBar(self, -1)
         self.sb.SetFieldsCount(2)
         self.sb.SetStatusWidths([self.GetSize()[0], -1])
@@ -500,13 +568,13 @@ class MainWindow(wx.Frame):
         # Menus bar / Barra de menu
         self.MenuBar = wx.MenuBar()
         self.MenuBar.Append(self.FileMenu, _("File"))
-        # self.MenuBar.Append(self.displaymenu, _("Display"))
-        self.MenuBar.Append(self.ExpertMenu, _("Tools"))
-        self.MenuBar.Append(self.OptionMenu, _("Settings"))
+        self.MenuBar.Append(self.ExpertMenu, ("Tools"))
+        self.MenuBar.Append(self.SettingMenu, ("Settings"))
         self.MenuBar.Append(self.PluginsMenu, _("Plugins"))
         self.MenuBar.Append(self.SupportMenu, _("Support"))
         self.MenuBar.Append(self.SocialMenu, _("Social"))
         self.MenuBar.Append(self.HelpMenu, _("Help"))
+        # self.MenuBar.Append(self.displaymenu, _("Display"))
         # self.MenuBar.Append(self.HelpMenu, _("About"))
 
         self.SetMenuBar(self.MenuBar)
@@ -515,26 +583,28 @@ class MainWindow(wx.Frame):
         # Tool bar / Barra de herramientas
         self.ToolBar = self.CreateToolBar(wx.TB_TEXT)
         self.ToolBar.SetToolBitmapSize(iconSize)
-        self.searchbox = wx.SearchCtrl(self.ToolBar, 124, style=wx.RAISED_BORDER)
-        self.playTool = self.ToolBar.AddTool(wx.ID_OPEN, _("Run"), wx.Bitmap(
-            Variables.playonlinux_env + "/resources/images/ToolBar/play.png"))
-        self.stopTool = self.ToolBar.AddTool(123, _("Close"), wx.Bitmap(
-            Variables.playonlinux_env + "/resources/images/ToolBar/stop.png"))
-
+        #self.searchbox = wx.SearchCtrl(self.ToolBar, 124, style=wx.RAISED_BORDER)
+        self.playTool = self.ToolBar.AddTool(wx.ID_OPEN, _("Run"), 
+            wx.Bitmap(Variables.playonlinux_env + "/resources/images/toolbar/play.png"))
+        self.stopTool = self.ToolBar.AddTool(123, _("Close"), 
+            wx.Bitmap(Variables.playonlinux_env + "/resources/images/toolbar/stop.png"))
         self.ToolBar.AddSeparator()
-        self.ToolBar.AddTool(wx.ID_ADD, _("Install"),
-                                  wx.Bitmap(Variables.playonlinux_env + "/resources/images/ToolBar/install.png"))
-        self.removeTool = self.ToolBar_remove = self.ToolBar.AddTool(wx.ID_DELETE, _("Remove"), wx.Bitmap(
-            Variables.playonlinux_env + "/resources/images/ToolBar/delete.png"))
+        self.ToolBar.AddTool(wx.ID_ADD, _("Install"), 
+            wx.Bitmap(Variables.playonlinux_env + "/resources/images/toolbar/install.png"))
+        self.removeTool = self.ToolBar_remove = self.ToolBar.AddTool(wx.ID_DELETE, _("Remove"), 
+            wx.Bitmap(Variables.playonlinux_env + "/resources/images/toolbar/delete.png"))
         self.ToolBar.AddSeparator()
-        self.ToolBar.AddTool(121, _("Configure"),
-                                  wx.Bitmap(Variables.playonlinux_env + "/resources/images/ToolBar/configure.png"))
-
+        self.ToolBar.AddTool(121, _("Configure"), 
+            wx.Bitmap(Variables.playonlinux_env + "/resources/images/toolbar/configure.png"))
+        self.ToolBar.AddTool(125, _("Extras"),
+            wx.Bitmap(Variables.playonlinux_env + "/resources/images/toolbar/emblem-downloads.png"))
+        
         try:
             self.ToolBar.AddStretchableSpace()
             self.SpaceHack = False
         except:
             #  wxpython 2.8 does not support AddStretchableSpace(). This is a dirty workaround for this.
+            #  wxpython 2.8 no admite AddStretchableSpace(). Esta es una solución sucia para esto.
             self.dirtyHack = wx.StaticText(self.ToolBar)
             self.SpaceHack = True
             self.ToolBar.AddControl(self.dirtyHack)
@@ -548,6 +618,7 @@ class MainWindow(wx.Frame):
             self.ToolBar.AddControl(self.searchbox)
             self.searchbox.SetDescriptiveText(_("Search"))
         '''
+
         # Event control / Control de eventos
         self.ToolBar.Realize()
         self.Reload(self)
@@ -630,22 +701,9 @@ class MainWindow(wx.Frame):
         self.Bind(wx.EVT_MENU, self.RKill, id=235)
         self.Bind(wx.EVT_MENU, self.ReadMe, id=236)
         self.Bind(wx.EVT_SIZE, self.ResizeWindow)
-        
-        self._mgr.restorePosition()
+
+        self._mgr.RestorePosition()
         self.PersonalizationPanel.SetAutoLayout(True)
-
-    def LoadGameCategoriesFromFiles(self):
-        dataDir = os.path.expanduser("~/.PlayOnLinux/icones/data/")
-        GameCategories = {}
-        if os.path.exists(dataDir):
-            for fname in os.listdir(dataDir):
-                if fname.endswith(".csv"):
-                    gameName = fname[:-4]
-                    with open(os.path.join(dataDir, fname), encoding="utf-8") as f:
-                        category = f.read().strip().lower()
-                    GameCategories[gameName] = category
-        return GameCategories
-
     def GenerateMenuCategory(self):
         # Limpia el panel izquierdo
         self.CategoryPanel.Freeze()
@@ -695,26 +753,10 @@ class MainWindow(wx.Frame):
         self.CategoryPanel.Layout()
         self.CategoryPanel.Thaw()
 
-    def OnCategoryClear(self, event):
-        self.CategorySearchBox.SetValue("")
-        self.OnSearch(None)
-
-    def OnResize(self, event):
-        event.Skip()
-        
-        # Ajustar tamaño del panel derecho
-        pane_info = self._mgr.GetPane(self.PersonalizationPanel)
-        pane_info.BestSize((270, self.GetSize().height - 50))
-        self._mgr.Update()
-        
-        # Forzar redibujado del contenido
-        if hasattr(self, 'menuElem'):
-            for item in self.menuElem.values():
-                item.Wrap(250)  # Reajustar texto al nuevo ancho
-        
-        self.ProgramsPanel.Layout()
-        self.ProgramsPanel.FitInside()
-        event.Skip()
+    def ConfigureGame(self):
+        if self.SelectedProgram:
+            print(f"Configurar: {self.SelectedProgram}")
+            # Aquí iría el código real para abrir la configuración
 
     def LaunchGame(self, event):
         widget = event.GetEventObject()
@@ -723,6 +765,22 @@ class MainWindow(wx.Frame):
             self.SelectedProgram = game_name  # <--- guardar la selección
             shortcut_path = os.path.expanduser(f'~/.PlayOnLinux/shortcuts/\"{game_name}\"')
             os.system(f'{shortcut_path} &')
+
+    def LoadGameCategoriesFromFiles(self):
+        dataDir = os.path.expanduser("~/.PlayOnLinux/icones/data/")
+        GameCategories = {}
+        if os.path.exists(dataDir):
+            for fname in os.listdir(dataDir):
+                if fname.endswith(".csv"):
+                    gameName = fname[:-4]
+                    with open(os.path.join(dataDir, fname), encoding="utf-8") as f:
+                        category = f.read().strip().lower()
+                    GameCategories[gameName] = category
+        return GameCategories
+
+    def OnCategoryClear(self, event):
+        self.CategorySearchBox.SetValue("")
+        self.OnSearch(None)
 
     def OnGameRightClick(self, event):
         widget = event.GetEventObject()
@@ -746,16 +804,6 @@ class MainWindow(wx.Frame):
         self.PopupMenu(menu)
         menu.Destroy()
 
-    def ConfigureGame(self):
-        if self.SelectedProgram:
-            print(f"Configurar: {self.SelectedProgram}")
-            # Aquí iría el código real para abrir la configuración
-
-    def RemoveGame(self):
-        if self.SelectedProgram:
-            print(f"Quitar: {self.SelectedProgram}")
-            # Aquí iría el código real para eliminar el juego
-
     def OnHover(self, event):
         event.GetEventObject().SetCursor(wx.Cursor(wx.CURSOR_HAND))
         event.Skip()
@@ -764,87 +812,29 @@ class MainWindow(wx.Frame):
         event.GetEventObject().SetCursor(wx.Cursor(wx.CURSOR_ARROW))
         event.Skip()
 
-    def ResizeWindow(self, e):
-        self.UpdateGaugePos()
-        self.UpdateSearchHackSize()
+    def OnResize(self, event):
+        event.Skip()
+        
+        # Ajustar tamaño del panel derecho
+        pane_info = self._mgr.GetPane(self.PersonalizationPanel)
+        pane_info.BestSize((270, self.GetSize().height - 50))
+        self._mgr.Update()
+        
+        # Forzar redibujado del contenido
+        if hasattr(self, 'menuElem'):
+            for item in self.menuElem.values():
+                item.Wrap(250)  # Reajustar texto al nuevo ancho
+        
+        self.ProgramsPanel.Layout()
+        self.ProgramsPanel.FitInside()
+        event.Skip()
 
-    def UpdateSearchHackSize(self):
-        if (self.SpaceHack == True):
-            self.dirtyHack.SetLabel("")
-            self.dirtyHack.SetSize((50, 1))
 
-    def UpdateGaugePos(self):
-        if (os.environ["POL_OS"] == "Mac"):
-            hauteur = 2
-        else:
-            hauteur = 6
-        self.jauge_update.SetPosition((self.GetSize()[0] - 100, hauteur))
 
-    def SetupWindowTimer_SendToGui(self, recvData):
-        recvData = recvData.split("\t")
-        while (self.SetupWindowTimer_action != None):
-            time.sleep(0.1)
-        self.SetupWindowTimer_action = recvData
-
-    def SetupWindow_TimerRestart(self, time):
-        if (time != self.SetupWindowTimer_delay):
-            self.SetupWindowTimer.Stop()
-            self.SetupWindowTimer.Start(time)
-            self.SetupWindowTimer_delay = time
-
-    def SetupWindowAction(self, event):
-        if (self.windowOpened == 0):
-            self.SetupWindow_TimerRestart(100)
-        else:
-            self.SetupWindow_TimerRestart(10)
-
-        if (self.SetupWindowTimer_action != None):
-            return GuiServer.readAction(self)
-
-    def TimerAction(self, event):
-        self.StatusRead()
-
-        # We read shortcut folder to see if it has to be rescanned
-        currentShortcuts = os.path.getmtime(Variables.playonlinux_rep + "/shortcuts")
-        currentIcons = os.path.getmtime(Variables.playonlinux_rep + "/icones/32")
-        if (currentShortcuts != self.Timer_LastShortcutList or currentIcons != self.Timer_LastIconList):
-            self.Reload(self)
-            self.Timer_LastShortcutList = currentShortcuts
-            self.Timer_LastIconList = currentIcons
-
-    def StatusRead(self):
-        self.sb.SetStatusText(self.updater.sendToStatusBarStr, 0)
-        if (self.updater.Gauge == True):
-            perc = self.updater.perc
-            if (perc == -1):
-                self.jauge_update.Pulse()
-            else:
-                try:
-                    self.installFrame.percentageText.SetLabel(str(perc) + " %")
-                except:
-                    pass
-                self.jauge_update.SetValue(perc)
-            self.jauge_update.Show()
-        else:
-            self.jauge_update.Hide()
-
-        try:
-            if (self.updater.updating == True):
-                self.sb.Show()
-                ## TODO: Refactor
-                self.installFrame.setWaitState(True)
-            else:
-                self.sb.Hide()
-                self.installFrame.setWaitState(False)
-                self.installFrame.Refresh()
-        except RuntimeError:
-            pass
-        except AttributeError:  # FIXME: Install Frame is not opened
-            pass
-
-        if (self.updater.sendAlertStr != self.sendAlertStr):
-            wx.MessageBox(self.updater.sendAlertStr, os.environ["APPLICATION_TITLE"], wx.OK | wx.CENTER, self)
-            self.sendAlertStr = self.updater.sendAlertStr
+    def RemoveGame(self):
+        if self.SelectedProgram:
+            print(f"Quitar: {self.SelectedProgram}")
+            # Aquí iría el código real para eliminar el juego
 
     def RMBInGameList(self, event):
         self.GameListPopUpMenu = wx.Menu()
@@ -883,6 +873,93 @@ class MainWindow(wx.Frame):
     def RWineConfigurator(self, event):
         self.RConfigure("winecfg")
 
+    def ResizeWindow(self, e):
+        self.UpdateGaugePos()
+        self.UpdateSearchHackSize()
+
+    def SetupWindowAction(self, event):
+        if (self.windowOpened == 0):
+            self.SetupWindow_TimerRestart(100)
+        else:
+            self.SetupWindow_TimerRestart(10)
+
+        if (self.SetupWindowTimer_action != None):
+            return GuiServer.readAction(self)
+
+    def SetupWindowTimer_SendToGui(self, recvData):
+        recvData = recvData.split("\t")
+        while (self.SetupWindowTimer_action != None):
+            time.sleep(0.1)
+        self.SetupWindowTimer_action = recvData
+
+    def SetupWindow_TimerRestart(self, time):
+        if (time != self.SetupWindowTimer_delay):
+            self.SetupWindowTimer.Stop()
+            self.SetupWindowTimer.Start(time)
+            self.SetupWindowTimer_delay = time
+
+    def StatusRead(self):
+        self.sb.SetStatusText(self.Updater.SendToStatusBarStr, 0)
+        if (self.Updater.Gauge == True):
+            Perc = self.Updater.Perc
+            if (Perc == -1):
+                self.jauge_update.Pulse()
+            else:
+                try:
+                    self.installFrame.percentageText.SetLabel(str(Perc) + " %")
+                except:
+                    pass
+                self.jauge_update.SetValue(Perc)
+            self.jauge_update.Show()
+        else:
+            self.jauge_update.Hide()
+
+        try:
+            if (self.Updater.updating == True):
+                self.sb.Show()
+                ## TODO: Refactor
+                self.installFrame.setWaitState(True)
+            else:
+                self.sb.Hide()
+                self.installFrame.setWaitState(False)
+                self.installFrame.Refresh()
+        except RuntimeError:
+            pass
+        except AttributeError:  # FIXME: Install Frame is not opened
+            pass
+
+        if (self.Updater.SendAlertStr != self.SendAlertStr):
+            wx.MessageBox(self.Updater.SendAlertStr, os.environ["APPLICATION_TITLE"], wx.OK | wx.CENTER, self)
+            self.SendAlertStr = self.Updater.SendAlertStr
+
+    def TimerAction(self, event):
+        self.StatusRead()
+
+        # We read shortcut folder to see if it has to be rescanned
+        currentShortcuts = os.path.getmtime(Variables.playonlinux_rep + "/shortcuts")
+        currentIcons = os.path.getmtime(Variables.playonlinux_rep + "/icones/32")
+        if (currentShortcuts != self.Timer_LastShortcutList or currentIcons != self.Timer_LastIconList):
+            self.Reload(self)
+            self.Timer_LastShortcutList = currentShortcuts
+            self.Timer_LastIconList = currentIcons
+
+    def UpdateSearchHackSize(self):
+        if (self.SpaceHack == True):
+            self.dirtyHack.SetLabel("")
+            self.dirtyHack.SetSize((50, 1))
+
+    def UpdateGaugePos(self):
+        if (os.environ["POL_OS"] == "Mac"):
+            hauteur = 2
+        else:
+            hauteur = 6
+        self.jauge_update.SetPosition((self.GetSize()[0] - 100, hauteur))
+
+
+
+
+
+
     def RKill(self, event):
         self.RConfigure("kprocess")
 
@@ -898,7 +975,7 @@ class MainWindow(wx.Frame):
 
     def run_plugin(self, event):
         game_exec = self.GetSelectedProgram()
-        plugin = self.plugin_list[event.GetId() - 300]
+        plugin = self.PluginList[event.GetId() - 300]
         try:
             subprocess.Popen(["bash", Variables.playonlinux_rep + "/plugins/" + plugin + "/scripts/menu", game_exec])
         except:
@@ -1344,23 +1421,26 @@ class MainWindow(wx.Frame):
         else:
             webbrowser.open("http://www.playonlinux.com/en/Donate.html")
 
+    # Actualizar ventana
     def Reload(self, event=None):
-        for child in self.ProgramsPanel.GetChildren():
-            child.Destroy()
-        self.ProgramsPanelSizer.Clear(True)
-
-        # Obtiene lista de accesos directos (juegos)
-        shortcuts_path = os.path.join(Variables.playonlinux_rep, "shortcuts")
+        # Lista de softwares
+        DirListSoftware = os.path.join(Variables.playonlinux_rep, "shortcuts")
         try:
-            self.games = sorted(os.listdir(shortcuts_path), key=str.upper)
+            self.games = sorted(os.listdir(DirListSoftware), key=str.upper)
         except Exception as e:
             print(f"Error cargando accesos directos: {e}")
             self.games = []
+
+        # Limpiar lista de software
+        for Panel in self.ProgramsPanel.GetChildren():
+            Panel.Destroy()
+        self.ProgramsPanelSizer.Clear(True)
 
         # Elimina archivos ocultos de macOS si existen
         if ".DS_Store" in self.games:
             self.games.remove(".DS_Store")
 
+        # Establece el tamaño del cover
         display_size = (240, 120)
 
         search_query = self.CategorySearchBox.GetValue().lower() if hasattr(self, "CategorySearchBox") else ""
@@ -1375,7 +1455,7 @@ class MainWindow(wx.Frame):
             if selected_cat != "all" and cat != selected_cat:
                 continue
             # Saltar si es carpeta
-            if os.path.isdir(os.path.join(shortcuts_path, game)):
+            if os.path.isdir(os.path.join(DirListSoftware, game)):
                 continue
 
             item_panel = wx.Panel(self.ProgramsPanel)
@@ -1551,6 +1631,7 @@ class MainWindow(wx.Frame):
 
     def GetSelectedProgram(self):
         return self.SelectedProgram
+        #return self.ProgramsPanel
 
     def Run(self, event, s_debug=False):
 
