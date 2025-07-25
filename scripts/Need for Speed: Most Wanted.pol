@@ -21,7 +21,9 @@ CHANGELOG
   + Initial script.
 
 REFERENCE
-GuerreroAzul: Documentation POL. - https://www.playonlinux.com/en/app-406-Need_for_Speed_Most_Wanted.html
+[GuerreroAzul]
+Documentation POL: https://www.playonlinux.com/en/app-406-Need_for_Speed_Most_Wanted.html
+Icon Shortcut: https://www.veryicon.com/icons/game/nfs-most-wanted/nfs-most-wanted.html
 '
         
 [ "$PLAYONLINUX" = "" ] && exit 0

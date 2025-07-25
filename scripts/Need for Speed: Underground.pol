@@ -19,7 +19,9 @@ CHANGELOG
     + Architecture: 32bits
  
 REFERENCE
-GuerreroAzul: Documentation POL. - https://www.playonlinux.com/en/topic-2547-script_Need_For_Speed_Underground.html
+[GuerreroAzul]
+Documentation POL: https://www.playonlinux.com/en/topic-2547-script_Need_For_Speed_Underground.html
+Icon Shortcut: https://www.deviantart.com/blitzk93/gallery#content
 '
         
 [ "$PLAYONLINUX" = "" ] && exit 0

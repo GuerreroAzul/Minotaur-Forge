@@ -21,7 +21,9 @@ CHANGELOG
   + Initial script.
 
 REFERENCE
-GuerreroAzul: Documentation POL. - https://www.playonlinux.com/en/app-623-Need_for_Speed_Underground_2.html
+[GuerreroAzul]
+Documentation POL: https://www.playonlinux.com/en/app-623-Need_for_Speed_Underground_2.html
+Icon Shortcut: https://download.cnet.com/need-for-speed-underground-2/3000-windows-need-for-speed-underground-2.html
 '
         
 [ "$PLAYONLINUX" = "" ] && exit 0
@@ -36,7 +38,7 @@ OSVERSION="win7"
 EDITHOR="NSLW & GNU_Raziel, Dadu042 And GuerreroAzul"
 COMPANY="Electronic Arts"
 HOMEPAGE="https://www.ea.com/"
-LOGO="https://i.imgur.com/r0VkAIc.png"
+LOGO="https://i.imgur.com/KEmhmmY.png"
 BANNER="https://i.imgur.com/fo7SPl8.png"
  
 # Download Images
