@@ -4,51 +4,45 @@ Date: See changelog.
 Last revision: See changelog.
 Wine version used: See changelog.
 Distribution used to test: See changelog.
-Author: Dadu042
+Author: LinuxScripter
 License: Retail
  
 CHANGELOG
-[GuerrreroAzul] (2025-06-10 08-55 GMT-6) / Linux Mint 22.1 x86_64
+[GuerrreroAzul] (2025-06-16 19-42 GMT-6) / Linux Mint 22.1 x86_64
   The following features have been updated:
     + Wine version 9.0
   Added the following features:
     + System version: Windows 7
     + Category: Games
-[Dadu042] (2019-06-01 13:21) Wine 2.22 / Ubuntu 18.04 x64
-  Rewrite the script for because the previous (2009-10-31) fail working (on POL 4.3.4).
+[Dadu042] (2018-08-21 22-46)
   [Setting initial]
-    + Version wine: 2.22
-    + Category: Game;
-    + Version system: winxp
-  [Reference]
-    + Document: https://en.wikipedia.org/wiki/Grand_Theft_Auto_III
+    + Version wine: 3.0.2
 
  
 REFERENCE
 [GuerreroAzul]
-Documentation POL: https://www.playonlinux.com/en/app-239-Grand_Theft_Auto_III.html
-Mod Liberty Extended: https://libertycity.net/files/gta-3/191140-liberty-extended-2-0.html
-Mod Widescreen Fix: https://libertycity.net/files/gta-3/91934-gta-iii-widescreen-fix.html
-Icon Shortcut: https://libertycity.net/files/gta-3/165832-gta-3-icon-trilogy-style.html
+Documentation POL: https://www.playonlinux.com/en/app-225-Grand_Theft_Auto__Vice_City.html
+Mod Vice Extended: https://libertycity.net/files/gta-vice-city/167639-vice-extended-june-2025-update.html
+Icon Shortcut: https://www.deviantart.com/blitzk93/gallery#content
 '
         
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
  
 #Setting
-TITLE="Grand Theft Auto III + Liberty Extended"
-PREFIX="GTA3"
+TITLE="Grand Theft Auto: Vice City + Vice Extended"
+PREFIX="GTAVC"
 CATEGORY="Games;"
 WINEVERSION="9.0"
 OSVERSION="win7"
 EDITHOR="GuerreroAzul"
 COMPANY="Rockstar Games"
-HOMEPAGE="https://www.rockstargames.com/games/grandtheftauto3"
-LOGO="https://i.imgur.com/70JclLT.png"
-BANNER="https://i.imgur.com/3x8HfZH.png"
-SOFTWARE="https://archive.org/download/GTA3LE/GTA3LE.exe"
-MD5FILE="54decc23c31c47f42fe4fc8e188f0f83"
-FILESETUP="GTA3LE.exe"
+HOMEPAGE="https://www.rockstargames.com/games/vicecity"
+LOGO="https://i.imgur.com/wuS3euS.png"
+BANNER="https://i.imgur.com/28Pj9np.png"
+SOFTWARE="https://archive.org/download/GTAVCVE/GTAVCVE.exe"
+MD5FILE="8bb49cacb27e0fe823be444a4788ff14" 
+FILESETUP="GTAVCVE.exe"
 
 # Download Images
 mkdir "$POL_USER_ROOT/configurations/setups/$TITLE"
@@ -102,12 +96,12 @@ POL_Wine start /unix "$INSTALLER"
 POL_Wine_WaitExit "$TITLE"
 
 # Shortcut
-if [ -f "$POL_USER_ROOT/wineprefix/GTA3/drive_c/Program Files/Grand Theft Auto III/re3.exe" ]; then
-  SHORTCUT="Grand Theft Auto III + LE"
-  ARCHIVE="re3.exe"
+if [ -f "$POL_USER_ROOT/wineprefix/GTAVC/drive_c/Program Files/Grand Theft Auto Vice City/reVC.exe" ]; then
+  SHORTCUT="Grand Theft Auto: Vice City + VE"
+  ARCHIVE="reVC.exe"
 else
-  SHORTCUT="Grand Theft Auto III"
-  ARCHIVE="gta3.exe"
+  SHORTCUT="Grand Theft Auto: Vice City"
+  ARCHIVE="gta-vc.exe"
 fi
 
 POL_Shortcut "$ARCHIVE" "$SHORTCUT" "" "" "$CATEGORY"
