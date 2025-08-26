@@ -4,37 +4,40 @@ Date: See changelog.
 Last revision: See changelog.
 Wine version used: See changelog.
 Distribution used to test: See changelog.
-Author: benyaminl
+Author: GuerreroAzul
 License: Retail
  
 CHANGELOG
-[GuerrreroAzul] (2025-07-14 14-03 GMT-6) / Linux Mint 22.1 x86_64
-  Added the following features:
+[GuerrreroAzul] (2025-08-08 20-26 GMT-6) / Linux Mint 22.1 x86_64
+  Script creation:
     + Wine version 9.0
     + System version: Windows 10
-    + Category: Office
-[benyaminl] (2023-05-01 13-26)
-  Script creation
+    + Category: Accesories
+[thib25] (2009-10-08 19-10) 
+  Script creation:
+    + Wine version: 1.1.30
+    + Architecture: 32bits
  
 REFERENCE
 [GuerreroAzul]
-Documentation POL: https://www.playonlinux.com/en/app-4559-Sumatra_PDF.html
-Link Download: https://www.sumatrapdfreader.org/download-prev
+Documentation POL: https://www.playonlinux.com/en/topic-2960-Colin_Mcrae_Rally_2.html
+Link Download: https://evernote.com/es-es/download
+Icon Shortcut: https://www.deviantart.com/loobootoo/art/Evernote-158267137
 '
         
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
  
 # Setting
-TITLE="Sumatra PDF"
-PREFIX="SPDF"
-CATEGORY="Office;"
+TITLE="Evernote"
+PREFIX="Evernote"
+CATEGORY="Accesories;"
 WINEVERSION="9.0"
 OSVERSION="win10"
-EDITHOR="benyaminl And GuerreroAzul"
+EDITHOR="GuerreroAzul"
 COMPANY="Codemasters"
 HOMEPAGE="https://www.ea.com/ea-studios/codemasters"
-LOGO="https://i.imgur.com/kDyiw2b.png"
+LOGO="https://i.imgur.com/WN1PF5O.png"
 BANNER="https://i.imgur.com/ST9Jm11.png"
 
 # Download Images
