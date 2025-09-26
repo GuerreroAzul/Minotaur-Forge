@@ -21,7 +21,7 @@
 source "$PLAYONLINUX/lib/sources"
 
 # Declaration of variables
-TITLE="Amazing Adventures: The Lost Tomb"
+TITLE="Amazing Adventures The Lost Tomb"
 PREFIX="AATLT"
 CATEGORY="Games;"
 WINEVERSION="9.0"
@@ -31,9 +31,6 @@ COMPANY="PopCap Games"
 HOMEPAGE="https://www.ea.com/es/games/amazing-adventures/amazing-adventures-the-lost-tomb"
 LOGO="https://i.imgur.com/cFCoEHR.png"
 BANNER="https://i.imgur.com/YoLtCeH.png"
-URL="https://archive.org/download/Game-POL/Amazing%20Adventures%20-%20The%20Lost%20Tomb%20%28ES%29/x86/1.0.0.1/setup.exe"
-MD5URL="d9be0b450da5c3f36402398412882273"
-FILE="setup.exe"
 
 
 # Download Images
@@ -71,16 +68,25 @@ POL_Call POL_Install_d3dx9
 # Select mode install
 POL_SetupWindow_InstallMethod "LOCAL, DOWNLOAD"
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
-    POL_Download_Resource "$URL" "$MD5URL" "$PREFIX"
-    INSTALLER="$POL_USER_ROOT/ressources/$PREFIX/$FILE"
-else
-    POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
-    INSTALLER="$APP_ANSWER"
-fi
+  # Compressor GuerreroAzul
+  if [ ! -f "$HOME/.local/bin/aaz" ]; then
+    POL_Download_Resource "https://archive.org/download/DLL-POL/aaz.sh" "53551e6e55190e7613a69eb76f32ceef" "aaz"
+    mkdir -p "$HOME/.local/bin"
+    cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
+    chmod +x "$HOME/.local/bin/aaz"
+  fi
 
-# Install Program
-POL_Wine start /unix "$INSTALLER"
-POL_Wine_WaitExit "$INSTALLER"
+  # Install Program
+  POL_Download_Resource "https://archive.org/download/Game-POL/Amazing%20Adventures%20-%20The%20Lost%20Tomb/archive.aaz" "36976aa64e158dad112e7bfcbbd93165" "$PREFIX"
+  aaz x "$POL_USER_ROOT/ressources/$PREFIX/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/"
+else
+  POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
+  INSTALLER="$APP_ANSWER"
+
+  # Install Program
+  POL_Wine start /unix "$INSTALLER"
+  POL_Wine_WaitExit "$INSTALLER"
+fi
 
 # Shortcut
 POL_Shortcut "AmazingAdventures.exe" "$TITLE" "" "" "$CATEGORY"
