@@ -1,0 +1,43 @@
+#!/bin/bash
+# Archivo Azul (AAZ)
+# Compresor personalizado para PlayOnLinux
+# Usa tar + zstd, extensión .aaz
+
+set -e
+
+function ayuda() {
+    echo "Uso: \$0 [c|x] archivo.aaz [carpeta|destino]"
+    echo "  c: comprimir -> \$0 c salida.aaz carpeta/"
+    echo "  x: extraer   -> \$0 x archivo.aaz [destino]"
+    exit 1
+}
+
+for cmd in tar zstd; do
+    command -v \$cmd >/dev/null 2>&1 || { echo "ERROR: falta \$cmd"; exit 1; }
+done
+
+[ \$# -lt 2 ] && ayuda
+
+accion=\$1
+archivo=\$2
+carpeta=\$3
+
+case \$accion in
+    c)
+        [ -z "\$carpeta" ] && ayuda
+        tar -cf - "\$carpeta" | zstd -19 -T0 -o "\$archivo"
+        echo "Archivo comprimido: \$archivo"
+        ;;
+    x)
+        if [ -z "\$carpeta" ]; then
+            zstd -d < "\$archivo" | tar -xf -
+        else
+            mkdir -p "\$carpeta"
+            zstd -d < "\$archivo" | tar -xf - -C "\$carpeta"
+        fi
+        echo "Archivo extraído de: \$archivo"
+        ;;
+    *)
+        ayuda
+        ;;
+esac
