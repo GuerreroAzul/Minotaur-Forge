@@ -8,7 +8,7 @@
  
 # CHANGELOG
 # [GuerreroAzul] 2025-09-27 06-06 (UTC -06-00) / wine 9.0 x86 / Linux Mint 22.2 x86_64
-#   Script version: 1.7.2
+#   Script version: 1.7.3
 #   - Updating to a dynamic software list.
 # [GuerreroAzul] 2024-08-16 13-03 (UTC -06-00) / Wine 9.0 x86 / Linux Mint 21.3 x86_64
 #   Script version: 1.7.1
@@ -108,11 +108,11 @@ if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
 
   # Download List
   mkdir -p "$POL_USER_ROOT/ressources/list/"
-  rm -f "$POL_USER_ROOT/ressources/list/WinBox.sh"
-  wget --header="User-Agent: Mozilla/5.0" -qO "$POL_USER_ROOT/ressources/list/WinBox.sh" "https://archive.org/download/Resources-POL/List%20URL/WinBox.sh"
+  rm -f "$POL_USER_ROOT/ressources/list/WinBox.lst"
+  wget --header="User-Agent: Mozilla/5.0" -qO "$POL_USER_ROOT/ressources/list/WinBox.lst" "https://archive.org/download/Resources-POL/List%20URL/WinBox.lst"
 
   # Charge list
-  source "$POL_USER_ROOT/ressources/list/WinBox.sh"
+  source "$POL_USER_ROOT/ressources/list/WinBox.lst"
 
   # [GuerreroAzul] List of WinBox versions
   POL_SetupWindow_menu "$(eval_gettext 'Select the version you want to install'):" "$TITLE" "$LISTVERSION" " "
