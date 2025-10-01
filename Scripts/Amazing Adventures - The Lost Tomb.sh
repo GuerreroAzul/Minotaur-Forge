@@ -9,6 +9,9 @@
 # License: GNU General Public License v3.0 
 
 # CHANGELOG
+# [GuerrreroAzul] 2025-09-30 21:03 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Script version: 1.0.2
+#     Updating to a dynamic software list.
 # [GuerrreroAzul] 2024-08-07 09:30 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 XFCE
 # Script creation:
 #   Wine version: 9.0
@@ -31,7 +34,6 @@ COMPANY="PopCap Games"
 HOMEPAGE="https://www.ea.com/es/games/amazing-adventures/amazing-adventures-the-lost-tomb"
 LOGO="https://i.imgur.com/cFCoEHR.png"
 BANNER="https://i.imgur.com/YoLtCeH.png"
-
 
 # Download Images
 mkdir "$POL_USER_ROOT/configurations/setups/$TITLE"
@@ -62,8 +64,19 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
-# Microsoft DirectX 9
-POL_Call POL_Install_d3dx9
+# Compressor AAZ
+if [ ! -f "$HOME/.local/bin/aaz" ]; then
+  POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
+  mkdir -p "$HOME/.local/bin"
+  cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
+  chmod +x "$HOME/.local/bin/aaz"
+fi
+
+# DirectX End-User Runtimes (June 2010)
+
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/archive.aaz" "57d73733cac213c3a126c935455d7b1d" "DirectX-2010.06"
+aaz x "$POL_USER_ROOT/ressources/DirectX-2010.06/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist"
+POL_Wine --ignore-errors "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist/DXSETUP.exe"
 
 # Select mode install
 POL_SetupWindow_InstallMethod "LOCAL, DOWNLOAD"
@@ -84,8 +97,20 @@ else
   INSTALLER="$APP_ANSWER"
 
   # Install Program
-  POL_Wine start /unix "$INSTALLER"
-  POL_Wine_WaitExit "$INSTALLER"
+  EXT="${INSTALLER##*.}"
+  
+  if [[ "$EXT" == "zip" ]]; then
+    # Archive zip
+    POL_Wine_WaitBefore "$TITLE"
+    unzip -q "$INSTALLER" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  elif [[ "$EXT" == "rar" ]]; then
+    # Archive rar
+    POL_Wine_WaitBefore "$TITLE"
+    unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  else
+    POL_Wine start /unix "$INSTALLER"
+    POL_Wine_WaitExit "$INSTALLER"
+  fi
 fi
 
 # Shortcut
