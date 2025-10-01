@@ -9,7 +9,7 @@
  
  # CHANGELOG
 # [GuerreroAzul] 2025-09-30 19:40 (UTC -06-00) / Wine 9.0 / Linux Mint 22.2 x86_64 xfce
-#   Script version: 1.0.0 (Creation of the script)
+#   Script version: 1.0.1 (Creation of the script)
 #   wine: 9.0
 #   version OS: winxp
 #   Category: Games
@@ -84,7 +84,6 @@ else
 
   # Install Program
   EXT="${INSTALLER##*.}"
-
   
   if [[ "$EXT" == "zip" ]]; then
     # Archive zip
