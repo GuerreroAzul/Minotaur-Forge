@@ -46,7 +46,7 @@ HOMEPAGE="https://www.rockstargames.com/games/grandtheftauto3"
 LOGO="https://i.imgur.com/70JclLT.png"
 BANNER="https://i.imgur.com/3x8HfZH.png"
 URL="https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/x86/setup.exe"
-MD5URL="2eab9b1e3e65c4fa941c1c0b12a13448"
+MD5URL="1199b999c3ca5177a1e06bdfa0e0ca2d"
 FILE="setup.exe"
 
 # Download Images
