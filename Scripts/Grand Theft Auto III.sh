@@ -8,6 +8,10 @@
 # License: Retail
  
 # CHANGELOG
+# [GuerreroAzul] 2025-10-03 11-47 (UTC -06-00) // Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Version: 1.0.3
+#   - Update URL Download Game
+#   - Update Funtions And Dependencies
 # [GuerrreroAzul] (2025-06-10 08-55 GMT-6) / Linux Mint 22.1 x86_64
 #   The following features have been updated:
 #     + Wine version 9.0
@@ -45,9 +49,6 @@ COMPANY="Rockstar Games"
 HOMEPAGE="https://www.rockstargames.com/games/grandtheftauto3"
 LOGO="https://i.imgur.com/70JclLT.png"
 BANNER="https://i.imgur.com/3x8HfZH.png"
-URL="https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/x86/setup.exe"
-MD5URL="1199b999c3ca5177a1e06bdfa0e0ca2d"
-FILE="setup.exe"
 
 # Download Images
 mkdir "$POL_USER_ROOT/configurations/setups/$TITLE"
@@ -78,39 +79,72 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
  
 # Dependencies
-# Microsoft DirectX 9
-POL_Call POL_Install_d3dx9
+# Compressor AAZ
+if [ ! -f "$HOME/.local/bin/aaz" ]; then
+  POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
+  mkdir -p "$HOME/.local/bin"
+  cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
+  chmod +x "$HOME/.local/bin/aaz"
+fi
+
+# DirectX End-User Runtimes (June 2010)
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/archive.aaz" "57d73733cac213c3a126c935455d7b1d" "DirectX-2010.06"
+aaz x "$POL_USER_ROOT/ressources/DirectX-2010.06/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist"
+POL_Wine --ignore-errors "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist/DXSETUP.exe"
  
 # Script start
+# Install for download
 POL_SetupWindow_InstallMethod "LOCAL, DVD, DOWNLOAD"
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
-    POL_Download_Resource "$URL" "$MD5URL" "$PREFIX"
-    INSTALLER="$POL_USER_ROOT/ressources/$PREFIX/$FILE"
-elif [ "$INSTALL_METHOD" = "DVD" ]; then
-    POL_SetupWindow_cdrom
-    POL_SetupWindow_check_cdrom "setup.exe" "SETUP.EXE"
-    INSTALLER="$CDROM/SETUP.EXE"
-    cd "$CDROM"
-else
-    POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
-    INSTALLER="$APP_ANSWER"
-fi
+  POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/archive.aaz" "5655223ca64495d08ccaf726e1a049d0" "$PREFIX"
+
+  # Unzip program
+  POL_Wine_WaitBefore "$TITLE"
+  aaz x "$POL_USER_ROOT/ressources/$PREFIX/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/"
  
-# Install Program
-POL_Wine start /unix "$INSTALLER"
-POL_Wine_WaitExit "$TITLE"
-
-# File save
-if [ -f "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/re3.exe" ]; then
+  # File save 
   rm -rf "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/LibertyExtended/userfiles"
+  mkdir -p "$(xdg-user-dir DOCUMENTS)/GTA3 User Files"
   ln -s "$(xdg-user-dir DOCUMENTS)/GTA3 User Files" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/LibertyExtended/userfiles"
-fi
-
-# Shortcut
-if [ -f "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/re3.exe" ]; then
+  
   POL_Shortcut "re3.exe" "$TITLE" "" "" "$CATEGORY"
   POL_Shortcut_QuietDebug "$TITLE"
+
+# Install CD/DVD
+elif [ "$INSTALL_METHOD" = "DVD" ]; then
+  POL_SetupWindow_cdrom
+  POL_SetupWindow_check_cdrom "setup.exe" "SETUP.EXE"
+  INSTALLER="$CDROM/SETUP.EXE"
+  cd "$CDROM"
+
+  # Install Program
+  POL_Wine start /unix "$INSTALLER"
+  POL_Wine_WaitExit "$TITLE"
+
+  POL_Shortcut "gta3.exe" "$TITLE" "" "" "$CATEGORY"
+  POL_Shortcut_QuietDebug "$TITLE"
+
+# Install local
 else
+  POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
+  INSTALLER="$APP_ANSWER"
+
+  # Install Program
+  EXT="${INSTALLER##*.}"
+  
+  if [[ "$EXT" == "zip" ]]; then
+    # Archive zip
+    POL_Wine_WaitBefore "$TITLE"
+    unzip -q "$INSTALLER" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  elif [[ "$EXT" == "rar" ]]; then
+    # Archive rar
+    POL_Wine_WaitBefore "$TITLE"
+    unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  else
+    POL_Wine start /unix "$INSTALLER"
+    POL_Wine_WaitExit "$INSTALLER"
+  fi
+
   POL_Shortcut "gta3.exe" "$TITLE" "" "" "$CATEGORY"
   POL_Shortcut_QuietDebug "$TITLE"
 fi
