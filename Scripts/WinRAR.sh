@@ -68,7 +68,7 @@ Set_OS "$OSVERSION"
 # Dependencies
 # Compressor AAZ
 # if [ ! -f "$HOME/.local/bin/aaz" ]; then
-#   POL_Download_Resource "https://archive.org/download/DLL-POL/aaz.sh" "53551e6e55190e7613a69eb76f32ceef" "aaz"
+#   POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
 #   mkdir -p "$HOME/.local/bin"
 #   cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
 #   chmod +x "$HOME/.local/bin/aaz"
@@ -121,18 +121,17 @@ b41bcf56929486b8bcdac33d50ecf773996052598f1f556defffbd
 aef69d48c864bcd72d15163897773d314187f6a9af350808719796' > "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$PREFIX/rarreg.key"
   #POL_Download_Resource "$URL" "$MD5URL" "$PREFIX"
   INSTALLER="$POL_USER_ROOT/ressources/$PREFIX/$FILE"
+
+  # Install Program
+  POL_Wine start /unix "$INSTALLER" /S
+  POL_Wine_WaitExit "$INSTALLER"
 else
   cd "$HOME"
   POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
   INSTALLER="$APP_ANSWER"
   FILE=$(echo "$INSTALLER" | rev | cut -d'/' -f1 | rev)
-fi
- 
-# Install Program
-if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
-  POL_Wine start /unix "$INSTALLER" /S
-  POL_Wine_WaitExit "$INSTALLER"
-else
+
+  # Install Program
   POL_Wine start /unix "$INSTALLER"
   POL_Wine_WaitExit "$INSTALLER"
 fi

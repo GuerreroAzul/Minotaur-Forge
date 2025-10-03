@@ -94,7 +94,7 @@ Set_OS "$OSVERSION"
 # Dependencies
 # Compressor AAZ
 # if [ ! -f "$HOME/.local/bin/aaz" ]; then
-#   POL_Download_Resource "https://archive.org/download/DLL-POL/aaz.sh" "53551e6e55190e7613a69eb76f32ceef" "aaz"
+#   POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
 #   mkdir -p "$HOME/.local/bin"
 #   cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
 #   chmod +x "$HOME/.local/bin/aaz"
