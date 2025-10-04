@@ -103,5 +103,5 @@ sudo chmod +x /usr/bin/playonlinux-bash
 2. Ejecutar el comando seguido del nombre del script. Ejemplo:
 
 ```
-playonlinux-bash script.pol
+playonlinux-bash script.sh
 ```
