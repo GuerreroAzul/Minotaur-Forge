@@ -9,9 +9,10 @@
  
 # CHANGELOG
 # [GuerreroAzul] 2025-10-03 11-47 (UTC -06-00) // Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
-#   Version: 1.0.3
+#   Version: 1.0.4
 #   - Update URL Download Game
 #   - Update Funtions And Dependencies
+#   - Suport for Mod Liberty Extended
 # [GuerrreroAzul] (2025-06-10 08-55 GMT-6) / Linux Mint 22.1 x86_64
 #   The following features have been updated:
 #     + Wine version 9.0
@@ -93,22 +94,15 @@ aaz x "$POL_USER_ROOT/ressources/DirectX-2010.06/archive.aaz" "$POL_USER_ROOT/wi
 POL_Wine --ignore-errors "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist/DXSETUP.exe"
  
 # Script start
-# Install for download
 POL_SetupWindow_InstallMethod "LOCAL, DVD, DOWNLOAD"
+# Install for download
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
+  # Download
   POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/archive.aaz" "5655223ca64495d08ccaf726e1a049d0" "$PREFIX"
 
   # Unzip program
   POL_Wine_WaitBefore "$TITLE"
   aaz x "$POL_USER_ROOT/ressources/$PREFIX/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/"
- 
-  # File save 
-  rm -rf "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/LibertyExtended/userfiles"
-  mkdir -p "$(xdg-user-dir DOCUMENTS)/GTA3 User Files"
-  ln -s "$(xdg-user-dir DOCUMENTS)/GTA3 User Files" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/LibertyExtended/userfiles"
-  
-  POL_Shortcut "re3.exe" "$TITLE" "" "" "$CATEGORY"
-  POL_Shortcut_QuietDebug "$TITLE"
 
 # Install CD/DVD
 elif [ "$INSTALL_METHOD" = "DVD" ]; then
@@ -120,9 +114,6 @@ elif [ "$INSTALL_METHOD" = "DVD" ]; then
   # Install Program
   POL_Wine start /unix "$INSTALLER"
   POL_Wine_WaitExit "$TITLE"
-
-  POL_Shortcut "gta3.exe" "$TITLE" "" "" "$CATEGORY"
-  POL_Shortcut_QuietDebug "$TITLE"
 
 # Install local
 else
@@ -144,7 +135,20 @@ else
     POL_Wine start /unix "$INSTALLER"
     POL_Wine_WaitExit "$INSTALLER"
   fi
+fi
 
+# Mod Liberty Extended
+if [ -f "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/re3.exe" ]; then
+  # File save 
+  rm -rf "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/LibertyExtended/userfiles"
+  mkdir -p "$(xdg-user-dir DOCUMENTS)/GTA3 User Files"
+  ln -s "$(xdg-user-dir DOCUMENTS)/GTA3 User Files" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/LibertyExtended/userfiles"
+  
+  # Shortcut
+  POL_Shortcut "re3.exe" "$TITLE" "" "" "$CATEGORY"
+  POL_Shortcut_QuietDebug "$TITLE"
+else
+  # Shortcut
   POL_Shortcut "gta3.exe" "$TITLE" "" "" "$CATEGORY"
   POL_Shortcut_QuietDebug "$TITLE"
 fi
