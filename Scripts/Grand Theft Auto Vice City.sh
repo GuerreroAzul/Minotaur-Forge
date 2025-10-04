@@ -8,6 +8,11 @@
 # License: Retail
  
 # CHANGELOG
+# [GuerreroAzul] 2025-10-03 16-33 (UTC -06-00) // Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Version: 1.0.3
+#   - Update URL Download Game
+#   - Update Funtions And Dependencies
+#   - Support Mod Vice Extended
 # [GuerrreroAzul] (2025-06-16 19-42 GMT-6) / Linux Mint 22.1 x86_64
 #   The following features have been updated:
 #     + Wine version 9.0
@@ -40,9 +45,6 @@ COMPANY="Rockstar Games"
 HOMEPAGE="https://www.rockstargames.com/games/vicecity"
 LOGO="https://i.imgur.com/wuS3euS.png"
 BANNER="https://i.imgur.com/28Pj9np.png"
-URL="https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20Vice%20City/x86/setup.exe"
-MD5URL="3e5718650121ed8d72654efecc315841" 
-FILE="setup.exe"
 
 # Download Images
 mkdir "$POL_USER_ROOT/configurations/setups/$TITLE"
@@ -73,39 +75,70 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
  
 # Dependencies
-# Microsoft DirectX 9
-POL_Call POL_Install_d3dx9
+# Compressor AAZ
+if [ ! -f "$HOME/.local/bin/aaz" ]; then
+  POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
+  mkdir -p "$HOME/.local/bin"
+  cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
+  chmod +x "$HOME/.local/bin/aaz"
+fi
  
 # Script start
+# Install for download
 POL_SetupWindow_InstallMethod "LOCAL, DVD, DOWNLOAD"
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
-    POL_Download_Resource "$URL" "$MD5URL" "$PREFIX"
-    INSTALLER="$POL_USER_ROOT/ressources/$PREFIX/$FILE"
+  # Download
+  POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20Vice%20City/archive.aaz" "129c76e1d15709b2f6e31ad8c2162480" "$PREFIX"
+
+  # Unzip program
+  POL_Wine_WaitBefore "$TITLE"
+  aaz x "$POL_USER_ROOT/ressources/$PREFIX/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/"
+
+# Install CD/DVD
 elif [ "$INSTALL_METHOD" = "DVD" ]; then
-    POL_SetupWindow_cdrom
-    POL_SetupWindow_check_cdrom "setup.exe" "SETUP.EXE"
-    INSTALLER="$CDROM/SETUP.EXE"
-    cd "$CDROM"
+  POL_SetupWindow_cdrom
+  POL_SetupWindow_check_cdrom "setup.exe" "SETUP.EXE"
+  INSTALLER="$CDROM/SETUP.EXE"
+  cd "$CDROM"
+
+  # Install Program
+  POL_Wine start /unix "$INSTALLER"
+  POL_Wine_WaitExit "$TITLE"
+
+# Install local
 else
-    POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
-    INSTALLER="$APP_ANSWER"
-fi
- 
-# Install Program
-POL_Wine start /unix "$INSTALLER"
-POL_Wine_WaitExit "$TITLE"
+  POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
+  INSTALLER="$APP_ANSWER"
 
-# File save
+  # Install Program
+  EXT="${INSTALLER##*.}"
+  
+  if [[ "$EXT" == "zip" ]]; then
+    # Archive zip
+    POL_Wine_WaitBefore "$TITLE"
+    unzip -q "$INSTALLER" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  elif [[ "$EXT" == "rar" ]]; then
+    # Archive rar
+    POL_Wine_WaitBefore "$TITLE"
+    unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  else
+    POL_Wine start /unix "$INSTALLER"
+    POL_Wine_WaitExit "$INSTALLER"
+  fi
+fi
+
+# Mod Vice Extended
 if [ -f "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto Vice City/reVC.exe" ]; then
+  # File save 
   rm -rf "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto Vice City/ViceExtended/userfiles"
+  mkdir -p "$(xdg-user-dir DOCUMENTS)/GTA Vice City User Files" 
   ln -s "$(xdg-user-dir DOCUMENTS)/GTA Vice City User Files" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto Vice City/ViceExtended/userfiles"
-fi
-
-# Shortcut
-if [ -f "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto Vice City/reVC.exe" ]; then
+  
+  # Shortcut
   POL_Shortcut "reVC.exe" "$TITLE" "" "" "$CATEGORY"
   POL_Shortcut_QuietDebug "$TITLE"
 else
+  # Shortcut
   POL_Shortcut "gtavc.exe" "$TITLE" "" "" "$CATEGORY"
   POL_Shortcut_QuietDebug "$TITLE"
 fi
