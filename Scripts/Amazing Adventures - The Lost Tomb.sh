@@ -64,33 +64,36 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
-# Compressor AAZ
-if [ ! -f "$HOME/.local/bin/aaz" ]; then
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
-  mkdir -p "$HOME/.local/bin"
-  cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
-  chmod +x "$HOME/.local/bin/aaz"
-fi
+# Verification of digital signatures and Microsoft certificates. (Download dll: https://es.dll-files.com/)
+# Crypto API32
+# POL_Download_Resource "https://archive.org/download/Resources-POL/CRYPT32/x86/10.0.19041.21/crypt32.dll" "26620d486c4892d15200149924be2cf8" "crypt32"
+# cp -f "$POL_USER_ROOT/ressources/crypt32/crypt32.dll" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/windows/system32/"
+# POL_Wine_OverrideDLL "native, builtin" crypt32.dll
+
+# Microsoft Abstract Syntax Notation 1
+# POL_Download_Resource "https://archive.org/download/Resources-POL/MSASN1/x86/10.0.18362.1/msasn1.dll" "5e66a3ed8f267aa2ccea3ffcfe9ffecc" "msasn1"
+# cp -f "$POL_USER_ROOT/ressources/msasn1/msasn1.dll" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/windows/system32/"
+# POL_Wine_OverrideDLL "native, builtin" msasn1.dll
+
+# Microsoft Trust Verification APIs
+# POL_Download_Resource "https://archive.org/download/Resources-POL/WINTRUST/x86/10.0.18362.387/wintrust.dll" "b403ccad0dda00a64bf49f975b7b5afd" "wintrust"
+# cp -f "$POL_USER_ROOT/ressources/wintrust/wintrust.dll" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/windows/system32/"
+# POL_Wine_OverrideDLL "native, builtin" wintrust.dll
+# POL_Wine regsvr32 /s wintrust.dll
 
 # DirectX End-User Runtimes (June 2010)
-POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/archive.aaz" "57d73733cac213c3a126c935455d7b1d" "DirectX-2010.06"
-aaz x "$POL_USER_ROOT/ressources/DirectX-2010.06/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist"
-POL_Wine --ignore-errors "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist/DXSETUP.exe"
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/directx_Jun2010_redist.exe" "822e4c516600e81dc7fb16d9a77ec6d4" "DirectX-2010.06"
+POL_Wine start /unix "$POL_USER_ROOT/ressources/DirectX-2010.06/directx_Jun2010_redist.exe" /Q /T:"C:/users/$USER/Temp/directx_Jun2010_redist"
+POL_Wine_WaitExit "DirectX End-User Runtimes (June 2010)"
+POL_Wine --ignore-errors "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist/DXSETUP.exe" &>/dev/null
+POL_Wine_WaitExit "DirectX End-User Runtimes (June 2010)"
 
 # Select mode install
 POL_SetupWindow_InstallMethod "LOCAL, DOWNLOAD"
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
-  # Compressor GuerreroAzul
-  if [ ! -f "$HOME/.local/bin/aaz" ]; then
-    POL_Download_Resource "https://archive.org/download/DLL-POL/aaz.sh" "53551e6e55190e7613a69eb76f32ceef" "aaz"
-    mkdir -p "$HOME/.local/bin"
-    cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
-    chmod +x "$HOME/.local/bin/aaz"
-  fi
-
   # Install Program
-  POL_Download_Resource "https://archive.org/download/Game-POL/Amazing%20Adventures%20-%20The%20Lost%20Tomb/archive.aaz" "36976aa64e158dad112e7bfcbbd93165" "$PREFIX"
-  aaz x "$POL_USER_ROOT/ressources/$PREFIX/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/"
+  POL_Download_Resource "https://archive.org/download/Game-POL/Amazing%20Adventures%20-%20The%20Lost%20Tomb/File.zip" "8f025f460c8c4da7aef5943137132706" "$PREFIX"
+  POL_System_unzip "$POL_USER_ROOT/ressources/$PREFIX/File.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
 else
   POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
   INSTALLER="$APP_ANSWER"
