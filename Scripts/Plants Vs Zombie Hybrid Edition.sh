@@ -32,7 +32,7 @@ CATEGORY="Games;"
 WINEVERSION="9.0"
 OSVERSION="win7"
 EDITHOR="GuerreroAzul"
-COMPANY="潜艇伟伟迷"
+COMPANY=""
 HOMEPAGE="https://www.pvzhe.com/"
 LOGO="https://i.imgur.com/40Ek4HL.png"
 BANNER="https://i.imgur.com/qZyKko1.png"
@@ -70,10 +70,10 @@ Set_OS "$OSVERSION"
 # Select mode install
 POL_SetupWindow_InstallMethod "LOCAL, DOWNLOAD"
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
-  POL_Download_Resource "https://archive.org/download/Game-POL/Plants%20Vs%20Zombies%20Hybrid%20Edition/3.9/File.zip" "71eba4b21b78d895a056ec63d7ba7680" "$PREFIX"
-  POL_System_unzip "$POL_USER_ROOT/ressources/$PREFIX/File.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp"
+  POL_Download_Resource "https://archive.org/download/Game-POL/Plants%20Vs%20Zombies%20Hybrid%20Edition/3.9/File.zip" "649c107ce586e175a0bbd14aebaf8a57" "$PREFIX"
+  POL_System_unzip "$POL_USER_ROOT/ressources/$PREFIX/File.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/PVZHE"
 
-  POL_Wine start /unix "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/植物大战僵尸杂交版v3.9/植物大战僵尸杂交版v3.9安装程序.exe"
+  POL_Wine start /unix "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/PVZHE/setup.exe"
     POL_Wine_WaitExit "$TITLE"
 else
   POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
