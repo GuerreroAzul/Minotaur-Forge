@@ -9,6 +9,12 @@
 # License: GNU General Public License v3.0 
 
 # CHANGELOG
+# [GuerrreroAzul] 2025-10-20 21:44 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Script version: 1.0.4
+#   Title correction on installation.
+# [GuerrreroAzul] 2025-09-30 21:03 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Script version: 1.0.3
+#   Update Link Download And Link Resources.
 # [GuerrreroAzul] 2025-09-30 21:03 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
 #   Script version: 1.0.2
 #     Updating to a dynamic software list.
@@ -111,7 +117,7 @@ else
     unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
   else
     POL_Wine start /unix "$INSTALLER"
-    POL_Wine_WaitExit "$INSTALLER"
+    POL_Wine_WaitExit "$TITLE"
   fi
 fi
 
