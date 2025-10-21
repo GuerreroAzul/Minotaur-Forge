@@ -5,18 +5,19 @@
 # Wine version used: See changelog.
 # Distribution used to test: See changelog.
 # Author: GuerreroAzul
-# License: Retail
+# License: GNU General Public License v3.0 
  
- # CHANGELOG
+# CHANGELOG
+# [GuerrreroAzul] 2025-10-20 21:53 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Script version: 1.0.1
+#   Title correction on installation.
+#   Update Link Download And Link Resources.
 # [GuerreroAzul] 2025-10-01 19:40 (UTC -06-00) / Wine 9.0 / Linux Mint 22.2 x86_64 xfce
 #   Script version: 1.0.0 (Creation of the script)
 #   wine: 9.0
 #   version OS: win7
 #   Category: Games
- 
-# [GuerrreroAzul] (2024-02-06 14:00 GMT-6) Wine 8.6 / Linux Mint 21.3 x86_64
-#   
- 
+#
 # REFERENCE
 # GuerreroAzul: Documentation POL. - https://www.playonlinux.com/en/app-4976-Plants_Vs_Zombies_Hybrid_Edition.html
 # GuerreroAzul Download - https://www.pvz-hybrid.com
@@ -64,21 +65,16 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
-# Compressor AAZ
-if [ ! -f "$HOME/.local/bin/aaz" ]; then
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
-  mkdir -p "$HOME/.local/bin"
-  cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
-  chmod +x "$HOME/.local/bin/aaz"
-fi
+# ...
 
 # Select mode install
 POL_SetupWindow_InstallMethod "LOCAL, DOWNLOAD"
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
-  POL_Download_Resource "https://archive.org/download/Game-POL/Plants%20Vs%20Zombies%20Hybrid%20Edition/archive.aaz" "e54c17f55a835b66150322339b496bf6" "$PREFIX"
+  POL_Download_Resource "https://archive.org/download/Game-POL/Plants%20Vs%20Zombies%20Hybrid%20Edition/3.9/File.zip" "71eba4b21b78d895a056ec63d7ba7680" "$PREFIX"
+  POL_System_unzip "$POL_USER_ROOT/ressources/$PREFIX/File.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp"
 
-  POL_Wine_WaitBefore "$TITLE"
-  aaz x "$POL_USER_ROOT/ressources/$PREFIX/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/"
+  POL_Wine start /unix "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/植物大战僵尸杂交版v3.9/植物大战僵尸杂交版v3.9安装程序.exe"
+    POL_Wine_WaitExit "$TITLE"
 else
   POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
   INSTALLER="$APP_ANSWER"
@@ -96,7 +92,7 @@ else
     unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
   else
     POL_Wine start /unix "$INSTALLER"
-    POL_Wine_WaitExit "$INSTALLER"
+    POL_Wine_WaitExit "$TITLE"
   fi
 fi
 
