@@ -5,9 +5,13 @@
 # Wine version used: See changelog.
 # Distribution used to test: See changelog.
 # Author: GuerreroAzul
-# License: Retail
+# License: GNU General Public License v3.0
  
- # CHANGELOG
+# CHANGELOG
+# [GuerrreroAzul] 2025-10-21 18:54 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Script version: 1.0.2
+#   version OS: Windows XP --> Windows 7
+#   Update Link Download And Link Resources.
 # [GuerreroAzul] 2025-09-30 19:40 (UTC -06-00) / Wine 9.0 / Linux Mint 22.2 x86_64 xfce
 #   Script version: 1.0.1 (Creation of the script)
 #   wine: 9.0
@@ -63,21 +67,13 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
-# Compressor AAZ
-if [ ! -f "$HOME/.local/bin/aaz" ]; then
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
-  mkdir -p "$HOME/.local/bin"
-  cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
-  chmod +x "$HOME/.local/bin/aaz"
-fi
+# ...
 
 # Select mode install
 POL_SetupWindow_InstallMethod "LOCAL, DOWNLOAD"
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
-  POL_Download_Resource "https://archive.org/download/Game-POL/Jetboat%20Superchamps%202/archive.aaz" "ebb2cb1ce66285d511ae26eb293d19c9" "$PREFIX"
-
-  POL_Wine_WaitBefore "$TITLE"
-  aaz x "$POL_USER_ROOT/ressources/$PREFIX/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/"
+  POL_Download_Resource "https://archive.org/download/Game-POL/Jetboat%20Superchamps%202/File.zip" "c5ba4f03b8a7d5c02894e8b0cdb9d766" "$PREFIX"
+  POL_System_unzip "$POL_USER_ROOT/ressources/$PREFIX/File.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
 else
   POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
   INSTALLER="$APP_ANSWER"
