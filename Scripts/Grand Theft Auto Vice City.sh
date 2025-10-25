@@ -82,6 +82,11 @@ if [ ! -f "$HOME/.local/bin/aaz" ]; then
   cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
   chmod +x "$HOME/.local/bin/aaz"
 fi
+
+# DirectX End-User Runtimes (June 2010)
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/archive.aaz" "57d73733cac213c3a126c935455d7b1d" "DirectX-2010.06"
+aaz x "$POL_USER_ROOT/ressources/DirectX-2010.06/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist"
+POL_Wine --ignore-errors "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist/DXSETUP.exe"
  
 # Script start
 # Install for download
