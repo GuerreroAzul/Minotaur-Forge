@@ -8,6 +8,12 @@
 # License: Retail
  
 # CHANGELOG
+# [GuerreroAzul] 2025-10-27 15-20 (UTC -06-00) // Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Version Script: 1.0.5
+#   - Update URL Download Game
+#   - Update DirectX End-User Runtimes (June 2010)
+#   - Install Direct Show Filters Fix
+#   - Update Install Mod
 # [GuerreroAzul] 2025-10-03 11-47 (UTC -06-00) // Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
 #   Version: 1.0.4
 #   - Update URL Download Game
@@ -27,14 +33,23 @@
 #     + Version system: winxp
 #   [Reference]
 #     + Document: https://en.wikipedia.org/wiki/Grand_Theft_Auto_III
-
  
 # REFERENCE
 # [GuerreroAzul]
 # Documentation POL: https://www.playonlinux.com/en/app-239-Grand_Theft_Auto_III.html
 # Mod Liberty Extended: https://libertycity.net/files/gta-3/191140-liberty-extended-2-0.html
 # Mod Widescreen Fix: https://libertycity.net/files/gta-3/91934-gta-iii-widescreen-fix.html
-# Icon Shortcut: https://libertycity.net/files/gta-3/165832-gta-3-icon-trilogy-style.html
+# Icon Shortcut: https://dynami-battles.fandom.com/pt-br/wiki/Claude_(GTA_III)
+
+# Extras Mod
+# HD Vehicles: https://es.libertycity.net/files/gta-3/38239-paquete-de-vehculos-hd-de-gta3-iii.html
+# HD Pack Texture: https://es.libertycity.net/files/gta-3/185097-paquete-de-texturas-hd-pantallas-de-carga-men-etc..html
+# High Quality Splash Screens: https://gamemodding.com/es/gta-3/others/49925-high-quality-splash-screens.html
+# Remaster HUD: https://es.libertycity.net/files/gta-3/174502-hud-remasterizado.html
+# Sound: https://es.libertycity.net/files/gta-3/168609-nuevos-sonidos-v2.0.html
+# Shoot and moves: https://es.libertycity.net/files/gta-3/168527-disparar-sobre-la-marcha.html
+# Tree: https://es.libertycity.net/files/gta-3/99916-reforma-de-flora-de-liberty-city.html
+# Intro: https://es.libertycity.net/files/gta-3/215068-vdeo-intro-mejorado.html
         
 [ "$PLAYONLINUX" = "" ] && exit 0
 source "$PLAYONLINUX/lib/sources"
@@ -48,7 +63,7 @@ OSVERSION="win7"
 EDITHOR="Dadu042 And GuerreroAzul"
 COMPANY="Rockstar Games"
 HOMEPAGE="https://www.rockstargames.com/games/grandtheftauto3"
-LOGO="https://i.imgur.com/70JclLT.png"
+LOGO="https://i.imgur.com/nWTJL64.png"
 BANNER="https://i.imgur.com/3x8HfZH.png"
 
 # Download Images
@@ -80,30 +95,32 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
  
 # Dependencies
-# Compressor AAZ
-if [ ! -f "$HOME/.local/bin/aaz" ]; then
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Funtions/aaz.sh" "057fe635857d9db4555c33f4ce4b839f" "aaz"
-  mkdir -p "$HOME/.local/bin"
-  cp "$POL_USER_ROOT/ressources/aaz/aaz.sh" -d "$HOME/.local/bin/aaz"
-  chmod +x "$HOME/.local/bin/aaz"
-fi
-
 # DirectX End-User Runtimes (June 2010)
-POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/archive.aaz" "57d73733cac213c3a126c935455d7b1d" "DirectX-2010.06"
-aaz x "$POL_USER_ROOT/ressources/DirectX-2010.06/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist"
-POL_Wine --ignore-errors "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist/DXSETUP.exe"
- 
+POL_System_TmpCreate "directx_Jun2010_redist"
+cd "$POL_System_TmpDir"
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/directx_Jun2010_redist.exe" "822e4c516600e81dc7fb16d9a77ec6d4" "DirectX-2010.06"
+POL_Wine start /unix "$POL_USER_ROOT/ressources/DirectX-2010.06/directx_Jun2010_redist.exe" /Q /T:"Z:$POL_System_TmpDir"
+POL_Wine_WaitExit "DirectX End-User Runtimes (June 2010)"
+
+# POL_Wine_WaitBefore "DirectX End-User Runtimes (June 2010)"
+POL_SetupWindow_wait_next_signal "Instalando DirectX (Jun 2010)" "$TITLE"
+cabextract -q -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/windows/system32" "$POL_System_TmpDir"/*.cab
+POL_System_TmpDelete
+
+# Direct Show Filters Fix
+POL_Call POL_Install_DirectShowFiltersFix
+
 # Script start
 POL_SetupWindow_InstallMethod "LOCAL, DVD, DOWNLOAD"
 # Install for download
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
   # Download
-  POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/archive.aaz" "5655223ca64495d08ccaf726e1a049d0" "$PREFIX"
+  POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/GTA3.zip" "80aef15329c0edeb79c5d20a8cefd225"  "$PREFIX"
+  POL_System_unzip "$POL_USER_ROOT/ressources/$PREFIX/GTA3.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
 
-  # Unzip program
-  POL_Wine_WaitBefore "$TITLE"
-  aaz x "$POL_USER_ROOT/ressources/$PREFIX/archive.aaz" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/"
-
+  # WidescreenFix
+  POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/WidescreenFix.zip" "7473627fa4c85238dc16b498f95f1da4"  "$PREFIX"
+  POL_System_unzip -o "$POL_USER_ROOT/ressources/$PREFIX/WidescreenFix.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
 # Install CD/DVD
 elif [ "$INSTALL_METHOD" = "DVD" ]; then
   POL_SetupWindow_cdrom
@@ -111,6 +128,10 @@ elif [ "$INSTALL_METHOD" = "DVD" ]; then
   INSTALLER="$CDROM/SETUP.EXE"
   cd "$CDROM"
 
+  # WidescreenFix
+  POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/WidescreenFix.zip" "7473627fa4c85238dc16b498f95f1da4"  "$PREFIX"
+  POL_System_unzip -o "$POL_USER_ROOT/ressources/$PREFIX/WidescreenFix.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  
   # Install Program
   POL_Wine start /unix "$INSTALLER"
   POL_Wine_WaitExit "$TITLE"
@@ -129,16 +150,41 @@ else
     unzip -q "$INSTALLER" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
   elif [[ "$EXT" == "rar" ]]; then
     # Archive rar
-    POL_Wine_WaitBefore "$TITLE"
-    unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+    if ! command -v unrar >/dev/null 2>&1; then
+      sudo apt install -y unrar
+
+      POL_Wine_WaitBefore "$TITLE"
+      unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+    fi
   else
     POL_Wine start /unix "$INSTALLER"
     POL_Wine_WaitExit "$INSTALLER"
   fi
+
+  # WidescreenFix
+  POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/WidescreenFix.zip" "7473627fa4c85238dc16b498f95f1da4"  "$PREFIX"
+  POL_System_unzip -o "$POL_USER_ROOT/ressources/$PREFIX/WidescreenFix.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
 fi
 
-# Mod Liberty Extended
-if [ -f "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/re3.exe" ]; then
+# Install mod Liberty Extended
+POL_SetupWindow_question "$(eval_gettext 'Do you want to install the Liberty Extended mod?')" "$TITLE"
+if [ "$APP_ANSWER" = "TRUE" ]; then
+  # Select version
+  POL_SetupWindow_menu "$(eval_gettext 'Which version of Liberty Extended do you want to install?')" "$TITLE" "2.0 Build 2025.10, 2.0 Build 2025.07" ", "
+
+  # Download Mod
+  if [ "$APP_ANSWER" = "2.0 Build 2025.07" ]; then
+    POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/LibertyExtended-2507.zip" "ee04fd8244943ba6c60f7012d2ca80a4"  "$PREFIX"
+    POL_System_unzip -o "$POL_USER_ROOT/ressources/$PREFIX/LibertyExtended-2507.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  else
+    POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/LibertyExtended-2510.zip" "a17da5834e37e336fbc4915d9854e61a"  "$PREFIX"
+    POL_System_unzip -o "$POL_USER_ROOT/ressources/$PREFIX/LibertyExtended-2510.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  fi
+
+  # MoreMods
+  POL_Download_Resource "https://archive.org/download/Game-POL/Grand%20Theft%20Auto%20III/MoreMods-2510.zip" "c2d507bf289063d364110effff81d9d2"  "$PREFIX"
+  POL_System_unzip -o "$POL_USER_ROOT/ressources/$PREFIX/MoreMods-2510.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+
   # File save 
   rm -rf "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/Grand Theft Auto III/LibertyExtended/userfiles"
   mkdir -p "$(xdg-user-dir DOCUMENTS)/GTA3 User Files"
@@ -158,6 +204,5 @@ wget --header="User-Agent: Mozilla/5.0" -qO- "$LOGO" | convert - -resize 32x32! 
 wget --header="User-Agent: Mozilla/5.0" "$LOGO" -O "$POL_USER_ROOT/icones/full_size/$TITLE"
 
 # End script
-POL_System_TmpDelete
 POL_SetupWindow_Close
 exit 0
