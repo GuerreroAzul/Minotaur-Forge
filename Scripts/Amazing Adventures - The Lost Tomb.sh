@@ -9,16 +9,22 @@
 # License: GNU General Public License v3.0 
 
 # CHANGELOG
-# [GuerrreroAzul] 2025-10-20 21:44 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+# [GuerreroAzul] 2025-10-29 21:16 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+#   Script version: 1.0.5
+#   Update Link Download
+#   Add new category "Casual"
+#   Update dependencie DirectX End-User Runtimes
+#   Update mode install manual
+# [GuerreroAzul] 2025-10-20 21:44 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
 #   Script version: 1.0.4
 #   Title correction on installation.
-# [GuerrreroAzul] 2025-09-30 21:03 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+# [GuerreroAzul] 2025-09-30 21:03 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
 #   Script version: 1.0.3
 #   Update Link Download And Link Resources.
-# [GuerrreroAzul] 2025-09-30 21:03 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
+# [GuerreroAzul] 2025-09-30 21:03 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 xfce
 #   Script version: 1.0.2
 #     Updating to a dynamic software list.
-# [GuerrreroAzul] 2024-08-07 09:30 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 XFCE
+# [GuerreroAzul] 2024-08-07 09:30 (UTC -06:00) / Wine 9.0 x86 / Linux Mint 22 x86_64 XFCE
 # Script creation:
 #   Wine version: 9.0
 #   System version: Windows 7
@@ -32,7 +38,7 @@ source "$PLAYONLINUX/lib/sources"
 # Declaration of variables
 TITLE="Amazing Adventures The Lost Tomb"
 PREFIX="AATLT"
-CATEGORY="Games;"
+CATEGORY="Games; Casual"
 WINEVERSION="9.0"
 OSVERSION="win7"
 EDITHOR="GuerrreroAzul"
@@ -88,18 +94,23 @@ Set_OS "$OSVERSION"
 # POL_Wine regsvr32 /s wintrust.dll
 
 # DirectX End-User Runtimes (June 2010)
+POL_System_TmpCreate "directx_Jun2010_redist"
+cd "$POL_System_TmpDir"
 POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/directx_Jun2010_redist.exe" "822e4c516600e81dc7fb16d9a77ec6d4" "DirectX-2010.06"
-POL_Wine start /unix "$POL_USER_ROOT/ressources/DirectX-2010.06/directx_Jun2010_redist.exe" /Q /T:"C:/users/$USER/Temp/directx_Jun2010_redist"
+POL_Wine start /unix "$POL_USER_ROOT/ressources/DirectX-2010.06/directx_Jun2010_redist.exe" /Q /T:"Z:$POL_System_TmpDir"
 POL_Wine_WaitExit "DirectX End-User Runtimes (June 2010)"
-POL_Wine --ignore-errors "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/users/$USER/Temp/directx_Jun2010_redist/DXSETUP.exe" &>/dev/null
-POL_Wine_WaitExit "DirectX End-User Runtimes (June 2010)"
+
+# POL_Wine_WaitBefore "DirectX End-User Runtimes (June 2010)"
+POL_SetupWindow_wait_next_signal "Instalando DirectX (Jun 2010)" "$TITLE"
+cabextract -q -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/windows/system32" "$POL_System_TmpDir"/*.cab
+POL_System_TmpDelete
 
 # Select mode install
 POL_SetupWindow_InstallMethod "LOCAL, DOWNLOAD"
 if [ "$INSTALL_METHOD" = "DOWNLOAD" ]; then
   # Install Program
-  POL_Download_Resource "https://archive.org/download/Game-POL/Amazing%20Adventures%20-%20The%20Lost%20Tomb/File.zip" "8f025f460c8c4da7aef5943137132706" "$PREFIX"
-  POL_System_unzip "$POL_USER_ROOT/ressources/$PREFIX/File.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+  POL_Download_Resource "https://archive.org/download/Game-POL/Amazing%20Adventures%20-%20The%20Lost%20Tomb/AmazingAdventures-TheLostTomb.zip" "8f025f460c8c4da7aef5943137132706" "$PREFIX"
+  POL_System_unzip "$POL_USER_ROOT/ressources/$PREFIX/AmazingAdventures-TheLostTomb.zip" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
 else
   POL_SetupWindow_browse "$(eval_gettext 'Please select the setup file to run.')" "$TITLE"
   INSTALLER="$APP_ANSWER"
@@ -109,12 +120,15 @@ else
   
   if [[ "$EXT" == "zip" ]]; then
     # Archive zip
-    POL_Wine_WaitBefore "$TITLE"
-    unzip -q "$INSTALLER" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+    POL_System_unzip -o "$INSTALLER" -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
   elif [[ "$EXT" == "rar" ]]; then
     # Archive rar
-    POL_Wine_WaitBefore "$TITLE"
-    unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+    if ! command -v unrar >/dev/null 2>&1; then
+      POL_Debug_Fatal "$(eval_gettext 'Please install unrar before installing.')" "$TITLE!"
+    else
+      POL_Wine_WaitBefore "$TITLE"
+      unrar x -inul "$INSTALLER" "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/Program Files/$TITLE"
+    fi
   else
     POL_Wine start /unix "$INSTALLER"
     POL_Wine_WaitExit "$TITLE"
