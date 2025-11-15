@@ -116,24 +116,22 @@ POL_Wine_OverrideDLL "native" "msxml3"
 POL_Wine --ignore-errors msiexec /i "$POL_USER_ROOT/ressources/msxml3/msxml3.msi" /q
 POL_Wine_WaitExit "Microsoft XML Parser 3.0"
 
-
 # Microsoft XML Core Services 6.0
+POL_System_TmpCreate "msxml6"
 if [ "$ARCHITECTURE" = "amd64" ]; then
-  POL_System_TmpCreate "Microsoft XML Core Services 6.0"
   POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20XML%20Core%20Services/6.0/msxml6_x64.zip" "118dc670ace3533efd5733ae41f32370" "msxml6"
   POL_System_unzip "$POL_USER_ROOT/ressources/msxml6/msxml6_x64.zip" -d "Z:$POL_System_TmpDir/msxml6"
   rm "$WINEPREFIX/drive_c/windows/syswow64/msxml6.dll"
   POL_Wine_OverrideDLL "native" "msxml6"
   POL_Wine --ignore-errors msiexec /i "$POL_System_TmpDir/msxml6/msxml6_x64.msi" /q
-  POL_Wine_WaitExit "Microsoft XML Core Services 6.0"
-  POL_System_TmpDelete
 else
   POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20XML%20Core%20Services/6.0/msxml6_x86.msi" "85a5571258de322458f288b94ee28cfb" "msxml6"
   rm "$WINEPREFIX/drive_c/windows/system32/msxml6.dll"
   POL_Wine_OverrideDLL "native" "msxml6"
   POL_Wine --ignore-errors msiexec /i "$POL_USER_ROOT/ressources/msxml6/msxml6_x86.msi" /q 
-  POL_Wine_WaitExit "Microsoft XML Core Services 6.0"
 fi
+POL_Wine_WaitExit "Microsoft XML Core Services 6.0"
+POL_System_TmpDelete
 
 # Microsoft Visual C++ 2010 MFC100 Library
 POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20Visual%20C%2B%2B%20Redistributable/MFC100%20Library/vcredist_x86_28c54491be70c38c97849c3d8cfbfdd0d3c515cb.exe" "1801436936e64598bab5b87b37dc7f87" "mfc100"
@@ -141,9 +139,9 @@ POL_Wine "$POL_USER_ROOT/ressources/mfc100/vcredist_x86_28c54491be70c38c97849c3d
 POL_Wine_WaitExit "Microsoft Visual C++ 2010 MFC100 Library"
 
 # Microsoft Data Access Components 2.8 Service Pack 1 (mdac28)
-Set_OS nt40
 POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20Data%20Access%20Components/2.8%20SP1/MDAC_TYP.EXE" "6e914a7391c3b17380ce54fd3a7a133d" "mdac28"
 POL_Wine_OverrideDLL "native, builtin" odbc32 odbccp32 oledb32 sqlsrv32
+Set_OS nt40
 POL_Wine "$POL_USER_ROOT/ressources/mdac28/MDAC_TYP.EXE" /q /C:"setup /QNT"
 POL_Wine_WaitExit "Microsoft Data Access Components 2.8 Service Pack 1"
 Set_OS "$OSVERSION"
@@ -297,13 +295,33 @@ cd "$POL_System_TmpDir"
 POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20DirectX%20End-User%20Runtime/29.9.1974.1%20%28June%202010%29/directx_Jun2010_redist.exe" "822e4c516600e81dc7fb16d9a77ec6d4" "DirectX-2010.06"
 POL_Wine start /unix "$POL_USER_ROOT/ressources/DirectX-2010.06/directx_Jun2010_redist.exe" /Q /T:"Z:$POL_System_TmpDir"
 POL_Wine_WaitExit "DirectX End-User Runtimes (June 2010)"
+POL_SetupWindow_wait_next_signal "Instalando DirectX (Jun 2010)" "$TITLE"
+cabextract -q -d "$POL_USER_ROOT/wineprefix/$PREFIX/drive_c/windows/system32" "$POL_System_TmpDir"/*.cab
+POL_System_TmpDelete
 
-# Microsoft .Net Framework 4.0
+# Install Microsoft .Net Framework 2.0 Service Pack 1
+# Set_OS "win2k"
+# Fix Pre-Installation
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/l_intl.nls" "3f138c7677ede64e8ad41e3277c86e9e" "dotnet20"
+cp -f "$POL_USER_ROOT/ressources/dotnet20/l_intl.nls" "$WINEPREFIX/drive_c/windows/system32"
+# Installation
+if [ "$ARCHITECTURE" = "amd64" ]; then
+  POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/NetFx20SP1_x64.exe" "4c07706a2ac5806944bc6a09c103bf9f" "dotnet20"
+  POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet20//NetFx20SP1_x64.exe" /q /c:"install.exe /q"
+else
+  POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/NetFx20SP1_x86.exe" "1b5e3c3c4d5e6f7e8f9fa0b1b2c3d4e5" "dotnet20"
+  POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet20/NetFx20SP1_x86.exe" /q /c:"install.exe /q"
+fi
+POL_Wine_WaitExit "Microsoft .Net Framework 2.0 SP1"
+#Set_OS "$OSVERSION"
+POL_System_TmpDelete
+
+
+
+
 
 # Microsoft .Net Framework 4.8
 POL_Download_Resource "https://download.microsoft.com/download/f/3/a/f3a6af84-da23-40a5-8d1c-49cc10c8e76f/NDP48-x86-x64-AllOS-ENU.exe" "74d56b9081a42f6315cea96c895cbbcc" "dotnet48"
-# POL_Wine uninstaller --remove '{E45D8920-A758-4088-B6C6-31DBB276992E}' || true
-rm "$WINEPREFIX/drive_c/windows/system32/mscoree.dll"
 POL_Wine_OverrideDLL "native, builtin" mscoree
 POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet48/NDP48-x86-x64-AllOS-ENU.exe" /q
 POL_Wine_WaitExit "Microsoft .Net Framework 4.8"
