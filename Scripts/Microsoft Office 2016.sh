@@ -56,7 +56,7 @@ CATEGORY="Office;"
 WINEVERSION="9.0"
 OSVERSION="win7"
 ARCHITECTURE="x86"
-EDITOR="Quentin Pâris, Eduardo Lucio and N0rbert, GuerreroAzul, Dingo35"
+EDITOR="Quentin Pâris, Dadu042, Eduardo Lucio and N0rbert, Dingo35 And\nGuerrerroAzul"
 COMPANY="Microsoft Inc."
 HOMEPAGE="ttp://www.microsoft.com"
 LOGO="https://i.imgur.com/licFVuF.png"
@@ -98,7 +98,9 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
-# Luna Theme
+# Clean Themes (https://www.vinstartheme.com/clean-theme-for-windows-7/)
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20Fonts/Fonts.zip" "a9669ee3387be9d3bc504eb799723799" "themes"
+
 POL_Call POL_Install_LunaTheme
 
 # Microsoft Fonts
