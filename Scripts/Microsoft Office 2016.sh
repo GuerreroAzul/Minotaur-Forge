@@ -105,39 +105,33 @@ POL_System_unzip -o "$POL_USER_ROOT/ressources/themes/SevenGlass.zip" -d "$WINEP
 POL_Wine regedit "$POL_USER_ROOT/ressources/themes/SevenGlass.reg"
 
 # Icons: Win10 (https://www.youtube.com/watch?v=B39GFWNcUPg)
-POL_System_TmpCreate "icons"
-if [ "$ARCHITECTURE" = "amd64" ]; then
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Icons/win10/IconsWin10x64.zip" "cfff5ed18c8e409f914dcfdee1c0921c" "icons"
-  mkdir -p "$POL_USER_ROOT/tmp/icons/i64"
-  POL_System_unzip -o "$POL_USER_ROOT/ressources/icons/IconsWin10x64.zip" -d "$POL_USER_ROOT/tmp/icons/i64/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i64/authui.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i64/fontext.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i64/imageres.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i64/imagesp1.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i64/shell32.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i64/zipfldr.dll" "$WINEPREFIX/drive_c/windows/yswow64/"
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Icons/win10/IconsWin10x86.zip" "875c90041464a9d2efaf6ca7849604c6" "icons"
-  mkdir -p "$POL_USER_ROOT/tmp/icons/i32"
-  POL_System_unzip -o "$POL_USER_ROOT/ressources/icons/IconsWin10x86.zip" -d "$POL_USER_ROOT/tmp/icons/i32/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i32/authui.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i32/fontext.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i32/imageres.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i32/imagesp1.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i32/shell32.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i32/zipfldr.dll" "$WINEPREFIX/drive_c/windows/system32/"
-else
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Icons/win10/IconsWin10x86.zip" "875c90041464a9d2efaf6ca7849604c6" "icons"
-  mkdir -p "$POL_USER_ROOT/tmp/icons/i32"
-  POL_System_unzip -o "$POL_USER_ROOT/ressources/icons/IconsWin10x86.zip" -d "$POL_USER_ROOT/tmp/icons/i32/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i32/authui.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/icons/i32/fontext.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/tmp/icons/i32/imageres.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/tmp/icons/i32/imagesp1.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/tmp/icons/i32/shell32.dll" "$WINEPREFIX/drive_c/windows/system32/"
-  cp -p "$POL_USER_ROOT/tmp/tmp/icons/i32/zipfldr.dll" "$WINEPREFIX/drive_c/windows/system32/"
-fi
-POL_Wine_reboot
-POL_System_TmpDelete
+# POL_System_TmpCreate "icons"
+# # System32
+# POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Icons/win10/IconsWin10x86.zip" "875c90041464a9d2efaf6ca7849604c6" "icons"
+# mkdir -p "$POL_USER_ROOT/tmp/icons/i32"
+# POL_System_unzip -o "$POL_USER_ROOT/ressources/icons/IconsWin10x86.zip" -d "$POL_USER_ROOT/tmp/icons/i32/"
+# rm "$WINEPREFIX/drive_c/windows/system32/shell32.dll"
+# cp -p "$POL_USER_ROOT/tmp/icons/i32/authui.dll" "$WINEPREFIX/drive_c/windows/system32/"
+# cp -p "$POL_USER_ROOT/tmp/icons/i32/fontext.dll" "$WINEPREFIX/drive_c/windows/system32/"
+# cp -p "$POL_USER_ROOT/tmp/icons/i32/imageres.dll" "$WINEPREFIX/drive_c/windows/system32/"
+# cp -p "$POL_USER_ROOT/tmp/icons/i32/imagesp1.dll" "$WINEPREFIX/drive_c/windows/system32/"
+# cp -p "$POL_USER_ROOT/tmp/icons/i32/shell32.dll" "$WINEPREFIX/drive_c/windows/system32/"
+# cp -p "$POL_USER_ROOT/tmp/icons/i32/zipfldr.dll" "$WINEPREFIX/drive_c/windows/system32/"
+# # Syswow64
+# if [ "$ARCHITECTURE" = "amd64" ]; then
+#   POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Icons/win10/IconsWin10x64.zip" "cfff5ed18c8e409f914dcfdee1c0921c" "icons"
+#   mkdir -p "$POL_USER_ROOT/tmp/icons/i64"
+#   POL_System_unzip -o "$POL_USER_ROOT/ressources/icons/IconsWin10x64.zip" -d "$POL_USER_ROOT/tmp/icons/i64/"
+#   rm "$WINEPREFIX/drive_c/windows/syswow64/shell32.dll"
+#   cp -p "$POL_USER_ROOT/tmp/icons/i64/authui.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+#   cp -p "$POL_USER_ROOT/tmp/icons/i64/fontext.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+#   cp -p "$POL_USER_ROOT/tmp/icons/i64/imageres.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+#   cp -p "$POL_USER_ROOT/tmp/icons/i64/imagesp1.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+#   cp -p "$POL_USER_ROOT/tmp/icons/i64/shell32.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+#   cp -p "$POL_USER_ROOT/tmp/icons/i64/zipfldr.dll" "$WINEPREFIX/drive_c/windows/yswow64/"
+# fi
+# POL_Wine_reboot
+# POL_System_TmpDelete
 
 # Microsoft Fonts
 POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20Fonts/Fonts.zip" "a9669ee3387be9d3bc504eb799723799" "Fonts"
