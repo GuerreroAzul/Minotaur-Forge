@@ -53,7 +53,7 @@ source "$PLAYONLINUX/lib/sources"
 TITLE="Microsoft Office 2016"
 PREFIX="MSO2016"
 CATEGORY="Office;"
-WINEVERSION="9.0"
+WINEVERSION="8.0.2"
 OSVERSION="win7"
 ARCHITECTURE="x86"
 EDITOR="Quentin Pâris, Dadu042, Eduardo Lucio and N0rbert, Dingo35 And\nGuerrerroAzul"
@@ -98,10 +98,46 @@ POL_Wine_PrefixCreate "$WINEVERSION"
 Set_OS "$OSVERSION"
 
 # Dependencies
-# Clean Themes (https://www.vinstartheme.com/clean-theme-for-windows-7/)
-POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20Fonts/Fonts.zip" "a9669ee3387be9d3bc504eb799723799" "themes"
+# Themes: SevenGlass (https://www.vinstartheme.com/clean-theme-for-windows-7/)
+POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Themes/SevenGlass.zip" "d86f4a523666a1a3e0f5035a893b83f0" "themes"
+POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Themes/SevenGlass.reg" "2220cb8b0e2326b95d827ef53d0f3234" "themes"
+POL_System_unzip -o "$POL_USER_ROOT/ressources/themes/SevenGlass.zip" -d "$WINEPREFIX/drive_c/windows/resources/themes/"
+POL_Wine regedit "$POL_USER_ROOT/ressources/themes/SevenGlass.reg"
 
-POL_Call POL_Install_LunaTheme
+# Icons: Win10 (https://www.youtube.com/watch?v=B39GFWNcUPg)
+POL_System_TmpCreate "icons"
+if [ "$ARCHITECTURE" = "amd64" ]; then
+  POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Icons/win10/IconsWin10x64.zip" "cfff5ed18c8e409f914dcfdee1c0921c" "icons"
+  mkdir -p "$POL_USER_ROOT/tmp/icons/i64"
+  POL_System_unzip -o "$POL_USER_ROOT/ressources/icons/IconsWin10x64.zip" -d "$POL_USER_ROOT/tmp/icons/i64/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i64/authui.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i64/fontext.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i64/imageres.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i64/imagesp1.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i64/shell32.dll" "$WINEPREFIX/drive_c/windows/syswow64/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i64/zipfldr.dll" "$WINEPREFIX/drive_c/windows/yswow64/"
+  POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Icons/win10/IconsWin10x86.zip" "875c90041464a9d2efaf6ca7849604c6" "icons"
+  mkdir -p "$POL_USER_ROOT/tmp/icons/i32"
+  POL_System_unzip -o "$POL_USER_ROOT/ressources/icons/IconsWin10x86.zip" -d "$POL_USER_ROOT/tmp/icons/i32/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i32/authui.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i32/fontext.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i32/imageres.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i32/imagesp1.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i32/shell32.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i32/zipfldr.dll" "$WINEPREFIX/drive_c/windows/system32/"
+else
+  POL_Download_Resource "https://archive.org/download/Resources-POL/Wine%20Icons/win10/IconsWin10x86.zip" "875c90041464a9d2efaf6ca7849604c6" "icons"
+  mkdir -p "$POL_USER_ROOT/tmp/icons/i32"
+  POL_System_unzip -o "$POL_USER_ROOT/ressources/icons/IconsWin10x86.zip" -d "$POL_USER_ROOT/tmp/icons/i32/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i32/authui.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/icons/i32/fontext.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/tmp/icons/i32/imageres.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/tmp/icons/i32/imagesp1.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/tmp/icons/i32/shell32.dll" "$WINEPREFIX/drive_c/windows/system32/"
+  cp -p "$POL_USER_ROOT/tmp/tmp/icons/i32/zipfldr.dll" "$WINEPREFIX/drive_c/windows/system32/"
+fi
+POL_Wine_reboot
+POL_System_TmpDelete
 
 # Microsoft Fonts
 POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20Fonts/Fonts.zip" "a9669ee3387be9d3bc504eb799723799" "Fonts"
@@ -304,29 +340,31 @@ POL_System_TmpDelete
 # Install Microsoft .Net Framework 2.0 Service Pack 1
 # Set_OS "win2k"
 # Fix Pre-Installation
-POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/l_intl.nls" "3f138c7677ede64e8ad41e3277c86e9e" "dotnet20"
-cp -f "$POL_USER_ROOT/ressources/dotnet20/l_intl.nls" "$WINEPREFIX/drive_c/windows/system32"
-# Installation
-if [ "$ARCHITECTURE" = "amd64" ]; then
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/NetFx20SP1_x64.exe" "4c07706a2ac5806944bc6a09c103bf9f" "dotnet20"
-  POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet20//NetFx20SP1_x64.exe" /q /c:"install.exe /q"
-else
-  POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/NetFx20SP1_x86.exe" "1b5e3c3c4d5e6f7e8f9fa0b1b2c3d4e5" "dotnet20"
-  POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet20/NetFx20SP1_x86.exe" /q /c:"install.exe /q"
-fi
-POL_Wine_WaitExit "Microsoft .Net Framework 2.0 SP1"
-#Set_OS "$OSVERSION"
-POL_System_TmpDelete
+# POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/l_intl.nls" "3f138c7677ede64e8ad41e3277c86e9e" "dotnet20"
+# cp -f "$POL_USER_ROOT/ressources/dotnet20/l_intl.nls" "$WINEPREFIX/drive_c/windows/system32"
+# # Installation
+# if [ "$ARCHITECTURE" = "amd64" ]; then
+#   POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/NetFx20SP1_x64.exe" "4c07706a2ac5806944bc6a09c103bf9f" "dotnet20"
+#   POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet20//NetFx20SP1_x64.exe" /q /c:"install.exe /q"
+# else
+#   POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.NET%20Framework/2.0%20SP1/NetFx20SP1_x86.exe" "1b5e3c3c4d5e6f7e8f9fa0b1b2c3d4e5" "dotnet20"
+#   POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet20/NetFx20SP1_x86.exe" /q /c:"install.exe /q"
+# fi
+# POL_Wine_WaitExit "Microsoft .Net Framework 2.0 SP1"
+# #Set_OS "$OSVERSION"
+# POL_System_TmpDelete
 
+# Install Microsoft .Net Framework 4.0 Service Pack 1
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.Net%20Framework/4.0%20SP1/dotNetFx40_Full_x86_x64.exe" "251743dfd3fda414570524bac9e55381" "dotnet40"
+POL_Wine_OverrideDLL "native" "mscoree"
+POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet40/dotNetFx40_Full_x86_x64.exe" /q
+POL_Wine_WaitExit "Microsoft .Net Framework 4.0 Service Pack 1"
 
-
-
-
-# Microsoft .Net Framework 4.8
-POL_Download_Resource "https://download.microsoft.com/download/f/3/a/f3a6af84-da23-40a5-8d1c-49cc10c8e76f/NDP48-x86-x64-AllOS-ENU.exe" "74d56b9081a42f6315cea96c895cbbcc" "dotnet48"
-POL_Wine_OverrideDLL "native, builtin" mscoree
+# Microsoft .Net Framework 4.8 Service Pack 1
+POL_Download_Resource "https://archive.org/download/Resources-POL/Microsoft%20.Net%20Framework/4.8%20SP1/NDP48-x86-x64-AllOS-ENU.exe" "74d56b9081a42f6315cea96c895cbbcc" "dotnet48"
+POL_Wine_OverrideDLL "native" "mscoree"
 POL_Wine start /unix "$POL_USER_ROOT/ressources/dotnet48/NDP48-x86-x64-AllOS-ENU.exe" /q
-POL_Wine_WaitExit "Microsoft .Net Framework 4.8"
+POL_Wine_WaitExit "Microsoft .Net Framework 4.8 Service Pack 1"
 
 # Fix MSI Install
 POL_Wine reg add "HKLM\\Software\\Policies\\Microsoft\\Windows\\Installer" /v DisableMSI /t REG_DWORD /d 0 /f
@@ -371,10 +409,9 @@ fi
 
 # cd "$HOME"
 # POL_Wine start /unix "$INSTALLER" /config "C:\\config.xml"
+POL_Wine_OverrideDLL "builtin" fusion mscoree
 POL_Wine start /unix "$INSTALLER"
 POL_Wine_WaitExit "$TITLE"
-
-
 
 # By GuerreroAzul: Pause to monitor the installation
 # POL_SetupWindow_message "$(eval_gettext 'Wait a moment while the installation begins, when the installation is finished press next.')" "$TITLE"
